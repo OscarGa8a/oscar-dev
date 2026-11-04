@@ -321,6 +321,79 @@ Sitemap: https://tudominio.com/sitemap.xml
 
 ---
 
+### 4. Aislamiento de Staging y Concept Demos (Patrón Robots en Doble Capa):
+
+> [!CAUTION]
+> **El problema del Staging**: Todo Concept Demo o web en desarrollo suele publicarse primero en un subdominio temporal (ej. `proyecto.oscardev.co`, Cloudflare Pages o Vercel Preview) para validación del cliente antes del lanzamiento oficial en su dominio definitivo (`tudominio.com`). Si Google u otros rastreadores descubren el staging antes de producción, indexarán el subdominio de desarrollo, provocarán sanciones por contenido duplicado o mostrarán enlaces temporales en los resultados de búsqueda.
+>
+> **La trampa de la solución manual**: Jamás debe clavarse un `<meta name="robots" content="noindex, nofollow">` estático a mano en el código para staging. En el 90% de los lanzamientos, el equipo olvida remover el tag antes de apuntar los DNS a producción, bloqueando catastróficamente la indexación orgánica del cliente.
+
+#### Arquitectura de Protección en Doble Capa:
+
+Implementar siempre en el Layout principal compartido (`BaseLayout.astro` / `Layout.astro`):
+
+1. **Capa 1: Resolución en Build-Time (Astro SSG)**  
+   Evalúa variables de entorno (`PUBLIC_SITE_URL`, `PUBLIC_ENV`, `PUBLIC_NOINDEX`) o dominios de staging conocidos (`oscardev.co`, `pages.dev`, `vercel.app`) para generar el tag correspondiente en el HTML estático:
+
+```astro
+---
+// En el frontmatter del Layout principal:
+interface Props {
+  // ...
+  robots?: string;
+}
+
+const { robots } = Astro.props;
+
+// Variables de entorno inyectadas en CI/CD (Cloudflare Pages, Vercel, etc.)
+const siteUrl = import.meta.env.PUBLIC_SITE_URL || process.env.PUBLIC_SITE_URL || process.env.SITE_URL || '';
+const publicEnv = import.meta.env.PUBLIC_ENV || process.env.PUBLIC_ENV || process.env.ENVIRONMENT || process.env.VERCEL_ENV || '';
+const publicNoindex = import.meta.env.PUBLIC_NOINDEX || process.env.PUBLIC_NOINDEX;
+
+// Detección de staging por entorno o patrón de dominio
+const isStagingDomain = siteUrl.includes('oscardev.co') || siteUrl.includes('pages.dev') || siteUrl.includes('vercel.app');
+const isStagingEnv = publicEnv === 'staging' || publicEnv === 'preview' || publicEnv === 'development';
+const isExplicitNoindex = publicNoindex === 'true' || publicNoindex === true;
+
+const isStaging = isStagingDomain || isStagingEnv || isExplicitNoindex;
+
+// Por defecto en producción es indexable; en staging se protege
+const defaultRobots = isStaging ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
+const resolvedRobots = robots || defaultRobots;
+---
+
+<head>
+  <meta name="robots" content={resolvedRobots} />
+  
+  {/* Capa 2: Salvaguarda dinámica en runtime */}
+  <script is:inline>
+    (function() {
+      try {
+        var host = window.location.hostname;
+        var isStagingHost = host.includes('oscardev.co') || host.endsWith('.pages.dev') || host.endsWith('.vercel.app');
+        var isProdHost = host === 'tudominio.com' || host === 'www.tudominio.com';
+        if (isStagingHost && !isProdHost) {
+          var meta = document.querySelector('meta[name="robots"]');
+          if (meta) {
+            meta.setAttribute('content', 'noindex, nofollow');
+          } else {
+            var m = document.createElement('meta');
+            m.name = 'robots';
+            m.content = 'noindex, nofollow';
+            document.head.appendChild(m);
+          }
+        }
+      } catch (_) {}
+    })();
+  </script>
+</head>
+```
+
+2. **Capa 2: Salvaguarda Dinámica en Runtime (Navegador & Crawlers JS)**  
+   El script inline evalúa `window.location.hostname`. Si el sitio se carga desde cualquier host de staging o previsualización y no coincide con el dominio canónico final, muta inmediatamente el DOM para asegurar `noindex, nofollow`. Si se navega en el dominio de producción, el script no ejecuta ninguna acción, asegurando que la producción sea 100% indexable sin tocar una sola línea de código.
+
+---
+
 ## Fase 5: Grafo de Entidades, E-E-A-T y Canales de Conversión
 
 1. **Desambiguación de Entidad (E-E-A-T)**:
@@ -525,7 +598,18 @@ Para verificar la propiedad del dominio en Google Search Console sin acoplar cla
    ```
 2. Configurar la variable de entorno `PUBLIC_GOOGLE_SITE_VERIFICATION` en el panel de Cloudflare Pages / Vercel / Netlify con el token proporcionado por Search Console.
 
-### 2. Monitoreo Post-Despliegue:
+### 2. Variables de Entorno para Indexación Segura (Staging vs Producción):
+Para gobernar el aislamiento sin modificar código fuente, documentar y configurar en el panel de hosting (Cloudflare Pages / Vercel / Netlify):
+
+| Variable | Entorno Staging / Concept Demo | Entorno Producción | Propósito |
+| :--- | :--- | :--- | :--- |
+| `PUBLIC_ENV` | `staging` | `production` | Define el entorno operacional del build. |
+| `PUBLIC_SITE_URL` | `https://proyecto.oscardev.co` | `https://tudominio.com` | Dominio base para resolución canónica y reglas de rastreo. |
+| `PUBLIC_NOINDEX` | `true` *(opcional si ya se usa `PUBLIC_ENV`)* | `false` | Interruptor maestro de bloqueo forzado de indexación. |
+
+En el archivo `.env.example` del proyecto siempre se deben declarar estas llaves comentadas para asegurar reproducibilidad por parte de cualquier desarrollador o agente de IA.
+
+### 3. Monitoreo Post-Despliegue:
 - Enviar el mapa del sitio `https://tudominio.com/sitemap.xml` en Google Search Console.
 - Solicitar indexación de las URLs canónicas principales (`/` y `/en/`).
 - Verificar que `robots.txt` devuelva código de estado HTTP `200 OK` y no bloquee recursos esenciales.
@@ -647,6 +731,7 @@ runAudit().catch(console.error);
 - [x] **Schema.org**: JSON-LD con `Person`, `ProfessionalService`, `WebSite` y `FAQPage`.
 - [x] **Robots.txt & Sitemap**: Permisos explícitos para rastreadores de IA y referencia al mapa del sitio.
 - [x] **Google Search Console**: Verificación limpia por variable de entorno sin acoplar secretos.
+- [x] **Aislamiento de Staging e Indexación Limpia**: Staging temporal (`*.oscardev.co` / previews) protegido con `noindex, nofollow` y producción canónica indexable (`index, follow, max-image-preview:large`) de forma automática y desacoplada mediante variables de entorno.
 - [x] **GTM + GA4 Carga Diferida (Zero-TBT)**: Inyección diferida de `gtm.js` por interacción/idle con buffer inmediato de `dataLayer`.
 - [x] **Seguridad & Caché**: Cabeceras HSTS, `X-Frame-Options: DENY` y caché inmutable de 1 año para `/_astro/*`.
 - [x] **Google Lighthouse**: Certificación de **100/100** en Rendimiento, Accesibilidad, Buenas Prácticas y SEO.

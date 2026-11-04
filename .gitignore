@@ -27,7 +27,6 @@ pnpm-debug.log*
 
 .playwright-mcp/
 .claude/
-.agents/
 .codex/
 .impeccable/
 .github/agents/
@@ -43,4 +42,3 @@ screenshots/
 .chrome-tmp/
 
 .atl/
-skills-lock.json

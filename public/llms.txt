@@ -9,8 +9,9 @@
 - WhatsApp: +57 318 020 9851 (https://wa.me/message/YXFZES54VJ2IK1)
 - Horario: lunes a sábado, 8:00–18:00 (hora Colombia, UTC-5)
 - Tiempo de respuesta: respondo el mismo día hábil.
-- Medios de pago: Nequi, Daviplata, Bancolombia, Nu y Bre-B. Pagas cuando ves tu web terminada; no pido anticipo.
-- Plazos: según alcance, acordado por escrito.
+- Medios de pago: Nequi, Daviplata, Bancolombia, Nu y Bre-B.
+- Forma de pago: en landing pages, pagas cuando ves tu web terminada (no pido anticipo). En apps y plataformas, la forma de pago se acuerda por escrito antes de empezar.
+- Plazos típicos: landing o sitio web, 2–4 semanas; plataforma o app, 6–12 semanas. Una app tipo Uber o un marketplace no entra en esos plazos y se cotiza aparte.
 
 ## Páginas
 - [Inicio](https://oscardev.co/) · [English](https://oscardev.co/en/)
@@ -35,7 +36,7 @@
 - [La Locura Bar](https://oscardev.co/proyectos/la-locura-bar/) → https://lalocurabar.com.co/ : web de bar en Villavicencio con carta y reservas por WhatsApp.
 
 ## Productos propios
-- [ConectaPlay](https://oscardev.co/proyectos/conectaplay/) → https://app.conectaplay.co/ : plataforma de reservas para complejos deportivos (reservas en tiempo real, pagos y panel administrativo). Oscar es el desarrollador e hizo toda la programación; su hermano es socio e inversionista (financió las herramientas de IA). Web app en Ionic + Angular; aún no está en las tiendas de apps.
+- [ConectaPlay](https://oscardev.co/proyectos/conectaplay/) → https://app.conectaplay.co/ : plataforma de reservas para complejos deportivos (reservas en tiempo real, pagos y panel administrativo). Oscar es el desarrollador e hizo toda la programación; su hermano es socio del proyecto. Web app en Ionic + Angular; aún no está en las tiendas de apps.
 - Riplai (beta) → https://riplai.pages.dev/ : atención por WhatsApp con IA y control humano.
 
 ## Conceptos (no son clientes)

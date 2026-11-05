@@ -28,8 +28,8 @@ Oscar Dev es la marca profesional de Oscar García, desarrollador de software y 
 - **Tecnología Principal**: Astro. Cero JavaScript innecesario enviado al cliente para garantizar que el navegador pinte el contenido en menos de 0.6 segundos. Si una sección requiere micro-interactividad reactiva puntual (como un cotizador o filtro), se utiliza una isla aislada en React.
 
 ### 2. Tiendas Online y E-commerce Personalizado
-- **Enfoque**: Catálogos estructurados, navegación fluida, personalización de productos y pasarelas de pago seguras (Stripe, Mercado Pago, Wompi, PayU).
-- **Diferencial**: Optimización móvil-primero que elimina fricciones en el proceso de checkout y reduce el abandono del carrito.
+- **Enfoque**: Catálogos estructurados, navegación fluida, personalización de productos y pedidos por WhatsApp o pagos en línea según la operación de cada negocio.
+- **Diferencial**: Optimización móvil-primero que elimina fricciones en el proceso de compra y reduce el abandono del carrito.
 
 ### 3. Aplicaciones Web y Móviles (iOS y Android)
 - **Enfoque**: Aplicaciones orientadas a usuarios o clientes finales que requieren uso frecuente, geolocalización, sincronización en tiempo real o uso en dispositivos móviles.
@@ -58,13 +58,13 @@ Oscar Dev es la marca profesional de Oscar García, desarrollador de software y 
 ### Upsteppers (Colombia)
 - **Tipo de proyecto**: Plataforma e-commerce para marca colombiana de streetwear premium.
 - **Problema**: Lanzar colecciones exclusivas de moda urbana con una tienda online rápida, sin depender de plataformas lentas y genéricas.
-- **Solución**: Tienda online moderna desarrollada en Angular con Server-Side Rendering (SSR), integración de medios optimizados en Cloudinary CDN y flujo de compra fluido para móvil.
+- **Solución**: Tienda online moderna desarrollada en Angular con Server-Side Rendering (SSR), integración de medios optimizados en Cloudinary CDN catálogo pensado para móvil y cierre del pedido por WhatsApp. Los pagos se coordinan por transferencia (Nequi, Daviplata, Bancolombia); la tienda no usa pasarela de pago con tarjeta.
 - **Enlace en vivo**: [Upsteppers](https://www.upsteppers.co/)
 
 ### Fuera del Molde (Colombia)
 - **Tipo de proyecto**: Tienda online de e-commerce de productos personalizados.
 - **Problema**: Mostrar catálogo dinámico de productos personalizables con una experiencia de compra sencilla en celulares.
-- **Solución**: Tienda online responsiva con filtros claros, personalizador visual y pasarela de pago integrada.
+- **Solución**: Tienda online responsiva con filtros claros, flujo de personalización y compra pensada para móvil.
 - **Enlace en vivo**: [Fuera del Molde](https://fueradelmolde.com/)
 
 ### La Locura Bar (Colombia)

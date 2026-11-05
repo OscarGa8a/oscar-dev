@@ -52,8 +52,8 @@ export const projects: PortfolioProject[] = [
     type: { es: 'Aplicación web y móvil', en: 'Web & mobile app' },
     sector: { es: 'Deportes', en: 'Sports' },
     description: {
-      es: 'Plataforma para encontrar partidos de fútbol cerca, ver sus detalles e inscribirse.',
-      en: 'A platform to find nearby football matches, check the details and sign up.',
+      es: 'Producto propio: reservas en tiempo real, pagos, panel administrativo y torneos para complejos deportivos.',
+      en: 'Our own product: real-time bookings, payments, admin dashboard and tournaments for sports complexes.',
     },
     cover: conectaplay,
     coverAlt: {
@@ -72,8 +72,8 @@ export const projects: PortfolioProject[] = [
     type: { es: 'Tienda online', en: 'Online store' },
     sector: { es: 'Moda y personalizados', en: 'Fashion & custom products' },
     description: {
-      es: 'Comercio electrónico con catálogo de productos personalizados y compra sencilla.',
-      en: 'E-commerce with a catalog of custom products and a simple checkout.',
+      es: 'Tienda de productos personalizables con catálogo claro y flujo de compra pensado para móvil.',
+      en: 'Store for customizable products with a clear catalog and a mobile-first purchase flow.',
     },
     cover: fueradelmolde,
     coverAlt: {
@@ -92,8 +92,8 @@ export const projects: PortfolioProject[] = [
     type: { es: 'Tienda online', en: 'Online store' },
     sector: { es: 'Ropa urbana', en: 'Streetwear' },
     description: {
-      es: 'Tienda de ropa urbana con catálogo, colecciones y experiencia de compra de marca.',
-      en: 'Streetwear store with catalog, collections and a branded shopping experience.',
+      es: 'Tienda online para una marca de streetwear de Villavicencio: catálogo, colecciones y pedidos por WhatsApp.',
+      en: 'Online store for a streetwear brand from Villavicencio: catalog, collections and orders via WhatsApp.',
     },
     cover: upsteppers,
     coverAlt: {
@@ -112,8 +112,8 @@ export const projects: PortfolioProject[] = [
     type: { es: 'Sitio web', en: 'Website' },
     sector: { es: 'Bar y eventos', en: 'Bar & events' },
     description: {
-      es: 'Sitio web del bar para mostrar su propuesta, eventos y facilitar el contacto.',
-      en: 'Website for the bar to show its vibe and events, and make contact easy.',
+      es: 'Web con carta, reservas por WhatsApp y ubicación para un bar con bolirana y fútbol en Villavicencio.',
+      en: 'Website with menu, WhatsApp bookings and location for a bar with bolirana and football in Villavicencio.',
     },
     cover: lalocura,
     coverAlt: {

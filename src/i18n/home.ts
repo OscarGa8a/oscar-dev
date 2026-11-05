@@ -10,7 +10,7 @@ const es = {
   hero: {
     eyebrow: 'Desarrollo web · Aplicaciones · Soluciones digitales',
     h1a: 'Ideas que', h1b: 'funcionan.',
-    desc: 'Diseño y desarrollo digital para negocios, marcas y proyectos que quieren crecer.',
+    desc: 'Webs y plataformas a medida para pymes en Villavicencio, Colombia y negocios latinos en EE. UU.',
     cta: 'Cuéntame tu proyecto', secondary: 'Ver proyectos', scroll: 'Scroll para explorar',
     strip: 'Proyectos destacados', all: 'Todos los proyectos', allShort: 'Ver todos',
     portraitPending: 'Retrato de Oscar — foto real pendiente',
@@ -36,9 +36,9 @@ const es = {
     meta: ['Soluciones', 'Estrategia', 'Resultados'],
     linkLabel: 'Hablemos de', items: [
       { id: 'sitios-web', title: 'Sitios web profesionales', desc: 'Presenta tu negocio con claridad, genera confianza y facilita el siguiente paso.' },
-      { id: 'tiendas-online', title: 'Tiendas online', desc: 'Organiza tus productos y ofrece una experiencia de compra sencilla y bien diseñada.' },
-      { id: 'aplicaciones', title: 'Aplicaciones web y móviles', desc: 'Convierte una idea de producto en una experiencia digital útil para sus usuarios.' },
-      { id: 'plataformas', title: 'Plataformas a medida', desc: 'Centraliza reservas, pagos, usuarios y procesos cuando tu negocio necesita más control.' },
+      { id: 'tiendas-online', title: 'Tiendas online', desc: 'Catálogo, carrito y pedidos por WhatsApp o pagos en línea, según cómo opera tu negocio.' },
+      { id: 'aplicaciones', title: 'Aplicaciones web y móviles', desc: 'Apps multiplataforma con panel administrativo, pensadas según el problema de tu negocio.' },
+      { id: 'plataformas', title: 'Plataformas a medida', desc: 'Ordena reservas, pagos, usuarios y procesos que hoy viven en Excel o WhatsApp.' },
     ],
   },
   signature: {
@@ -71,7 +71,7 @@ const es = {
     lead: 'Desarrollador web y creador de soluciones digitales desde 2019.',
     p1: 'He trabajado en proyectos de comercio electrónico, turismo, deportes y otros sectores, combinando diseño y desarrollo para construir experiencias útiles.',
     p2: 'Me interesa entender cómo funciona cada negocio, qué necesita mejorar y cómo la tecnología puede ayudar sin complicar las cosas.',
-    meta: 'Colombia · Desarrollo independiente',
+    meta: 'Villavicencio, Colombia · Desarrollo independiente',
     cta: 'Conoce mis proyectos',
   },
   faq: {
@@ -81,8 +81,8 @@ const es = {
     outro: '¿Tienes otra pregunta?', outroLink: 'Podemos hablar de tu caso.',
     items: [
       { q: 'No sé qué solución necesita mi negocio. ¿Podemos revisarlo?', a: 'Claro. Lo primero es entender qué quieres resolver. A partir de eso podemos identificar si tiene sentido una web, una tienda online, una aplicación o una plataforma a medida.' },
-      { q: '¿Cuánto cuesta desarrollar un proyecto?', a: 'Depende del alcance, las funcionalidades y el trabajo necesario. Primero definimos qué necesitas y después preparo una propuesta con el presupuesto.' },
-      { q: '¿Cuánto tiempo tarda?', a: 'Una landing y una plataforma a medida requieren esfuerzos diferentes. El cronograma se define según el alcance acordado y se comunica antes de iniciar.' },
+      { q: '¿Cuánto cuesta desarrollar un proyecto?', a: 'Una landing page parte desde COP 600.000 si ya tienes dominio y hosting (o desde USD 200 para clientes en EE. UU.). Webs, tiendas, apps y plataformas se cotizan según el alcance, con una propuesta por escrito antes de empezar.' },
+      { q: '¿Cuánto tiempo tarda?', a: 'Una landing o un sitio web suele tomar de 2 a 4 semanas; una plataforma o app, de 6 a 12 semanas. El cronograma final depende del alcance y de que el contenido esté listo.' },
       { q: '¿Qué necesito tener preparado?', a: 'Es útil contar con información de tu negocio, servicios, identidad visual y materiales disponibles. Si algo falta, podemos identificarlo durante la definición.' },
       { q: '¿Podré actualizar el contenido después?', a: 'Podemos contemplar una forma de administrar el contenido cuando el proyecto lo necesite. Se define desde el alcance para evitar funciones innecesarias.' },
       { q: '¿Qué sucede después de la entrega?', a: 'La publicación, capacitación, soporte y mantenimiento se especifican en la propuesta, según lo que necesite cada proyecto.' },
@@ -112,7 +112,7 @@ const en: HomeCopy = {
   hero: {
     eyebrow: 'Web development · Apps · Digital solutions',
     h1a: 'Ideas that', h1b: 'work.',
-    desc: 'Digital design and development for businesses, brands and projects that want to grow.',
+    desc: 'Custom websites and platforms for small businesses in the US and Colombia. Bilingual, English and Spanish.',
     cta: 'Tell me about your project', secondary: 'See projects', scroll: 'Scroll to explore',
     strip: 'Featured projects', all: 'All projects', allShort: 'See all',
     portraitPending: 'Portrait of Oscar — real photo pending',
@@ -138,9 +138,9 @@ const en: HomeCopy = {
     meta: ['Solutions', 'Strategy', 'Results'],
     linkLabel: 'Let’s talk about', items: [
       { id: 'sitios-web', title: 'Professional websites', desc: 'Present your business clearly, build trust and make the next step easy.' },
-      { id: 'tiendas-online', title: 'Online stores', desc: 'Organize your products and offer a simple, well-designed shopping experience.' },
-      { id: 'aplicaciones', title: 'Web & mobile apps', desc: 'Turn a product idea into a digital experience that is useful for its users.' },
-      { id: 'plataformas', title: 'Custom platforms', desc: 'Bring bookings, payments, users and processes together when your business needs more control.' },
+      { id: 'tiendas-online', title: 'Online stores', desc: 'Clear catalogs and a fast mobile purchase flow, adapted to how you take orders and payments.' },
+      { id: 'aplicaciones', title: 'Web & mobile apps', desc: 'Cross-platform apps with an admin dashboard, scoped around your business problem.' },
+      { id: 'plataformas', title: 'Custom platforms', desc: 'Real-time bookings, payments, users and admin dashboards for processes that live in spreadsheets or chats.' },
     ],
   },
   signature: {
@@ -173,7 +173,7 @@ const en: HomeCopy = {
     lead: 'Web developer and digital solutions builder since 2019.',
     p1: 'I have worked on e-commerce, tourism, sports and other projects, combining design and development to build useful experiences.',
     p2: 'I care about understanding how each business works, what it needs to improve and how technology can help without making things complicated.',
-    meta: 'Colombia · Independent development',
+    meta: 'Villavicencio, Colombia · Independent development',
     cta: 'See my projects',
   },
   faq: {
@@ -183,8 +183,8 @@ const en: HomeCopy = {
     outro: 'Have another question?', outroLink: 'We can talk about your case.',
     items: [
       { q: 'I’m not sure what my business needs. Can we figure it out?', a: 'Of course. The first step is understanding what you want to solve. From there we can see whether a website, an online store, an app or a custom platform makes sense.' },
-      { q: 'How much does a project cost?', a: 'It depends on the scope, the features and the work involved. First we define what you need, then I prepare a proposal with a budget.' },
-      { q: 'How long does it take?', a: 'A landing page and a custom platform take different efforts. The timeline is set according to the agreed scope and shared before we start.' },
+      { q: 'How much does a project cost?', a: 'Landing pages start from USD 200. Websites, online stores, apps and booking platforms are quoted by scope, with a fixed written proposal before we start.' },
+      { q: 'How long does it take?', a: 'A landing page or website usually takes 2–4 weeks; a platform or app, 6–12 weeks. The final timeline depends on the scope and on having the content ready.' },
       { q: 'What do I need to have ready?', a: 'It helps to have information about your business, services, visual identity and available materials. If something is missing, we can identify it during definition.' },
       { q: 'Will I be able to update the content later?', a: 'We can include a way to manage content when the project needs it. It is defined in the scope to avoid unnecessary features.' },
       { q: 'What happens after delivery?', a: 'Publishing, training, support and maintenance are specified in the proposal, according to what each project needs.' },

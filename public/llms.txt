@@ -11,8 +11,8 @@
 
 - [Duarte's Auto Detailing (EE. UU.)](https://duartesautodetailing.com/): Landing page comercial para detailing automotriz a domicilio en EE. UU.
 - [ConectaPlay (Colombia)](https://app.conectaplay.co/): Plataforma web integral para gestión de complejos deportivos y torneos.
-- [Upsteppers (Colombia)](https://www.upsteppers.co/): Tienda online e-commerce en Angular con Server-Side Rendering (SSR).
-- [Fuera del Molde (Colombia)](https://fueradelmolde.com/): E-commerce de productos personalizados con catálogo interactivo y checkout optimizado.
+- [Upsteppers (Colombia)](https://www.upsteppers.co/): Tienda online en Angular SSR con catálogo, colecciones y pedidos por WhatsApp (pagos por transferencia).
+- [Fuera del Molde (Colombia)](https://fueradelmolde.com/): E-commerce de productos personalizados con catálogo claro y flujo de compra pensado para móvil.
 - [La Locura Bar (Colombia)](https://lalocurabar.com.co/): Sitio web corporativo con menú digital y sistema de reservas.
 
 ## Canales de Contacto y Perfiles Profesionales

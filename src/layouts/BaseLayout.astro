@@ -2,17 +2,18 @@
 import '../styles/global.css';
 import RevealObserver from '../components/RevealObserver.astro';
 import Analytics from '../components/Analytics.astro';
-import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
 import { siteUrl, author, contact } from '../config/site';
-import { t } from '../i18n/index';
+import { homeCopy } from '../i18n/home';
 
 interface Props {
   lang: 'es' | 'en';
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 const {
   lang,
+  noindex = false,
   title = lang === 'es'
     ? 'Oscar Dev | Desarrollo Web, Apps y Software a Medida'
     : 'Oscar Dev | Custom Web, App and Software Development',
@@ -35,13 +36,7 @@ const services = lang === 'es'
   ? ['Sitios web profesionales', 'Tiendas online', 'Aplicaciones web y móviles', 'Plataformas a medida']
   : ['Professional websites', 'Online stores', 'Web and mobile apps', 'Custom platforms'];
 
-const faqs = [
-  { q: t(lang, 'faq_q1'), a: t(lang, 'faq_a1') },
-  { q: t(lang, 'faq_q2'), a: t(lang, 'faq_a2') },
-  { q: t(lang, 'faq_q3'), a: t(lang, 'faq_a3') },
-  { q: t(lang, 'faq_q4'), a: t(lang, 'faq_a4') },
-  { q: t(lang, 'faq_q5'), a: t(lang, 'faq_a5') },
-];
+const faqs = homeCopy[lang].faq.items.map((f) => ({ q: f.q, a: f.a }));
 
 // Structured data: Entity graph + FAQPage for traditional and AI search (Google AI Overviews, Perplexity, ChatGPT).
 const jsonLd = {
@@ -134,7 +129,7 @@ const jsonLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#121214" />
     <meta name="color-scheme" content="dark" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     {import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION && (
       <meta name="google-site-verification" content={import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION} />
@@ -193,7 +188,7 @@ const jsonLd = {
       <!-- End Google Tag Manager -->
     )}
   </head>
-  <body class="antialiased">
+  <body class="antialiased v2">
     {gtmId && (
       <!-- Google Tag Manager (noscript) -->
       <noscript>
@@ -210,6 +205,5 @@ const jsonLd = {
     <slot />
     <RevealObserver />
     <Analytics />
-    <FloatingWhatsApp lang={lang} />
   </body>
 </html>

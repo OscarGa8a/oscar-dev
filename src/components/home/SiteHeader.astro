@@ -1,0 +1,61 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { Locale } from '../../i18n/index';
+import { homeCopy, homeBase } from '../../i18n/home';
+import { whatsappUrl } from '../../config/site';
+interface Props { lang: Locale; solid?: boolean }
+const { lang, solid = false } = Astro.props;
+const c = homeCopy[lang].nav;
+const base = homeBase(lang);
+const links = [
+  { href: `${base}#proyectos`, label: c.projects },
+  { href: `${base}#servicios`, label: c.services },
+  { href: `${base}#sobre-mi`, label: c.about },
+  { href: `${base}#contacto`, label: c.contact },
+];
+const other = lang === 'es' ? { href: '/en/', label: 'EN', aria: 'EN — English version', hl: 'en' } : { href: '/', label: 'ES', aria: 'ES — Versión en español', hl: 'es' };
+---
+<header class:list={['site-header', { 'is-solid': solid }]} id="site-header" data-solid={solid ? 'always' : undefined}>
+  <div class="wrap bar">
+    <a href={base} class="logo logo-mask" aria-label={c.home}></a>
+    <nav aria-label={c.primary}>
+      <ul class="nav-links">{links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+    </nav>
+    <div class="nav-right">
+      <a class="lang" href={other.href} hreflang={other.hl} lang={other.hl} aria-label={other.aria}>{other.label}</a>
+      <a class="btn header-cta" href={whatsappUrl(lang)} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click" data-event-location="navigation">
+        {c.cta}<Icon name="ph:arrow-up-right" aria-hidden="true" />
+      </a>
+      <button class="menu-btn" id="menu-open" type="button" aria-label={c.open} aria-expanded="false" aria-controls="mnav">
+        <Icon name="ph:list" aria-hidden="true" />
+      </button>
+    </div>
+  </div>
+</header>
+<dialog class="mnav v2" id="mnav" aria-label={c.menu}>
+  <div class="wrap" style="display:flex;flex-direction:column;min-height:100%">
+    <div class="top">
+      <a href={base} class="logo" style={`background:url(/logo-oscar-dev.webp) left center/contain no-repeat`} aria-label={c.home}></a>
+      <button class="menu-btn" id="menu-close" type="button" aria-label={c.close} style="display:inline-grid"><Icon name="ph:x" aria-hidden="true" /></button>
+    </div>
+    <ul>{links.map((l, i) => <li><a href={l.href} class="mnav-link"><span>0{i + 1}</span>{l.label}</a></li>)}</ul>
+    <div class="bottom">
+      <a class="btn btn-orange mnav-link" href={whatsappUrl(lang)} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click" data-event-location="mobile_navigation">{c.cta}<Icon name="ph:arrow-up-right" aria-hidden="true" /></a>
+      <a class="btn btn-line" href={other.href} hreflang={other.hl} lang={other.hl}>{other.aria}</a>
+    </div>
+  </div>
+</dialog>
+<script>
+  const header = document.getElementById('site-header')!;
+  const sentinel = document.getElementById('hero-sentinel');
+  if (sentinel && !header.dataset.solid) {
+    new IntersectionObserver(([e]) => header.classList.toggle('is-solid', !e.isIntersecting && e.boundingClientRect.top < 80), { rootMargin: '-80px 0px 0px 0px' }).observe(sentinel);
+  } else header.classList.add('is-solid');
+  const dlg = document.getElementById('mnav') as HTMLDialogElement;
+  const open = document.getElementById('menu-open')!;
+  open.addEventListener('click', () => { dlg.showModal(); open.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; });
+  document.getElementById('menu-close')!.addEventListener('click', () => dlg.close());
+  dlg.addEventListener('close', () => { open.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; open.focus(); });
+  dlg.querySelectorAll('.mnav-link').forEach((a) => a.addEventListener('click', () => dlg.close()));
+  matchMedia('(min-width: 960px)').addEventListener('change', (m) => m.matches && dlg.open && dlg.close());
+</script>

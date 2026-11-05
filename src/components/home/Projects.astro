@@ -1,0 +1,69 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import type { Locale } from '../../i18n/index';
+import { homeCopy } from '../../i18n/home';
+import { publishedProjects, projectHref, kindLabel } from '../../data/projects';
+import Heading from './Heading.astro';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const c = homeCopy[lang].projects;
+---
+<section class="section surface-dark" id="proyectos" aria-labelledby="proj-title">
+  <div class="wrap proj-head">
+    <div><Heading n="02" eyebrow={c.eyebrow} a={c.h2a} b={c.h2b} id="proj-title" /></div>
+    <div class="side">
+      <p class="lead" style="margin:0">{c.intro}</p>
+      <div class="carousel-btns">
+        <button type="button" class="prev" aria-label={c.prev} aria-controls="proj-track" disabled><Icon name="ph:arrow-left" aria-hidden="true" /></button>
+        <button type="button" class="next" aria-label={c.next} aria-controls="proj-track"><Icon name="ph:arrow-right" aria-hidden="true" /></button>
+      </div>
+    </div>
+  </div>
+  <div role="region" aria-roledescription="carousel" aria-label={c.region}>
+    <ul class="track" id="proj-track" tabindex="0">
+      {publishedProjects.map((p) => (
+        <li>
+          <a class="card" href={projectHref(p)} target="_blank" rel="noopener noreferrer" data-event="project_link_click" data-event-location="projects_carousel">
+            <div class="img"><Image src={p.cover!} alt={p.coverAlt![lang]} widths={[480, 720, 960]} sizes="(min-width:1024px) 28vw, (min-width:640px) 46vw, 86vw" loading="lazy" /></div>
+            <div class="body">
+              <span class="type">{p.type[lang]}</span>
+              <h3>{p.title}</h3>
+              <span class="round"><Icon name="ph:arrow-up-right" aria-hidden="true" /></span>
+              <p>{p.description[lang]}</p>
+              <span class="kind">{kindLabel[p.kind][lang]} · {p.sector[lang]}</span>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <div class="wrap proj-foot">
+    <div class="progress" role="presentation"><i id="proj-progress"></i></div>
+    <span class="swipe" aria-hidden="true">{c.swipe}</span>
+  </div>
+</section>
+<script>
+  const track = document.getElementById('proj-track')!;
+  const bar = document.getElementById('proj-progress')!;
+  const prev = document.querySelector<HTMLButtonElement>('.carousel-btns .prev')!;
+  const next = document.querySelector<HTMLButtonElement>('.carousel-btns .next')!;
+  const update = () => {
+    const max = track.scrollWidth - track.clientWidth;
+    const ratio = track.clientWidth / track.scrollWidth;
+    const pos = max > 0 ? track.scrollLeft / max : 1;
+    bar.style.width = `${(ratio + (1 - ratio) * pos) * 100}%`;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max - 2;
+  };
+  const step = (d: number) => {
+    const card = track.querySelector('li') as HTMLElement;
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 16;
+    track.scrollBy({ left: d * (card.offsetWidth + gap), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  };
+  prev.addEventListener('click', () => step(-1));
+  next.addEventListener('click', () => step(1));
+  track.addEventListener('scroll', update, { passive: true });
+  addEventListener('resize', update);
+  update();
+</script>

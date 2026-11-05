@@ -1,0 +1,6 @@
+---
+interface Props { n?: string; eyebrow: string; a: string; b: string; id?: string; class?: string; level?: 'h2' | 'h1' }
+const { n, eyebrow, a, b, id, class: cls } = Astro.props;
+---
+<p class="eyebrow">{n && <span class="n">{n} /</span>}<span>{eyebrow}</span></p>
+<h2 class:list={['h2', cls]} id={id}>{a} <span class="accent">{b}</span></h2>

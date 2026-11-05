@@ -25,4 +25,4 @@ User-agent: Bingbot
 Allow: /
 
 # Sitemaps and AI Context Files
-Sitemap: https://oscardev.co/sitemap.xml
+Sitemap: https://oscardev.co/sitemap-index.xml

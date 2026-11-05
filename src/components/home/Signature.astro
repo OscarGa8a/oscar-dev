@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import type { Locale } from '../../i18n/index';
+import { homeCopy } from '../../i18n/home';
+import { projects } from '../../data/projects';
+import Heading from './Heading.astro';
+import { whatsappUrl } from '../../config/site';
+const { lang } = Astro.props as { lang: Locale };
+const c = homeCopy[lang].signature;
+// Conditional section: only render with a real, published ConectaPlay screenshot. Static version (gate §7.6):
+// we only have ONE verified screen, so no tabs/stepper with fake states.
+const cp = projects.find((p) => p.slug === 'conectaplay' && p.published && p.cover);
+---
+{cp && (
+<section class="section surface-dark" id="experiencia" aria-labelledby="sig-title">
+  <div class="wrap sig">
+    <div>
+      <Heading n="05" eyebrow={c.eyebrow} a={c.h2a} b={c.h2b} id="sig-title" />
+      <p class="lead" style="margin-top:1.5rem">{c.body}</p>
+      <ol class="sig-steps">{c.steps.map((s, i) => <li><span class="n" aria-hidden="true">0{i + 1}</span><h3>{s.title}</h3><p>{s.desc}</p></li>)}</ol>
+      <div class="ctas">
+        <a class="btn btn-orange" href={whatsappUrl(lang)} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click" data-event-location="signature">{c.cta}<Icon name="ph:arrow-up-right" aria-hidden="true" /></a>
+        <a class="btn btn-line" href="#sobre-mi">{c.secondary}</a>
+      </div>
+    </div>
+    <figure class="shot">
+      <div class="frame"><Image src={cp.cover!} alt={cp.coverAlt![lang]} widths={[640, 960, 1400]} sizes="(min-width:960px) 52vw, 92vw" loading="lazy" /></div>
+      <figcaption>{c.caption}</figcaption>
+    </figure>
+  </div>
+</section>
+)}

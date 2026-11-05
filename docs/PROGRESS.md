@@ -1,34 +1,35 @@
 # Home V2 — PROGRESS
 
-Rama: `feat/home-v2` (desde `main` @ 0335c5c). Este archivo se actualiza en cada commit relevante.
+Rama: `feat/home-v2`. No se hace merge a main ni se despliega a producción desde esta rama.
 
-## 1. Hecho
-- Rama creada; dependencias instaladas (pnpm). Añadidas fuentes `@fontsource-variable/inter-tight` y `@fontsource/instrument-serif`.
-- `src/data/projects.ts`: inventario tipado con `published` (solo con evidencia: captura real en repo + URL pública), bloqueo Pley↔ConectaPlay en build, Duarte's como audiovisual no publicado.
-- `src/i18n/home.ts`: copy ES/EN del blueprint para las 9 secciones.
-- `public/logo-oscar-dev.webp`: logo oficial (Cloudinary `oscar_dev/logo_horizontal2_e5gcg8`) en local, usado como máscara monocroma sobre naranja.
-- `src/assets/projects/upsteppers.png` descargado de Cloudinary (asset ya publicado en el sitio actual).
+## Hecho
+- Datos: `src/data/projects.ts` contiene el inventario tipado. Solo se publican proyectos con evidencia: ConectaPlay, Fuera del Molde, Upsteppers y La Locura Bar. Un guard de build impide publicar Pley y ConectaPlay a la vez, y Duarte's queda marcado como audiovisual y sin publicar.
+- Copy ES/EN: `src/i18n/home.ts`, tomado del blueprint.
+- Estilos V2: `src/styles/home.css`, con Inter Tight e Instrument Serif vía fontsource.
+- Componentes en `src/components/home/`: SiteHeader (nav nueva, menú móvil en `<dialog>`, ES/EN), Hero, Projects (carrusel con scroll-snap), Manifesto, Services (4 filas), Signature (#experiencia, estático y con una captura real), Method (timeline), About, Faq (acordeón accesible), Contact y Footer.
+- Las páginas `/` y `/en/` están recompuestas. Se mantienen el SEO, el JSON-LD (el FAQ ahora sale del copy), el GTM diferido, `data-event` y el CTA de WhatsApp del hero (`data-event-location="hero"`).
+- Extras: `src/pages/404.astro` (noindex) y `@astrojs/sitemap` con alternates hreflang. El 404 se excluye del sitemap, se eliminó `public/sitemap.xml` y `robots.txt` ahora apunta a `sitemap-index.xml`.
+- Verificación:
+  - El build pasa y no hay overflow horizontal en 390, 768 ni 1536 px.
+  - No hay enlaces internos rotos.
+  - Lighthouse local (ES): móvil 95–100 / 100 / 100 / 100 y escritorio 100 / 100 / 100 / 100.
+  - El header es transparente sobre el hero y se vuelve sólido al pasar el hero.
 
-## 2. Pendiente
-- Componentes de las 9 secciones + Header/Footer nuevos; ES y EN.
-- BaseLayout: FAQ JSON-LD con las 6 preguntas nuevas; mantener SEO, GTM diferido y tracking `data-event`.
-- Build, capturas Playwright vs mockups (`/workspace/home-v2-compare/`), Lighthouse móvil/escritorio.
-- Extras: `404.astro`, `@astrojs/sitemap`.
+## Pendiente
+- Retrato real de Oscar para el Hero y Sobre mí; ahora hay un placeholder punteado.
+- Páginas `/proyectos/{slug}`. Por ahora las tarjetas enlazan al sitio externo y "Ver todos" ancla a #proyectos.
+- Más capturas reales de ConectaPlay para convertir la sección #experiencia en tabs.
+- Borrar los componentes V1 que ya no se usan (`src/components/*.astro`: Nav, Hero, CaseStudies, etc.) tras confirmarlo.
+- Preview de Cloudflare Pages: verificar que la rama genera un deploy de preview.
 
-## 3. Decisiones
-- Lenguaje visual de los mockups (layout, eyebrows `0N /`, acentos serif itálicos, metadatos laterales) + reglas estructurales del blueprint/usuario (Servicios en 4 filas sin cards; sin métricas ni teléfonos falsos).
-- Copy: el del blueprint (coincide con los mockups móviles); se evita copy de mockup con promesas no verificadas.
-- Superficies: las del mockup desktop para ambos breakpoints.
-- Proyectos publicados: ConectaPlay, Fuera del Molde, Upsteppers, La Locura Bar. Como no existen `/proyectos/{slug}`, las tarjetas enlazan a la web pública del proyecto (`rel=noopener`); “Ver todos” → `#proyectos`.
-- Retrato: no hay foto real (solo un avatar ilustrado) → hueco de retrato marcado como pendiente.
-- Signature: reducida a versión estática (solo hay 1 captura real de ConectaPlay, no 3).
-- Contraste: acentos serif sobre papel en `#984A0D`; sobre naranja se trata el crema para cumplir contraste.
+## Decisiones
+- Superficies según los mockups de escritorio. Hero en naranja; proyectos, firma y footer en oscuro; el resto en paper o ivory.
+- Se eliminaron elementos de los mockups sin respaldo: métricas falsas, teléfonos inventados, el icono de YouTube y la foto de laptop. Statum, Pley y Óptica Alemania no aparecen porque están sin publicar.
+- #experiencia es estática con la captura real de ConectaPlay, sin pestañas falsas.
+- Los botones de servicios abren WhatsApp con `data-event=services_{id}`.
 
-## 4. Dudas abiertas (para Oscar)
-- Foto real de Oscar (alta resolución, recortable) y permiso de uso.
-- ¿La Locura Bar fue desarrollo web o marketing? ¿Upsteppers: entrega concreta?
-- Material audiovisual real de Duarte's (frames/portadas) y permiso.
-- Relación Pley/ConectaPlay.
-- Capturas reales de ConectaPlay para Elegir e Inscribirse.
-- Variante del logo para fondo naranja.
-- ¿Correo `oscar.garcia.development@gmail.com` es el definitivo para el footer/contacto? ¿YouTube existe?
+## Dudas abiertas
+- ¿Hay foto/retrato profesional para el hero?
+- ¿Se puede publicar Statum u Óptica Alemania (demo)? ¿Hay evidencia?
+- ¿Pley o ConectaPlay? Hoy está ConectaPlay como producto propio.
+- ¿Deseas páginas de caso por proyecto?

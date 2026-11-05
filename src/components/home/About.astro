@@ -1,0 +1,23 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { Locale } from '../../i18n/index';
+import { homeCopy } from '../../i18n/home';
+import Heading from './Heading.astro';
+const { lang } = Astro.props as { lang: Locale };
+const c = homeCopy[lang].about;
+const pending = homeCopy[lang].hero.portraitPending;
+---
+<section class="section surface-ivory" id="sobre-mi" aria-labelledby="about-title">
+  <div class="wrap about">
+    <!-- TODO(asset): real portrait of Oscar -->
+    <div class="portrait"><div class="ph" role="img" aria-label={pending}><span>{pending}</span></div></div>
+    <div>
+      <Heading n="07" eyebrow={c.eyebrow} a={c.h2a} b={c.h2b} id="about-title" />
+      <p class="lead-strong">{c.lead}</p>
+      <p class="body">{c.p1}</p>
+      <p class="body">{c.p2}</p>
+      <p class="meta">{c.meta}</p>
+      <a class="btn btn-orange" href="#proyectos">{c.cta}<Icon name="ph:arrow-right" aria-hidden="true" /></a>
+    </div>
+  </div>
+</section>

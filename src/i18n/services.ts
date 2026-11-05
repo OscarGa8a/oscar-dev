@@ -239,7 +239,7 @@ export const services: Service[] = [
         { t: 'Staged launch', d: 'Start as a web app and publish to the stores once there are recurring users.' },
       ],
       casesH: { eyebrow: 'Own product', a: 'An app', b: 'in operation' }, cases: ['conectaplay'],
-      price: quoteEn + ' Typical delivery: 2–4 weeks, depending on content. You pay when you see your finished app. No upfront deposit.',
+      price: quoteEn + ' Typical delivery: 6–12 weeks. Payment terms: agreed in writing before we start.',
       faq: [
         { q: 'Why start as a web app?', a: 'People use it without downloading anything and you validate with real users. Google Play requires a closed test with 12 testers for 14 days, so it helps to have recurring users first.' },
         { q: 'Are the store accounts in my name?', a: 'Yes. Apple and Google developer accounts are created in your name and you pay their fees directly.' },

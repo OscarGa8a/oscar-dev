@@ -105,12 +105,6 @@ Rama: `feat/home-v2`. No se hace merge a main ni se despliega a producción desd
 - La página de contacto no tiene formulario porque no hay backend y no promete tiempo de respuesta.
 - H1 de la home: la auditoría no propone otro; ya coincide con plan-v2.
 
-### Dudas abiertas
-- Formulario de contacto y backend.
-- Tiempo de respuesta (SLA) a publicar.
-- Perfil de Google Business para sameAs.
-- Foto real de Oscar.
-
 ## Fase 4: ajustes previos a producción (aprobado por Oscar: publicar sin foto)
 
 ### Hecho
@@ -124,10 +118,6 @@ Rama: `feat/home-v2`. No se hace merge a main ni se despliega a producción desd
 - Enlaces internos: Villavicencio → /servicios/diseno-web-pymes/; precios y latinos-usa → /servicios/landing-pages/. El H2 de landing-pages ahora es «Caso Duarte's…».
 - Se mantiene la línea de CATO en Sobre mí y en llms-full.
 - Merge de feat/home-v2 a main y deploy de producción.
-
-### Dudas abiertas
-- Foto real de Oscar.
-- Perfil de Google Business para sameAs.
 
 ## Publicación en producción (2026-11-05)
 
@@ -147,3 +137,9 @@ Rama: `feat/home-v2`. No se hace merge a main ni se despliega a producción desd
 - `www.oscardev.co` no existe (NXDOMAIN). Hay que decidir si se crea el registro con un redirect 301 a `https://oscardev.co`.
 - Falta la foto real de Oscar.
 - Falta el perfil de Google Business.
+
+## Hotfix SEO (2026-11-05)
+
+- `robots.txt` ya apuntaba a `https://oscardev.co/sitemap-index.xml`. No hay `sitemap.xml` en `public` ni en el build, pero en vivo `/sitemap.xml` seguía sirviendo el sitemap viejo. Se agregó `public/_redirects` con `/sitemap.xml /sitemap-index.xml 301`.
+- Apps móviles en EN (`/en/services/mobile-apps/`) decía «2–4 weeks» y «no upfront deposit». Se cambió a «Typical delivery: 6–12 weeks. Payment terms: agreed in writing before we start.», igual que en ES (que ya decía 6–12 semanas). Los demás plazos no se tocaron.
+- Se quitaron de este archivo las listas de pendientes duplicadas. La lista vigente es la de «Publicación en producción».

@@ -110,3 +110,21 @@ Rama: `feat/home-v2`. No se hace merge a main ni se despliega a producción desd
 - Tiempo de respuesta (SLA) a publicar.
 - Perfil de Google Business para sameAs.
 - Foto real de Oscar.
+
+## Fase 4: ajustes previos a producción (aprobado por Oscar: publicar sin foto)
+
+### Hecho
+- /contacto sin formulario: solo WhatsApp y hola@oscardev.co. Respondo el mismo día hábil (ES, EN y llms).
+- Nuevos H1 y subtítulo del Home en ES y EN; se redujo el tamaño del H1 para que los CTA queden en el primer pantallazo.
+- Solo «desde 2020»: se quitó «más de 5 años» del sitio y de los llms.
+- Plazos «según alcance, acordado por escrito» en tablas, servicios, FAQ (incluido su schema) y llms.
+- «Pagas cuando ves tu web terminada. No te pido anticipo» en precios, landing pages y apps.
+- Medios de pago: Nequi, Daviplata, Bancolombia, Nu y Bre-B, en el schema y en el copy. Se quitaron «Wire transfer» y las comisiones de pasarela genéricas.
+- ConectaPlay sin menciones a torneos; el hermano aparece como socio que financió las herramientas de IA.
+- Enlaces internos: Villavicencio → /servicios/diseno-web-pymes/; precios y latinos-usa → /servicios/landing-pages/. El H2 de landing-pages ahora es «Caso Duarte's…».
+- Se mantiene la línea de CATO en Sobre mí y en llms-full.
+- Merge de feat/home-v2 a main y deploy de producción.
+
+### Dudas abiertas
+- Foto real de Oscar.
+- Perfil de Google Business para sameAs.

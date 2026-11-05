@@ -16,8 +16,8 @@ export const serviceUrl = (s: Service, lang: Locale) => (lang === 'es' ? `/servi
 export const servicesIndexUrl = (lang: Locale) => (lang === 'es' ? '/servicios/' : '/en/services/');
 export const contactUrl = (lang: Locale) => (lang === 'es' ? '/contacto/' : '/en/contact/');
 
-const quoteEs = 'Cotización cerrada según alcance, por escrito antes de empezar. Dominio, hosting y comisiones de pasarela se pagan aparte a tu proveedor.';
-const quoteEn = 'Fixed quote by scope, in writing before we start. Domain, hosting and payment-processor fees are paid directly to your provider.';
+const quoteEs = 'Cotización cerrada según alcance, por escrito antes de empezar. Dominio y hosting se pagan aparte a tu proveedor.';
+const quoteEn = 'Fixed quote by scope, in writing before we start. Domain and hosting are paid directly to your provider.';
 const ownEs = { q: '¿El código y el sitio quedan a mi nombre?', a: 'Sí. Código, dominio y accesos son tuyos.' };
 const ownEn = { q: 'Do I own the code and the site?', a: 'Yes. The code, domain and access are yours.' };
 
@@ -37,8 +37,8 @@ export const services: Service[] = [
         { t: 'SEO técnico básico', d: 'Títulos, descripción, velocidad y datos para Google bien configurados.' },
         { t: 'Publicada a tu nombre', d: 'En tu dominio y hosting; el código y los accesos quedan contigo.' },
       ],
-      casesH: { eyebrow: 'Ejemplo real', a: 'Una landing', b: 'pensada para reservar' }, cases: ['duartes-auto-detailing'],
-      price: 'Desde COP 600.000 si ya tienes dominio y hosting (o desde USD 200 para EE. UU.). Entrega típica: 2–4 semanas, según el contenido.',
+      casesH: { eyebrow: 'Ejemplo real', a: 'Caso Duarte\'s:', b: 'una landing pensada para reservar' }, cases: ['duartes-auto-detailing'],
+      price: 'Desde COP 600.000 si ya tienes dominio y hosting (o desde USD 200 para EE. UU.). Plazo: según alcance, acordado por escrito. Pagas cuando ves tu web terminada. No te pido anticipo.',
       faq: [
         { q: '¿Por qué «desde»?', a: 'El precio base cubre una landing estándar. Secciones extra, textos desde cero o integraciones especiales suben el valor; siempre lo verás por escrito antes de empezar.' },
         { q: '¿Y si no tengo dominio ni hosting?', a: 'Te oriento para comprarlos a tu nombre y lo incluimos en la cotización.' },
@@ -58,8 +58,8 @@ export const services: Service[] = [
         { t: 'Basic technical SEO', d: 'Titles, description, speed and structured data set up for Google.' },
         { t: 'Published in your name', d: 'On your domain and hosting; you keep the code and access.' },
       ],
-      casesH: { eyebrow: 'Real example', a: 'A landing page', b: 'built for bookings' }, cases: ['duartes-auto-detailing'],
-      price: 'From USD 200 (or COP 600,000) if you already have a domain and hosting. Typical delivery: 2–4 weeks, depending on content.',
+      casesH: { eyebrow: 'Real example', a: 'Duarte\'s case:', b: 'a landing page built for bookings' }, cases: ['duartes-auto-detailing'],
+      price: 'From USD 200 (or COP 600,000) if you already have a domain and hosting. Timeline: by scope, agreed in writing. You pay when you see your finished website. No upfront deposit.',
       faq: [
         { q: 'Why “from”?', a: 'The base price covers a standard landing page. Extra sections, copywriting from scratch or special integrations raise it; you always see it in writing first.' },
         { q: 'What if I don’t have a domain or hosting?', a: 'I’ll help you buy them in your name and include it in the quote.' },
@@ -71,7 +71,7 @@ export const services: Service[] = [
     key: 'pymes', slug: { es: 'diseno-web-pymes', en: 'small-business-websites' },
     es: {
       title: 'Diseño de páginas web para pymes | OscarDev',
-      description: 'Web corporativa a medida para pymes en Colombia: clara, rápida y medible. Entrega típica de 2–4 semanas. Cotización según alcance.',
+      description: 'Web corporativa a medida para pymes en Colombia: clara, rápida y medible. Plazo según alcance. Cotización según alcance.',
       eyebrow: 'Webs para pymes', h1a: 'Diseño de páginas web', h1b: 'para pymes',
       lead: 'Para empresas con varios servicios que necesitan explicar bien su oferta, generar confianza y llevar a cada cliente al contacto correcto.',
       card: 'Webs de varias páginas para explicar tu oferta y generar confianza.',
@@ -83,7 +83,7 @@ export const services: Service[] = [
         { t: 'Rápida y medible', d: 'Carga rápida en el celular y eventos para saber de dónde llegan los contactos.' },
       ],
       casesH: { eyebrow: 'Casos', a: 'Webs para', b: 'empresas reales' }, cases: ['optica-alemania', 'abogados-lobo', 'la-locura-bar'],
-      price: quoteEs + ' Entrega típica: 2–4 semanas.',
+      price: quoteEs + ' Plazo: según alcance, acordado por escrito.',
       faq: [
         { q: '¿Podré actualizar el contenido?', a: 'Si el proyecto lo necesita, contemplamos una forma de administrar el contenido. Se define en el alcance para no pagar funciones que no usarás.' },
         { q: '¿Trabajas fuera de Villavicencio?', a: 'Sí: toda Colombia y negocios latinos en EE. UU., de forma remota.' },
@@ -92,7 +92,7 @@ export const services: Service[] = [
     },
     en: {
       title: 'Small Business Website Design | OscarDev',
-      description: 'Custom multi-page websites for small businesses: clear, fast and measurable. Typical delivery in 2–4 weeks. Quoted by scope.',
+      description: 'Custom multi-page websites for small businesses: clear, fast and measurable. Timeline by scope. Quoted by scope.',
       eyebrow: 'Small business websites', h1a: 'Website design', h1b: 'for small businesses',
       lead: 'For businesses with several services that need to explain their offer, build trust and send each customer to the right contact.',
       card: 'Multi-page websites that explain your offer and build trust.',
@@ -104,7 +104,7 @@ export const services: Service[] = [
         { t: 'Fast and measurable', d: 'Fast on mobile, with events that show where leads come from.' },
       ],
       casesH: { eyebrow: 'Cases', a: 'Websites for', b: 'real businesses' }, cases: ['optica-alemania', 'abogados-lobo', 'la-locura-bar'],
-      price: quoteEn + ' Typical delivery: 2–4 weeks.',
+      price: quoteEn + ' Timeline: by scope, agreed in writing.',
       faq: [
         { q: 'Can I update the content?', a: 'If the project needs it, we include a way to manage content. It is defined in the scope so you don’t pay for features you won’t use.' },
         { q: 'Do you work with US businesses?', a: 'Yes, remotely, in English or Spanish.' },
@@ -123,7 +123,7 @@ export const services: Service[] = [
       incH: { eyebrow: 'Qué incluye', a: 'Una tienda hecha', b: 'a tu forma de vender' },
       includes: [
         { t: 'Catálogo y colecciones', d: 'Categorías, colecciones y fichas de producto rápidas en el celular.' },
-        { t: 'Cierre a tu medida', d: 'Pedido por WhatsApp con transferencia (Nequi, Daviplata, Bancolombia) o pasarela de pago, según el caso.' },
+        { t: 'Cierre a tu medida', d: 'Pedido por WhatsApp con transferencia (Nequi, Daviplata, Bancolombia, Nu o Bre-B) o pagos en línea, según el caso.' },
         { t: 'Imágenes optimizadas', d: 'Fotos que se ven bien y cargan rápido, también con datos móviles.' },
         { t: 'Tallas, envíos y cambios', d: 'Preguntas frecuentes que resuelven dudas antes de escribirte.' },
       ],
@@ -173,9 +173,9 @@ export const services: Service[] = [
         { t: 'Funciona en el celular', d: 'Web app que se usa sin descargar nada.' },
       ],
       casesH: { eyebrow: 'Producto propio', a: 'Ya construí', b: 'y opero uno' }, cases: ['conectaplay'],
-      price: quoteEs + ' Entrega típica: 6–12 semanas.',
+      price: quoteEs + ' Plazo: según alcance, acordado por escrito.',
       faq: [
-        { q: '¿Qué es ConectaPlay?', a: 'Un producto propio de OscarDev para complejos deportivos: reservas en tiempo real, pagos, panel administrativo y torneos. Yo soy el desarrollador e hice toda la programación; mi hermano es socio e inversionista y financió las herramientas de IA.' },
+        { q: '¿Qué es ConectaPlay?', a: 'Un producto propio de OscarDev para complejos deportivos: reservas en tiempo real, pagos y panel administrativo. Yo soy el desarrollador e hice toda la programación; mi hermano es socio e inversionista y financió las herramientas de IA.' },
         { q: '¿Sirve para mi tipo de negocio?', a: 'Si gestionas horarios, cupos o espacios, probablemente sí. En el diagnóstico gratis lo revisamos.' },
         ownEs,
       ],
@@ -194,9 +194,9 @@ export const services: Service[] = [
         { t: 'Works on mobile', d: 'A web app that works without downloading anything.' },
       ],
       casesH: { eyebrow: 'Own product', a: 'I already built', b: 'and run one' }, cases: ['conectaplay'],
-      price: quoteEn + ' Typical delivery: 6–12 weeks.',
+      price: quoteEn + ' Timeline: by scope, agreed in writing.',
       faq: [
-        { q: 'What is ConectaPlay?', a: 'An OscarDev product for sports complexes: real-time bookings, payments, admin dashboard and tournaments. I’m the developer and wrote all the code; my brother is a partner and investor who funded the AI tools.' },
+        { q: 'What is ConectaPlay?', a: 'An OscarDev product for sports complexes: real-time bookings, payments, and an admin dashboard. I’m the developer and wrote all the code; my brother is a partner and investor who funded the AI tools.' },
         { q: 'Will it work for my business?', a: 'If you manage time slots, capacity or spaces, probably yes. We review it on the free call.' },
         ownEn,
       ],
@@ -218,7 +218,7 @@ export const services: Service[] = [
         { t: 'Lanzamiento por etapas', d: 'Empezar como web app y publicar en tiendas cuando haya usuarios recurrentes.' },
       ],
       casesH: { eyebrow: 'Producto propio', a: 'Una app', b: 'en operación' }, cases: ['conectaplay'],
-      price: quoteEs + ' Entrega típica: 6–12 semanas.',
+      price: quoteEs + ' Plazo: según alcance, acordado por escrito. Pagas cuando ves tu app terminada. No te pido anticipo.',
       faq: [
         { q: '¿Por qué empezar como web app?', a: 'Se usa sin descargar nada y permite validar con usuarios reales. Play Store pide una prueba cerrada con 12 testers durante 14 días; conviene llegar con usuarios recurrentes.' },
         { q: '¿Las cuentas de las tiendas van a mi nombre?', a: 'Sí. Las cuentas de desarrollador de Apple y Google se crean a tu nombre y sus tarifas las pagas directo.' },
@@ -239,7 +239,7 @@ export const services: Service[] = [
         { t: 'Staged launch', d: 'Start as a web app and publish to the stores once there are recurring users.' },
       ],
       casesH: { eyebrow: 'Own product', a: 'An app', b: 'in operation' }, cases: ['conectaplay'],
-      price: quoteEn + ' Typical delivery: 6–12 weeks.',
+      price: quoteEn + ' Timeline: by scope, agreed in writing. You pay when you see your finished app. No upfront deposit.',
       faq: [
         { q: 'Why start as a web app?', a: 'People use it without downloading anything and you validate with real users. Google Play requires a closed test with 12 testers for 14 days, so it helps to have recurring users first.' },
         { q: 'Are the store accounts in my name?', a: 'Yes. Apple and Google developer accounts are created in your name and you pay their fees directly.' },
@@ -316,7 +316,7 @@ export const contactPage = {
     title: 'Contacto y diagnóstico gratis | OscarDev',
     description: 'Escríbeme a hola@oscardev.co o por WhatsApp al +57 318 020 9851. Diagnóstico de 30 min sin costo. Villavicencio, Colombia y remoto.',
     eyebrow: 'Contacto', h1a: 'Hablemos de', h1b: 'tu proyecto',
-    lead: 'Cuéntame qué necesita tu negocio. En un diagnóstico gratis de 30 minutos te digo si te sirve una landing, una web, una tienda o una plataforma, trabajemos o no.',
+    lead: 'Escríbeme por WhatsApp o a hola@oscardev.co. Respondo el mismo día hábil. Cuéntame qué necesita tu negocio. En un diagnóstico gratis de 30 minutos te digo si te sirve una landing, una web, una tienda o una plataforma, trabajemos o no.',
     channelsH: { eyebrow: 'Canales', a: 'Escríbeme', b: 'por donde prefieras' },
     channels: { whatsapp: 'WhatsApp', email: 'Correo', hours: 'Horario', place: 'Ubicación' },
     place: 'Villavicencio, Meta, Colombia · Remoto en toda Colombia y EE. UU.',
@@ -332,7 +332,7 @@ export const contactPage = {
     title: 'Contact & Free Consultation | OscarDev',
     description: 'Email hola@oscardev.co or WhatsApp +57 318 020 9851. Free 30-minute call. Based in Colombia, working remotely with US businesses.',
     eyebrow: 'Contact', h1a: 'Let’s talk about', h1b: 'your project',
-    lead: 'Tell me what your business needs. On a free 30-minute call I’ll tell you whether a landing page, a website, a store or a platform fits, whether or not we work together.',
+    lead: 'Message me on WhatsApp or at hola@oscardev.co. I reply the same business day. Tell me what your business needs. On a free 30-minute call I’ll tell you whether a landing page, a website, a store or a platform fits, whether or not we work together.',
     channelsH: { eyebrow: 'Channels', a: 'Reach me', b: 'wherever you prefer' },
     channels: { whatsapp: 'WhatsApp', email: 'Email', hours: 'Hours', place: 'Location' },
     place: 'Villavicencio, Meta, Colombia · Remote across Colombia and the US',

@@ -89,8 +89,8 @@ export const projects: PortfolioProject[] = [
     type: { es: 'Web app', en: 'Web app' }, sector: { es: 'Deportes', en: 'Sports' },
     city: { es: 'Villavicencio, Colombia', en: 'Villavicencio, Colombia' },
     description: {
-      es: 'Producto propio: reservas en tiempo real, pagos, panel administrativo y torneos para complejos deportivos.',
-      en: 'Our own product: real-time bookings, payments, admin dashboard and tournaments for sports complexes.',
+      es: 'Producto propio: reservas en tiempo real, pagos y panel administrativo para complejos deportivos.',
+      en: 'Our own product: real-time bookings, payments and an admin dashboard for sports complexes.',
     },
     cover: conectaplay,
     coverAlt: { es: 'Pantalla de ConectaPlay «Encuentra tu próximo partido» con mapa de canchas', en: 'ConectaPlay “Find your next match” screen with a map of pitches' },

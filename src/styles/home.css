@@ -88,7 +88,7 @@
 .hero { background: var(--orange); color: var(--ink); position: relative; overflow: hidden; padding-top: 4.5rem; }
 .hero-grid { display: grid; gap: 2rem; position: relative; z-index: 1; padding-top: clamp(1.5rem, 4vw, 3.25rem); }
 .hero .eyebrow-h { font-size: clamp(.6875rem, .9vw, .8125rem); font-weight: 600; letter-spacing: .22em; text-transform: uppercase; margin: 0 0 clamp(1rem, 2vw, 1.75rem); }
-.hero h1 { margin: 0; font-weight: 800; letter-spacing: -.05em; line-height: .92; font-size: clamp(2.6rem, 11vw, 6.4rem); text-wrap: balance; }
+.hero h1 { margin: 0; font-weight: 800; letter-spacing: -.05em; line-height: .92; font-size: clamp(2rem, 7.4vw, 4.4rem); text-wrap: balance; }
 .hero h1 .l1 { display: inline; }
 .hero h1 .l2 { display: inline; font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -.02em; color: #FFF3E2; line-height: .95; margin-left: -.04em; font-size: 1.08em; text-shadow: 0 .03em 0 rgba(18,18,20,.55), 0 0 .02em rgba(18,18,20,.6); }
 .hero .desc { font-size: clamp(1.125rem, 1.9vw, 1.6rem); line-height: 1.3; max-width: 30rem; margin: clamp(1rem, 2vw, 1.5rem) 0 0; font-weight: 450; }
@@ -392,3 +392,4 @@
 .pay-note .h3 { margin: .35rem 0 .6rem; }
 .pay-note p:last-child { margin: 0; }
 .about .career, .career { margin-top: 1rem; font-size: .875rem; font-weight: 600; letter-spacing: .02em; opacity: .8; }
+.band-ctas { display: flex; flex-wrap: wrap; gap: .75rem; } .fine a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }

@@ -9,9 +9,9 @@ const es = {
   },
   hero: {
     eyebrow: 'Desarrollo web · Aplicaciones · Soluciones digitales',
-    h1a: 'Webs y plataformas a medida para negocios que', h1b: 'quieren crecer',
+    h1a: 'Páginas web, tiendas y sistemas de reservas para negocios en', h1b: 'Villavicencio, Colombia y EE. UU.',
     tagline: 'Ideas que funcionan.',
-    desc: 'Para pymes en Villavicencio, toda Colombia y negocios latinos en EE. UU.',
+    desc: 'Desarrollo a medida desde Villavicencio para pymes de toda Colombia y negocios latinos en Estados Unidos, con atención directa en español.',
     cta: 'Cuéntame tu proyecto', secondary: 'Ver proyectos', scroll: 'Scroll para explorar',
     strip: 'Proyectos destacados', all: 'Todos los proyectos', allShort: 'Ver todos',
     portraitPending: 'Oscar García, desarrollador web',
@@ -84,7 +84,7 @@ const es = {
     items: [
       { q: 'No sé qué solución necesita mi negocio. ¿Podemos revisarlo?', a: 'Claro. Lo primero es entender qué quieres resolver. A partir de eso podemos identificar si tiene sentido una web, una tienda online, una aplicación o una plataforma a medida.' },
       { q: '¿Cuánto cuesta desarrollar un proyecto?', a: 'Una landing page parte desde COP 600.000 si ya tienes dominio y hosting (o desde USD 200 para clientes en EE. UU.). Webs, tiendas, apps y plataformas se cotizan según el alcance, con una propuesta por escrito antes de empezar.' },
-      { q: '¿Cuánto tiempo tarda?', a: 'Una landing o un sitio web suele tomar de 2 a 4 semanas; una plataforma o app, de 6 a 12 semanas. El cronograma final depende del alcance y de que el contenido esté listo.' },
+      { q: '¿Cuánto tiempo tarda?', a: 'El plazo es según alcance, acordado por escrito antes de empezar. También depende de que el contenido esté listo.' },
       { q: '¿Qué necesito tener preparado?', a: 'Es útil contar con información de tu negocio, servicios, identidad visual y materiales disponibles. Si algo falta, podemos identificarlo durante la definición.' },
       { q: '¿Podré actualizar el contenido después?', a: 'Podemos contemplar una forma de administrar el contenido cuando el proyecto lo necesite. Se define desde el alcance para evitar funciones innecesarias.' },
       { q: '¿Qué sucede después de la entrega?', a: 'La publicación, capacitación, soporte y mantenimiento se especifican en la propuesta, según lo que necesite cada proyecto.' },
@@ -113,9 +113,9 @@ const en: HomeCopy = {
   },
   hero: {
     eyebrow: 'Web development · Apps · Digital solutions',
-    h1a: 'Custom websites and platforms for', h1b: 'growing businesses',
+    h1a: 'Websites, online stores and booking systems for', h1b: 'small businesses in the US and Colombia',
     tagline: 'Ideas that work.',
-    desc: 'For small businesses in the US and Colombia. Bilingual, English and Spanish.',
+    desc: 'Custom, bilingual development from Villavicencio, Colombia, for Latino-owned businesses in the US and local companies, with direct communication in Spanish or English.',
     cta: 'Tell me about your project', secondary: 'See projects', scroll: 'Scroll to explore',
     strip: 'Featured projects', all: 'All projects', allShort: 'See all',
     portraitPending: 'Oscar García, web developer',
@@ -188,7 +188,7 @@ const en: HomeCopy = {
     items: [
       { q: 'I’m not sure what my business needs. Can we figure it out?', a: 'Of course. The first step is understanding what you want to solve. From there we can see whether a website, an online store, an app or a custom platform makes sense.' },
       { q: 'How much does a project cost?', a: 'Landing pages start from USD 200. Websites, online stores, apps and booking platforms are quoted by scope, with a fixed written proposal before we start.' },
-      { q: 'How long does it take?', a: 'A landing page or website usually takes 2–4 weeks; a platform or app, 6–12 weeks. The final timeline depends on the scope and on having the content ready.' },
+      { q: 'How long does it take?', a: 'The timeline is set by scope and agreed in writing before we start. It also depends on having the content ready.' },
       { q: 'What do I need to have ready?', a: 'It helps to have information about your business, services, visual identity and available materials. If something is missing, we can identify it during definition.' },
       { q: 'Will I be able to update the content later?', a: 'We can include a way to manage content when the project needs it. It is defined in the scope to avoid unnecessary features.' },
       { q: 'What happens after delivery?', a: 'Publishing, training, support and maintenance are specified in the proposal, according to what each project needs.' },

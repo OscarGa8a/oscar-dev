@@ -33,7 +33,7 @@ const schema = [{
           </li>
         ))}
       </ul>
-      <p class="fine">{t.timeNote}</p>
+      <p class="fine">{t.timeNote} <a href={lang === 'es' ? '/servicios/landing-pages/' : '/en/services/landing-pages/'} data-event="service_click" data-event-location="pricing">{lang === 'es' ? 'Ver qué incluye una landing page' : 'See what a landing page includes'}</a></p>
       <div class="pay-note">
         <p class="eyebrow">{t.pay.eyebrow}</p>
         <h2 class="h3">{t.pay.h}</h2>

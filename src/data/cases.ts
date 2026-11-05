@@ -121,16 +121,16 @@ export const cases: Record<string, CaseEntry> = {
   conectaplay: {
     es: {
       title: 'ConectaPlay: plataforma de reservas deportivas | OscarDev',
-      description: 'Producto propio: reservas en tiempo real, pagos, panel administrativo y torneos para complejos deportivos. Cómo se construyó.',
+      description: 'Producto propio: reservas en tiempo real, pagos y panel administrativo para complejos deportivos. Cómo se construyó.',
       h1a: 'ConectaPlay:', h1b: 'nuestra plataforma para complejos deportivos',
-      lead: 'Un producto propio. Yo soy el desarrollador e hice toda la programación: reservas, pagos, panel del administrador y torneos. Mi hermano es socio e inversionista: financió el proyecto pagando las herramientas de IA.',
+      lead: 'Un producto propio. Yo soy el desarrollador e hice toda la programación: reservas, pagos y panel del administrador. Mi hermano es socio e inversionista: financió el proyecto pagando las herramientas de IA.',
       facts: [['Stack', 'Ionic + Angular · Astro'], ['Piloto', 'Villavicencio, Meta']],
       context: 'ConectaPlay conecta a jugadores de fútbol (5v5, 7v7) y voleibol con canchas cercanas. Los jugadores encuentran partidos, se unen y pagan desde el celular; los dueños publican su cancha, sus precios y su disponibilidad.',
       challenge: 'En muchos complejos, las reservas, los pagos y la disponibilidad se manejan a mano, por WhatsApp o en un cuaderno: decenas de mensajes para armar un partido, cobros en efectivo, cruces de horario y canchas vacías sin aviso.',
       solution: [
         'Para jugadores: búsqueda de partidos por mapa o lista, filtros por deporte, hora y formato, pago en la app y confirmación inmediata.',
         'Para dueños: publicación de la cancha con fotos, precios y disponibilidad; los jugadores se inscriben y pagan solos.',
-        'Panel con partidos, ingresos, ocupación y agenda digital, y organización de torneos locales.',
+        'Panel con partidos, ingresos, ocupación y agenda digital.',
         'Modelo publicado sin mensualidad: una comisión por partido cobrado.',
       ],
       tech: [
@@ -144,16 +144,16 @@ export const cases: Record<string, CaseEntry> = {
     },
     en: {
       title: 'ConectaPlay: Sports Facility Booking Platform | OscarDev',
-      description: 'Our own product: real-time bookings, payments, admin dashboard and tournaments for sports complexes. How it was built.',
+      description: 'Our own product: real-time bookings, payments and an admin dashboard for sports complexes. How it was built.',
       h1a: 'ConectaPlay:', h1b: 'our sports facility booking platform',
-      lead: 'Our own product. I’m the developer and wrote all of the code: bookings, payments, the owner dashboard and tournaments. My brother is a partner and investor: he funded the project by paying for the AI tools.',
+      lead: 'Our own product. I’m the developer and wrote all of the code: bookings, payments and the owner dashboard. My brother is a partner and investor: he funded the project by paying for the AI tools.',
       facts: [['Stack', 'Ionic + Angular · Astro'], ['Pilot', 'Villavicencio, Colombia']],
       context: 'ConectaPlay connects football (5v5, 7v7) and volleyball players with nearby pitches. Players find games, join and pay from their phone; owners list their pitch, prices and availability.',
       challenge: 'Many sports complexes run bookings, payments and availability by hand, over WhatsApp or in a notebook: dozens of messages to set up a game, cash payments, double bookings and empty pitches.',
       solution: [
         'For players: find games on a map or list, filter by sport, time and format, pay in the app and get instant confirmation.',
         'For owners: list the pitch with photos, prices and availability; players sign up and pay on their own.',
-        'A dashboard with games, revenue, occupancy and a digital schedule, plus local tournaments.',
+        'A dashboard with games, revenue, occupancy and a digital schedule.',
         'A published model with no monthly fee: a commission per paid game.',
       ],
       tech: [

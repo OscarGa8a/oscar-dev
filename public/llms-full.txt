@@ -1,11 +1,12 @@
 # OscarDev — Dossier completo: desarrollo web, tiendas online, reservas y software a medida
 
 ## Perfil
-OscarDev es la marca profesional de Oscar García, desarrollador web y de soluciones digitales en Villavicencio (Meta, Colombia). Desarrolla desde 2020 (más de 5 años). Entre octubre de 2020 y diciembre de 2025 fue Desarrollador Frontend & Mobile en Grupo Tecnológico CATO S.A.S.
+OscarDev es la marca profesional de Oscar García, desarrollador web y de soluciones digitales en Villavicencio (Meta, Colombia). Desarrolla desde 2020. Entre octubre de 2020 y diciembre de 2025 fue Desarrollador Frontend & Mobile en Grupo Tecnológico CATO S.A.S.
 - **Marca**: OscarDev
 - **Ubicación**: Villavicencio, Meta, Colombia. Trabajo remoto en toda Colombia y con negocios latinos en EE. UU.
 - **Idiomas**: español e inglés
 - **Horario**: lunes a sábado, 8:00–18:00 (hora Colombia, UTC-5)
+- **Tiempo de respuesta**: respondo el mismo día hábil
 - **Correo**: [hola@oscardev.co](mailto:hola@oscardev.co)
 - **WhatsApp**: [+57 318 020 9851](https://wa.me/message/YXFZES54VJ2IK1)
 - **Redes**: [Instagram](https://www.instagram.com/oscargarcia.dev/) · [TikTok](https://www.tiktok.com/@oscargarcia.dev) · [Facebook](https://www.facebook.com/oscardev.co) · [LinkedIn](https://www.linkedin.com/in/oscar-garcia-dev/) · [GitHub](https://github.com/OscarGa8a)
@@ -13,6 +14,9 @@ OscarDev es la marca profesional de Oscar García, desarrollador web y de soluci
 ## Precios
 - Landing page: desde COP 600.000 (con dominio y hosting del cliente) o desde USD 200 para EE. UU.
 - Webs para pymes, tiendas online, sistemas de reservas, apps y software a medida: cotización cerrada según alcance.
+- Plazos: según alcance, acordado por escrito.
+- Pago: pagas cuando ves tu web terminada; no pido anticipo (aplica a landings y apps). En algunos proyectos, en dos partes: al entregar y a 1 o 2 meses.
+- Medios de pago: Nequi, Daviplata, Bancolombia, Nu y Bre-B.
 - Detalle: https://oscardev.co/precios/
 
 ---
@@ -47,7 +51,7 @@ OscarDev es la marca profesional de Oscar García, desarrollador web y de soluci
 - **La Locura Bar** (Villavicencio). Caso: https://oscardev.co/proyectos/la-locura-bar/ · Sitio: https://lalocurabar.com.co/ . Web con carta, reservas por WhatsApp y ubicación para un bar con bolirana y fútbol.
 
 ### Productos propios
-- **ConectaPlay**. Caso: https://oscardev.co/proyectos/conectaplay/ · App: https://app.conectaplay.co/ . Plataforma para complejos deportivos: reservas en tiempo real, pagos, panel administrativo y torneos. Oscar es el desarrollador e hizo toda la programación; su hermano es socio e inversionista y financió el proyecto pagando las herramientas de IA. Web app en Ionic + Angular que se usa sin descargar nada; aún no está en las tiendas de apps (se publicará cuando tenga usuarios recurrentes).
+- **ConectaPlay**. Caso: https://oscardev.co/proyectos/conectaplay/ · App: https://app.conectaplay.co/ . Plataforma para complejos deportivos: reservas en tiempo real, pagos y panel administrativo. Oscar es el desarrollador e hizo toda la programación; su hermano es socio e inversionista y financió el proyecto pagando las herramientas de IA. Web app en Ionic + Angular que se usa sin descargar nada; aún no está en las tiendas de apps (se publicará cuando tenga usuarios recurrentes).
 - **Riplai (beta)**. https://riplai.pages.dev/ . Atención por WhatsApp con IA y control humano: base de conocimiento, asistente, bandeja compartida y supervisión.
 
 ### Conceptos (no son clientes)
@@ -61,7 +65,7 @@ Diseños no comisionados publicados en subdominios *.oscardev.co para mostrar c�
 Desarrollo landings y sitios web de alto rendimiento con Astro (y React puntual si requiere micro-interactividad). Para plataformas web complejas, portales comerciales y paneles a medida utilizo Angular. Para aplicaciones móviles multiplataforma (iOS y Android) utilizo Angular con Ionic.
 
 ### 2. ¿Cuánto tiempo toma el desarrollo de un proyecto?
-Depende de la complejidad. Una landing page o sitio web comercial suele tomar entre 2 y 4 semanas. Una plataforma web o aplicación móvil a medida suele tomar entre 6 y 12 semanas, con entregas continuas y avances visibles.
+Según alcance, acordado por escrito antes de empezar, con entregas continuas y avances visibles.
 
 ### 3. ¿Cuál es la ventaja de una solución a medida frente a plantillas o constructores genéricos?
 Una solución a medida carga rápido, no depende de decenas de plugins que se rompen con actualizaciones, se adapta con exactitud al flujo de tu negocio y el código te pertenece por completo sin costos mensuales por plataformas cerradas.

@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { Locale } from '../../i18n/index';
+import { homeCopy } from '../../i18n/home';
+import Heading from './Heading.astro';
+import { services, serviceUrl } from '../../i18n/services';
+const map: Record<string, string> = { 'sitios-web': 'pymes', 'tiendas-online': 'tiendas', aplicaciones: 'apps', plataformas: 'software' };
+const hrefFor = (id: string) => serviceUrl(services.find((s) => s.key === map[id])!, lang);
+const { lang } = Astro.props as { lang: Locale };
+const c = homeCopy[lang].services;
+---
+<section class="section surface-paper" id="servicios" aria-labelledby="svc-title" style="padding-top:clamp(2rem,4vw,3rem)">
+  <div class="wrap">
+    <div class="svc-head">
+      <div><Heading n="04" eyebrow={c.eyebrow} a={c.h2a} b={c.h2b} id="svc-title" /><p class="lead" style="margin:1.5rem 0 0">{c.intro}</p></div>
+      <p class="meta-side" aria-hidden="true">{c.meta.map((m) => <span>{m}</span>)}</p>
+    </div>
+    <ol class="svc-list">
+      {c.items.map((s, i) => (
+        <li class="svc-row" id={`servicio-${s.id}`}>
+          <a href={hrefFor(s.id)} data-event="service_click" data-event-location={`services_${s.id}`}>
+            <span class="num" aria-hidden="true">0{i + 1}</span>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+            <span class="round" aria-hidden="true"><Icon name="ph:arrow-up-right" /></span>
+            
+          </a>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+---
+import type { Locale } from '../../i18n/index';
+import { homeCopy } from '../../i18n/home';
+import Heading from './Heading.astro';
+const { lang } = Astro.props as { lang: Locale };
+const c = homeCopy[lang].method;
+---
+<section class="section surface-paper" id="metodo" aria-labelledby="met-title">
+  <div class="wrap">
+    <div class="met-head"><div><Heading n="06" eyebrow={c.eyebrow} a={c.h2a} b={c.h2b} id="met-title" /></div><p class="lead" style="margin:0">{c.intro}</p></div>
+    <ol class="timeline">
+      {c.steps.map((s, i) => (
+        <li class="tl-step"><span class="dot" aria-hidden="true"></span><span class="n" aria-hidden="true">0{i + 1}</span><h3>{s.title}</h3><p>{s.desc}</p><p class="res"><small>{c.resultLabel}</small>{s.result}</p></li>
+      ))}
+    </ol>
+  </div>
+</section>

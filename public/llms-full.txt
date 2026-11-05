@@ -1,23 +1,24 @@
-# Oscar Dev — Dossier Completo de Soluciones Digitales y Desarrollo a Medida
+# OscarDev — Dossier completo: desarrollo web, tiendas online, reservas y software a medida
 
-## Resumen Ejecutivo
-Oscar Dev es la marca profesional de Oscar García, desarrollador de software y soluciones digitales con actividad continua desde 2019. Su enfoque se centra en crear soluciones de software útiles, rápidas y aterrizadas a la rentabilidad del negocio, evitando plantillas genéricas o dependencias innecesarias.
+## Perfil
+OscarDev es la marca profesional de Oscar García, desarrollador web y de soluciones digitales en Villavicencio (Meta, Colombia). Desarrolla desde 2020. Entre octubre de 2020 y diciembre de 2025 fue Desarrollador Frontend & Mobile en Grupo Tecnológico CATO S.A.S.
+- **Marca**: OscarDev
+- **Ubicación**: Villavicencio, Meta, Colombia. Trabajo remoto en toda Colombia y con negocios latinos en EE. UU.
+- **Idiomas**: español e inglés
+- **Horario**: lunes a sábado, 8:00–18:00 (hora Colombia, UTC-5)
+- **Tiempo de respuesta**: respondo el mismo día hábil
+- **Correo**: [hola@oscardev.co](mailto:hola@oscardev.co)
+- **WhatsApp**: [+57 318 020 9851](https://wa.me/message/YXFZES54VJ2IK1)
+- **Redes**: [Instagram](https://www.instagram.com/oscargarcia.dev/) · [TikTok](https://www.tiktok.com/@oscargarcia.dev) · [Facebook](https://www.facebook.com/oscardev.co) · [LinkedIn](https://www.linkedin.com/in/oscar-garcia-dev/) · [GitHub](https://github.com/OscarGa8a)
 
-## Perfil del Autor y Credenciales E-E-A-T
-- **Nombre**: Oscar García
-- **Cargo**: Desarrollador de Soluciones Digitales / Full Stack Developer
-- **Experiencia**: Más de 5 años en desarrollo web, móvil y plataformas empresariales (desde 2019).
-- **Alcance Geográfico**: Colombia y Estados Unidos.
-- **Canales Oficiales**:
-  - Web (Español): [https://oscardev.co/](https://oscardev.co/)
-  - Web (English): [https://oscardev.co/en/](https://oscardev.co/en/)
-  - LinkedIn: [Oscar García en LinkedIn](https://www.linkedin.com/in/oscar-garcia-dev/)
-  - GitHub: [OscarGa8a en GitHub](https://github.com/OscarGa8a)
-  - Instagram: [@oscargarcia.dev en Instagram](https://www.instagram.com/oscargarcia.dev/)
-  - TikTok: [@oscargarcia.dev en TikTok](https://www.tiktok.com/@oscargarcia.dev)
-  - Facebook: [Oscar Dev en Facebook](https://www.facebook.com/oscardev.co)
-  - WhatsApp: [WhatsApp Directo (+57 318 020 9851)](https://wa.me/message/YXFZES54VJ2IK1)
-  - Correo Electrónico: [oscar.garcia.development@gmail.com](mailto:oscar.garcia.development@gmail.com)
+## Precios
+- Landing page: desde COP 600.000 (con dominio y hosting del cliente) o desde USD 200 para EE. UU.
+- Webs para pymes, tiendas online, sistemas de reservas, apps y software a medida: cotización cerrada según alcance.
+- Plazos típicos: landing o sitio web, 2–4 semanas; plataforma o app, 6–12 semanas. Una app tipo Uber o un marketplace no entra en esos plazos y se cotiza aparte.
+- Pago en landing pages: pagas cuando ves tu web terminada; no pido anticipo.
+- Pago en apps y plataformas: la forma de pago se acuerda por escrito antes de empezar. En algunos proyectos, en dos partes: al entregar y a 1 o 2 meses.
+- Medios de pago: Nequi, Daviplata, Bancolombia, Nu y Bre-B.
+- Detalle: https://oscardev.co/precios/
 
 ---
 
@@ -25,15 +26,15 @@ Oscar Dev es la marca profesional de Oscar García, desarrollador de software y 
 
 ### 1. Sitios Web Profesionales y Landings de Conversión
 - **Enfoque**: Sitios diseñados para proyectar confianza, estructurar la propuesta de valor y guiar al usuario hacia la conversión (reserva, compra o contacto directo).
-- **Tecnología Principal**: Astro. Cero JavaScript innecesario enviado al cliente para garantizar que el navegador pinte el contenido en menos de 0.6 segundos. Si una sección requiere micro-interactividad reactiva puntual (como un cotizador o filtro), se utiliza una isla aislada en React.
+- **Tecnología Principal**: Astro. Se envía solo el JavaScript necesario para que el sitio cargue rápido. Si una sección requiere micro-interactividad reactiva puntual (como un cotizador o filtro), se utiliza una isla aislada en React.
 
 ### 2. Tiendas Online y E-commerce Personalizado
-- **Enfoque**: Catálogos estructurados, navegación fluida, personalización de productos y pasarelas de pago seguras (Stripe, Mercado Pago, Wompi, PayU).
-- **Diferencial**: Optimización móvil-primero que elimina fricciones en el proceso de checkout y reduce el abandono del carrito.
+- **Enfoque**: Catálogos estructurados, navegación fluida, personalización de productos y pedidos por WhatsApp o pagos en línea según la operación de cada negocio.
+- **Diferencial**: Optimización móvil-primero que elimina fricciones en el proceso de compra y reduce el abandono del carrito.
 
 ### 3. Aplicaciones Web y Móviles (iOS y Android)
 - **Enfoque**: Aplicaciones orientadas a usuarios o clientes finales que requieren uso frecuente, geolocalización, sincronización en tiempo real o uso en dispositivos móviles.
-- **Tecnología**: Angular + Ionic. Permite compilar aplicaciones nativas para Google Play y Apple App Store con excelente rendimiento y mantenimiento unificado.
+- **Tecnología**: Angular + Ionic. Un mismo código para web, Android e iOS; se puede lanzar primero como web app y publicar en tiendas después.
 
 ### 4. Plataformas y Software a Medida (B2B / Gestión Interna)
 - **Enfoque**: Sistemas administrativos, gestión de reservas, paneles de control (Dashboards), automatización de tareas y digitalización de procesos que hoy dependen de planillas de Excel o chats de WhatsApp.
@@ -41,37 +42,21 @@ Oscar Dev es la marca profesional de Oscar García, desarrollador de software y 
 
 ---
 
-## Portafolio y Casos de Estudio Reales
+## Portafolio (casos en oscardev.co)
 
-### Duarte's Auto Detailing (Cliente en EE. UU.)
-- **Tipo de proyecto**: Landing page comercial para detailing automotriz a domicilio.
-- **Problema**: El negocio requería una presencia digital premium para el mercado estadounidense que comunicara calidad y permitiera a los clientes reservar servicios fácilmente.
-- **Solución**: Diseño con paleta oscura de alta gama, tipografía editorial, presentación visual de paquetes y ruta de reserva directa.
-- **Enlace en vivo**: [Duarte's Auto Detailing](https://duartesautodetailing.com/)
+### Clientes
+- **Óptica Alemania** (Villavicencio). Caso: https://oscardev.co/proyectos/optica-alemania/ · Sitio: https://opticaalemania.co/ . Web de optometría con servicios, procedimientos, atención infantil, monturas y WhatsApp según la intención. Hecha en Astro.
+- **Abogados Lobo** (Bucaramanga). Caso: https://oscardev.co/proyectos/abogados-lobo/ · Sitio: https://abogadosbucaramanga.com/ . Web para una firma de familia y sucesiones: 5 áreas con página propia, blog jurídico, FAQ y WhatsApp.
+- **Duarte's Auto Detailing** (Bay Area, California, EE. UU.). Caso: https://oscardev.co/proyectos/duartes-auto-detailing/ · Sitio: https://duartesautodetailing.com/ . Web premium en inglés pensada para reservas; además, marketing y contenido de la marca junto con un socio.
+- **Upsteppers** (Villavicencio). Caso: https://oscardev.co/proyectos/upsteppers/ · Sitio: https://www.upsteppers.co/ . Tienda de streetwear en Angular SSR con imágenes en Cloudinary; pedidos por WhatsApp y pagos por transferencia (Nequi, Daviplata, Bancolombia), sin pasarela con tarjeta.
+- **La Locura Bar** (Villavicencio). Caso: https://oscardev.co/proyectos/la-locura-bar/ · Sitio: https://lalocurabar.com.co/ . Web con carta, reservas por WhatsApp y ubicación para un bar con bolirana y fútbol.
 
-### ConectaPlay (Colombia)
-- **Tipo de proyecto**: Plataforma web para la gestión de complejos deportivos y torneos.
-- **Problema**: Los administradores de canchas perdían tiempo coordinando reservas manuales y cobros.
-- **Solución**: Plataforma web integral con calendario de disponibilidad en tiempo real, gestión de canchas y módulo para torneos.
-- **Enlace en vivo**: [ConectaPlay](https://app.conectaplay.co/)
+### Productos propios
+- **ConectaPlay**. Caso: https://oscardev.co/proyectos/conectaplay/ · App: https://app.conectaplay.co/ . Plataforma para complejos deportivos: reservas en tiempo real, pagos y panel administrativo. Oscar es el desarrollador e hizo toda la programación; su hermano es socio del proyecto. Web app en Ionic + Angular que se usa sin descargar nada; aún no está en las tiendas de apps (se publicará cuando tenga usuarios recurrentes).
+- **Riplai (beta)**. https://riplai.pages.dev/ . Atención por WhatsApp con IA y control humano: base de conocimiento, asistente, bandeja compartida y supervisión.
 
-### Upsteppers (Colombia)
-- **Tipo de proyecto**: Plataforma e-commerce para marca colombiana de streetwear premium.
-- **Problema**: Lanzar colecciones exclusivas de moda urbana con una tienda online rápida, sin depender de plataformas lentas y genéricas.
-- **Solución**: Tienda online moderna desarrollada en Angular con Server-Side Rendering (SSR), integración de medios optimizados en Cloudinary CDN y flujo de compra fluido para móvil.
-- **Enlace en vivo**: [Upsteppers](https://www.upsteppers.co/)
-
-### Fuera del Molde (Colombia)
-- **Tipo de proyecto**: Tienda online de e-commerce de productos personalizados.
-- **Problema**: Mostrar catálogo dinámico de productos personalizables con una experiencia de compra sencilla en celulares.
-- **Solución**: Tienda online responsiva con filtros claros, personalizador visual y pasarela de pago integrada.
-- **Enlace en vivo**: [Fuera del Molde](https://fueradelmolde.com/)
-
-### La Locura Bar (Colombia)
-- **Tipo de proyecto**: Sitio web comercial y menú digital para negocio local.
-- **Problema**: Digitalizar la carta, ubicación y sistema de reservas para atraer clientes físicos.
-- **Solución**: Web moderna con menú digital categorizado, mapa interactivo e integración directa con WhatsApp para reservas.
-- **Enlace en vivo**: [La Locura Bar](https://lalocurabar.com.co/)
+### Conceptos (no son clientes)
+Diseños no comisionados publicados en subdominios *.oscardev.co para mostrar cómo resolvería webs de distintos rubros (veterinaria, salud, academias, turismo, restaurantes). No son los sitios oficiales de ningún negocio.
 
 ---
 
@@ -81,10 +66,10 @@ Oscar Dev es la marca profesional de Oscar García, desarrollador de software y 
 Desarrollo landings y sitios web de alto rendimiento con Astro (y React puntual si requiere micro-interactividad). Para plataformas web complejas, portales comerciales y paneles a medida utilizo Angular. Para aplicaciones móviles multiplataforma (iOS y Android) utilizo Angular con Ionic.
 
 ### 2. ¿Cuánto tiempo toma el desarrollo de un proyecto?
-Depende de la complejidad. Una landing page o sitio web comercial suele tomar entre 2 y 4 semanas. Una plataforma web o aplicación móvil a medida suele tomar entre 6 y 12 semanas, con entregas continuas y avances visibles.
+Una landing page o sitio web suele tomar entre 2 y 4 semanas. Una plataforma web o aplicación móvil a medida suele tomar entre 6 y 12 semanas, con entregas continuas y avances visibles. Una app tipo Uber o un marketplace no entra en esos plazos y se cotiza aparte.
 
 ### 3. ¿Cuál es la ventaja de una solución a medida frente a plantillas o constructores genéricos?
-Una solución a medida carga en milisegundos, no depende de decenas de plugins que se rompen con actualizaciones, es 100% segura, se adapta con exactitud al flujo de tu negocio y el código te pertenece por completo sin costos mensuales por plataformas cerradas.
+Una solución a medida carga rápido, no depende de decenas de plugins que se rompen con actualizaciones, se adapta con exactitud al flujo de tu negocio y el código te pertenece por completo sin costos mensuales por plataformas cerradas.
 
 ### 4. ¿Cómo es el proceso de trabajo y qué incluye la cotización?
 El proceso tiene 4 etapas:
@@ -100,10 +85,10 @@ Sí. Cuento con experiencia desarrollando proyectos para negocios tanto en Colom
 
 ## Contacto Directo
 - **WhatsApp**: [WhatsApp Directo (+57 318 020 9851)](https://wa.me/message/YXFZES54VJ2IK1)
-- **Email**: [oscar.garcia.development@gmail.com](mailto:oscar.garcia.development@gmail.com)
+- **Email**: [hola@oscardev.co](mailto:hola@oscardev.co)
 - **LinkedIn**: [LinkedIn de Oscar García](https://www.linkedin.com/in/oscar-garcia-dev/)
 - **GitHub**: [GitHub de Oscar García](https://github.com/OscarGa8a)
 - **Instagram**: [Instagram de Oscar García](https://www.instagram.com/oscargarcia.dev/)
 - **TikTok**: [TikTok de Oscar García](https://www.tiktok.com/@oscargarcia.dev)
-- **Facebook**: [Página de Facebook de Oscar Dev](https://www.facebook.com/oscardev.co)
+- **Facebook**: [Página de Facebook de OscarDev](https://www.facebook.com/oscardev.co)
 - **Página principal**: [https://oscardev.co/](https://oscardev.co/)

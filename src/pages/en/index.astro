@@ -1,33 +1,29 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Nav from '../../components/Nav.astro';
-import Hero from '../../components/Hero.astro';
-import TrustMetrics from '../../components/TrustMetrics.astro';
-import Services from '../../components/Services.astro';
-import CaseStudies from '../../components/CaseStudies.astro';
-import ProcessTimeline from '../../components/ProcessTimeline.astro';
-import About from '../../components/About.astro';
-import Faq from '../../components/Faq.astro';
-import FinalCta from '../../components/FinalCta.astro';
-import Footer from '../../components/Footer.astro';
+import SiteHeader from '../../components/home/SiteHeader.astro';
+import Hero from '../../components/home/Hero.astro';
+import Projects from '../../components/home/Projects.astro';
+import Manifesto from '../../components/home/Manifesto.astro';
+import Services from '../../components/home/Services.astro';
+import Signature from '../../components/home/Signature.astro';
+import Method from '../../components/home/Method.astro';
+import About from '../../components/home/About.astro';
+import Faq from '../../components/home/Faq.astro';
+import Contact from '../../components/home/Contact.astro';
 
 const lang = 'en' as const;
 ---
-<BaseLayout
-  lang={lang}
-  title="Oscar Dev | Custom Web, App and Software Development"
-  description="Websites, online stores and custom platforms for businesses that need clarity, control and growth. Astro, Angular and Ionic since 2019. Get in touch."
->
-  <Nav lang={lang} />
+<BaseLayout lang={lang} title="Web Developer for Small Businesses | OscarDev" description="Websites, online stores and booking systems for small businesses in the US and Colombia. Bilingual. Landing pages from USD 200.">
+  <SiteHeader lang={lang} />
   <main id="contenido-principal">
     <Hero lang={lang} />
-    <TrustMetrics lang={lang} />
+    <Projects lang={lang} />
+    <Manifesto lang={lang} />
     <Services lang={lang} />
-    <CaseStudies lang={lang} />
-    <ProcessTimeline lang={lang} />
+    <Signature lang={lang} />
+    <Method lang={lang} />
     <About lang={lang} />
     <Faq lang={lang} />
-    <FinalCta lang={lang} />
+    <Contact lang={lang} />
   </main>
-  <Footer lang={lang} />
 </BaseLayout>

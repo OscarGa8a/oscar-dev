@@ -1,30 +1,52 @@
-# Oscar Dev — Desarrollo Web, Apps y Software a Medida
+# OscarDev — Desarrollo web, tiendas online, sistemas de reservas y software a medida
 
-> Oscar Dev (liderado por Oscar García) diseña y construye soluciones digitales a medida para negocios y empresas en Colombia y Estados Unidos. Especializado en arquitectura web de alto rendimiento, desarrollo de software escalable y aplicaciones móviles. Experiencia activa desde 2019.
+> OscarDev es la marca de Oscar García, desarrollador web en Villavicencio (Meta, Colombia), desarrollando desde 2020. Hace páginas web, tiendas online, sistemas de reservas, apps y software a medida para pymes en Villavicencio, toda Colombia y negocios latinos en EE. UU., en español e inglés.
 
-## Páginas Principales
+## Datos de contacto (NAP)
+- Nombre: OscarDev (Oscar García)
+- Ubicación: Villavicencio, Meta, Colombia. Atención remota en toda Colombia y EE. UU.
+- Correo: hola@oscardev.co
+- WhatsApp: +57 318 020 9851 (https://wa.me/message/YXFZES54VJ2IK1)
+- Horario: lunes a sábado, 8:00–18:00 (hora Colombia, UTC-5)
+- Tiempo de respuesta: respondo el mismo día hábil.
+- Medios de pago: Nequi, Daviplata, Bancolombia, Nu y Bre-B.
+- Forma de pago: en landing pages, pagas cuando ves tu web terminada (no pido anticipo). En apps y plataformas, la forma de pago se acuerda por escrito antes de empezar.
+- Plazos típicos: landing o sitio web, 2–4 semanas; plataforma o app, 6–12 semanas. Una app tipo Uber o un marketplace no entra en esos plazos y se cotiza aparte.
 
-- [Oscar Dev — Portafolio Oficial (Español)](https://oscardev.co/): Portafolio principal con propuesta de valor, casos de estudio reales, stack tecnológico y contacto directo.
-- [Oscar Dev — Official Portfolio (English)](https://oscardev.co/en/): Official English portfolio featuring real-world case studies, architecture stack, and direct contact.
+## Páginas
+- [Inicio](https://oscardev.co/) · [English](https://oscardev.co/en/)
+- [Servicios](https://oscardev.co/servicios/) · [Services](https://oscardev.co/en/services/)
+  - [Landing pages](https://oscardev.co/servicios/landing-pages/): desde COP 600.000 o USD 200, con dominio y hosting del cliente.
+  - [Diseño web para pymes](https://oscardev.co/servicios/diseno-web-pymes/)
+  - [Tiendas online](https://oscardev.co/servicios/tiendas-online/)
+  - [Sistemas de reservas](https://oscardev.co/servicios/sistema-de-reservas/)
+  - [Apps móviles](https://oscardev.co/servicios/apps-moviles/)
+  - [Software a medida](https://oscardev.co/servicios/software-a-medida/)
+- [Proyectos](https://oscardev.co/proyectos/) · [Projects](https://oscardev.co/en/projects/)
+- [Precios](https://oscardev.co/precios/) · [Pricing](https://oscardev.co/en/pricing/)
+- [Diseño web en Villavicencio](https://oscardev.co/diseno-web-villavicencio/)
+- [Páginas web para negocios latinos en EE. UU.](https://oscardev.co/paginas-web-negocios-latinos-usa/) · [Hispanic business websites](https://oscardev.co/en/hispanic-business-websites/)
+- [Contacto](https://oscardev.co/contacto/) · [Contact](https://oscardev.co/en/contact/)
 
-## Casos de Estudio y Proyectos
+## Casos de clientes (caso en oscardev.co → sitio del cliente)
+- [Óptica Alemania](https://oscardev.co/proyectos/optica-alemania/) → https://opticaalemania.co/ : web de optometría en Villavicencio.
+- [Abogados Lobo](https://oscardev.co/proyectos/abogados-lobo/) → https://abogadosbucaramanga.com/ : web para abogados de familia en Bucaramanga.
+- [Duarte's Auto Detailing](https://oscardev.co/proyectos/duartes-auto-detailing/) → https://duartesautodetailing.com/ : web con reservas para detailing móvil en Bay Area, California; marketing y contenido con un socio.
+- [Upsteppers](https://oscardev.co/proyectos/upsteppers/) → https://www.upsteppers.co/ : tienda de streetwear de Villavicencio (Angular SSR), pedidos por WhatsApp y transferencia, sin pasarela de pago.
+- [La Locura Bar](https://oscardev.co/proyectos/la-locura-bar/) → https://lalocurabar.com.co/ : web de bar en Villavicencio con carta y reservas por WhatsApp.
 
-- [Duarte's Auto Detailing (EE. UU.)](https://duartesautodetailing.com/): Landing page comercial para detailing automotriz a domicilio en EE. UU.
-- [ConectaPlay (Colombia)](https://app.conectaplay.co/): Plataforma web integral para gestión de complejos deportivos y torneos.
-- [Upsteppers (Colombia)](https://www.upsteppers.co/): Tienda online e-commerce en Angular con Server-Side Rendering (SSR).
-- [Fuera del Molde (Colombia)](https://fueradelmolde.com/): E-commerce de productos personalizados con catálogo interactivo y checkout optimizado.
-- [La Locura Bar (Colombia)](https://lalocurabar.com.co/): Sitio web corporativo con menú digital y sistema de reservas.
+## Productos propios
+- [ConectaPlay](https://oscardev.co/proyectos/conectaplay/) → https://app.conectaplay.co/ : plataforma de reservas para complejos deportivos (reservas en tiempo real, pagos y panel administrativo). Oscar es el desarrollador e hizo toda la programación; su hermano es socio del proyecto. Web app en Ionic + Angular; aún no está en las tiendas de apps.
+- Riplai (beta) → https://riplai.pages.dev/ : atención por WhatsApp con IA y control humano.
 
-## Canales de Contacto y Perfiles Profesionales
+## Conceptos (no son clientes)
+Diseños no comisionados en subdominios *.oscardev.co (p. ej., romvet, glamping, academia-diyer, lume). No son los sitios oficiales de esos negocios.
 
-- [WhatsApp Oficial](https://wa.me/message/YXFZES54VJ2IK1): Canal de comunicación directa (+57 318 020 9851).
-- [LinkedIn de Oscar García](https://www.linkedin.com/in/oscar-garcia-dev/): Perfil profesional, trayectoria y red de contactos.
-- [GitHub de Oscar García](https://github.com/OscarGa8a): Repositorios de código abierto y contribuciones técnicas.
-- [Instagram](https://www.instagram.com/oscargarcia.dev/): Contenido audiovisual sobre desarrollo y proyectos.
-- [TikTok](https://www.tiktok.com/@oscargarcia.dev): Divulgación tecnológica y buenas prácticas de ingeniería.
-- [Facebook](https://www.facebook.com/oscardev.co): Página oficial de Oscar Dev.
-- [Correo Electrónico](mailto:oscar.garcia.development@gmail.com): Contacto vía email corporativo.
+## Perfiles
+- Instagram: https://www.instagram.com/oscargarcia.dev/
+- TikTok: https://www.tiktok.com/@oscargarcia.dev
+- Facebook: https://www.facebook.com/oscardev.co
+- LinkedIn: https://www.linkedin.com/in/oscar-garcia-dev/
+- GitHub: https://github.com/OscarGa8a
 
-## Documentación y Enlaces Opcionales
-
-- [Dossier Completo (llms-full.txt)](https://oscardev.co/llms-full.txt): Archivo exhaustivo con toda la información técnica, E-E-A-T, metodología de trabajo y FAQ.
+Versión ampliada: https://oscardev.co/llms-full.txt

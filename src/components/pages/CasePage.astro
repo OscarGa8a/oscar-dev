@@ -1,0 +1,63 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import type { Locale } from '../../i18n/index';
+import { cases, caseLabels } from '../../data/cases';
+import { getProject, kindLabel, publishedProjects, projectsIndexUrl } from '../../data/projects';
+import ProjectCard from '../home/ProjectCard.astro';
+import PageHero from './PageHero.astro';
+import PageShell from './PageShell.astro';
+interface Props { lang: Locale; slug: string }
+const { lang, slug } = Astro.props;
+const c = cases[slug][lang];
+const p = getProject(slug);
+const L = caseLabels[lang];
+const site = 'https://oscardev.co';
+const crumbs = [{ href: projectsIndexUrl(lang), label: L.crumbs }, { label: p.title }];
+const facts: [string, string][] = [
+  [L.kind, kindLabel[p.kind][lang]], [L.type, p.type[lang]], [L.sector, p.sector[lang]], ...(p.city?.[lang] ? [[L.city, p.city[lang]] as [string, string]] : []), ...c.facts,
+];
+const more = publishedProjects.filter((x) => x.slug !== slug && x.hasCase).slice(0, 3);
+const schema = [{
+  '@type': 'CreativeWork', '@id': new URL(Astro.url.pathname, site).href + '#case',
+  name: p.title, headline: `${c.h1a} ${c.h1b}`, description: c.description, inLanguage: lang === 'es' ? 'es' : 'en',
+  url: new URL(Astro.url.pathname, site).href, creator: { '@id': `${site}/#person` }, ...(p.externalUrl ? { about: { '@type': 'WebSite', name: p.title, url: p.externalUrl } } : {}),
+}];
+---
+<PageShell lang={lang} title={c.title} description={c.description} crumbs={crumbs} schema={schema}>
+  <PageHero lang={lang} eyebrow={`${kindLabel[p.kind][lang]} · ${p.type[lang]}`} h1a={c.h1a} h1b={c.h1b} lead={c.lead} crumbs={[{ href: lang === 'es' ? '/' : '/en/', label: lang === 'es' ? 'Inicio' : 'Home' }, ...crumbs]} cta={false}>
+    {p.externalUrl && <p class="visit"><a class="btn btn-orange" href={p.externalUrl} target="_blank" rel="noopener noreferrer" data-event="project_visit_click" data-event-location="case_hero">{L.visit}<Icon name="ph:arrow-up-right" aria-hidden="true" /></a></p>}
+  </PageHero>
+  <section class="section surface-paper case-cover-sec" aria-label={p.coverAlt[lang]}>
+    <div class="wrap">
+      <figure class="case-cover"><Image src={p.cover} alt={p.coverAlt[lang]} widths={[640, 960, 1280, 1600]} sizes="(min-width:1280px) 76rem, 94vw" loading="eager" fetchpriority="high" /></figure>
+    </div>
+  </section>
+  <section class="section surface-paper case-body" aria-labelledby="case-context">
+    <div class="wrap case-grid">
+      <aside class="facts" aria-label={L.facts}>
+        <h2 class="eyebrow"><span>{L.facts}</span></h2>
+        <dl>{facts.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
+      </aside>
+      <div class="prose">
+        <h2 id="case-context">{L.context}</h2><p>{c.context}</p>
+        <h2>{L.challenge}</h2><p>{c.challenge}</p>
+        <h2>{L.solution}</h2><ul>{c.solution.map((s) => <li>{s}</li>)}</ul>
+        <h2>{L.tech}</h2><ul>{c.tech.map((s) => <li>{s}</li>)}</ul>
+        {c.extra && <p class="extra">{c.extra}</p>}
+        <h2>{L.result}</h2><p>{c.result}</p>
+        <div class="case-cta">
+          <p>{c.cta.q}</p>
+          <a class="btn btn-ink" href={c.cta.href} data-event="case_cta_click" data-event-location="case_body">{c.cta.label}<Icon name="ph:arrow-right" aria-hidden="true" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section surface-ivory" aria-labelledby="more-title">
+    <div class="wrap">
+      <h2 class="h2" id="more-title">{L.more}</h2>
+      <div class="grid-cards">{more.map((x) => <ProjectCard p={x} lang={lang} location="case_more" sizes="(min-width:1024px) 30vw, (min-width:640px) 46vw, 92vw" />)}</div>
+      <p style="margin-top:2rem"><a class="btn btn-line" href={projectsIndexUrl(lang)}>{L.all}<Icon name="ph:arrow-right" aria-hidden="true" /></a></p>
+    </div>
+  </section>
+</PageShell>

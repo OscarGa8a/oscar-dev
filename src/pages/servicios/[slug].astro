@@ -1,0 +1,6 @@
+---
+import ServicePage from '../../components/pages/ServicePage.astro';
+import { services } from '../../i18n/services';
+export function getStaticPaths() { return services.map((s) => ({ params: { slug: s.slug.es } })); }
+---
+<ServicePage lang="es" slug={Astro.params.slug!} />

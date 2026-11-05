@@ -1,0 +1,67 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { Locale } from '../../i18n/index';
+import { services, servicesIndexUrl, serviceUrl } from '../../i18n/services';
+import { getProject } from '../../data/projects';
+import { whatsappUrl } from '../../config/site';
+import Heading from '../home/Heading.astro';
+import ProjectCard from '../home/ProjectCard.astro';
+import PageHero from './PageHero.astro';
+import PageShell from './PageShell.astro';
+interface Props { lang: Locale; slug: string }
+const { lang, slug } = Astro.props;
+const s = services.find((x) => x.slug[lang] === slug)!;
+const t = s[lang];
+const projects = t.cases.map(getProject).filter((p) => p && p.published);
+const others = services.filter((x) => x !== s);
+const site = 'https://oscardev.co';
+const idx = { href: servicesIndexUrl(lang), label: lang === 'es' ? 'Servicios' : 'Services' };
+const schema = [{
+  '@type': 'Service', name: t.eyebrow, serviceType: t.eyebrow, description: t.description, url: new URL(Astro.url.pathname, site).href,
+  provider: { '@id': `${site}/#service` },
+  areaServed: [{ '@type': 'City', name: 'Villavicencio' }, { '@type': 'Country', name: 'Colombia' }, { '@type': 'Country', name: 'United States' }],
+  availableLanguage: ['es', 'en'],
+  ...(s.key === 'landing' ? { offers: [
+    { '@type': 'Offer', priceSpecification: { '@type': 'PriceSpecification', minPrice: 600000, priceCurrency: 'COP' } },
+    { '@type': 'Offer', priceSpecification: { '@type': 'PriceSpecification', minPrice: 200, priceCurrency: 'USD' } },
+  ] } : {}),
+}];
+const pricingHref = lang === 'es' ? '/precios/' : '/en/pricing/';
+---
+<PageShell lang={lang} title={t.title} description={t.description} crumbs={[idx, { label: t.eyebrow }]} schema={schema} faq={[...t.faq]}>
+  <PageHero lang={lang} eyebrow={t.eyebrow} h1a={t.h1a} h1b={t.h1b} lead={t.lead} crumbs={[{ href: lang === 'es' ? '/' : '/en/', label: lang === 'es' ? 'Inicio' : 'Home' }, idx, { label: t.eyebrow }]} location={`service_${s.key}_hero`} />
+  <section class="section surface-paper" aria-labelledby="inc-title">
+    <div class="wrap">
+      <Heading n="01" eyebrow={t.incH.eyebrow} a={t.incH.a} b={t.incH.b} id="inc-title" />
+      <ul class="why" role="list">{t.includes.map((w) => <li><h3>{w.t}</h3><p>{w.d}</p></li>)}</ul>
+    </div>
+  </section>
+  {projects.length > 0 && t.casesH && (
+    <section class="section surface-ivory" aria-labelledby="scases-title">
+      <div class="wrap">
+        <Heading n="02" eyebrow={t.casesH.eyebrow} a={t.casesH.a} b={t.casesH.b} id="scases-title" />
+        <div class:list={['grid-cards', { two: projects.length < 3 }]}>{projects.map((p) => <ProjectCard p={p} lang={lang} location={`service_${s.key}`} sizes="(min-width:1024px) 30vw, (min-width:640px) 46vw, 92vw" />)}</div>
+      </div>
+    </section>
+  )}
+  <section class="section surface-dark" aria-label={lang === 'es' ? 'Precio' : 'Price'}>
+    <div class="wrap price-band">
+      <p>{t.price}</p>
+      <a class="btn btn-orange" href={pricingHref}>{lang === 'es' ? 'Ver precios' : 'See pricing'}<Icon name="ph:arrow-right" aria-hidden="true" /></a>
+    </div>
+  </section>
+  <section class="section surface-paper" aria-labelledby="sfaq-title">
+    <div class="wrap">
+      <Heading n="03" eyebrow={lang === 'es' ? 'Preguntas' : 'FAQ'} a={lang === 'es' ? 'Preguntas' : 'Common'} b={lang === 'es' ? 'frecuentes' : 'questions'} id="sfaq-title" />
+      <div class="qa">{t.faq.map((f) => <details><summary>{f.q}<Icon name="ph:plus" aria-hidden="true" /></summary><p>{f.a}</p></details>)}</div>
+      <div class="case-cta">
+        <p><strong>{lang === 'es' ? '¿No sabes si es lo que necesitas?' : 'Not sure this is what you need?'}</strong> {lang === 'es' ? 'Agenda un diagnóstico gratis de 30 minutos o escríbeme a hola@oscardev.co.' : 'Book a free 30-minute call or email hola@oscardev.co.'}</p>
+        <a class="btn btn-ink" href={whatsappUrl(lang)} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click" data-event-location={`service_${s.key}_cta`}><Icon name="ph:whatsapp-logo" aria-hidden="true" />{lang === 'es' ? 'Agendar diagnóstico gratis' : 'Book a free call'}</a>
+      </div>
+      <nav class="svc-others" aria-label={lang === 'es' ? 'Otros servicios' : 'Other services'}>
+        <p class="eyebrow"><span>{lang === 'es' ? 'Otros servicios' : 'Other services'}</span></p>
+        <ul>{others.map((o) => <li><a href={serviceUrl(o, lang)}>{o[lang].eyebrow}<Icon name="ph:arrow-right" aria-hidden="true" /></a></li>)}</ul>
+      </nav>
+    </div>
+  </section>
+</PageShell>

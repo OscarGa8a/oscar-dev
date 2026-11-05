@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import type { Locale } from '../../i18n/index';
+import { type Concept, conceptUrl } from '../../data/projects';
+import { projectsPage } from '../../i18n/pages';
+interface Props { c: Concept; lang: Locale }
+const { c, lang } = Astro.props;
+const t = projectsPage[lang].concepts;
+---
+<a class="card concept" href={conceptUrl(c)} target="_blank" rel="noopener noreferrer nofollow" data-event="concept_click" data-event-location="concepts">
+  <div class="img"><span class="concept-badge">{t.label}</span><Image src={c.cover} alt={`${t.label}: ${c.title}`} widths={[400, 640]} sizes="(min-width:1024px) 22vw, (min-width:640px) 46vw, 86vw" loading="lazy" /></div>
+  <div class="body">
+    <span class="type">{c.sector[lang]}{c.city && ` · ${c.city}`}</span>
+    <h3>{c.title}</h3>
+    <span class="round"><Icon name="ph:arrow-up-right" aria-hidden="true" /></span>
+    <p>{c.shows[lang]}</p>
+    <span class="kind">{t.label} · {t.note}</span>
+  </div>
+</a>

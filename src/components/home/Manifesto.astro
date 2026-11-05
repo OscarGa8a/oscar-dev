@@ -1,0 +1,16 @@
+---
+import type { Locale } from '../../i18n/index';
+import { homeCopy } from '../../i18n/home';
+import Heading from './Heading.astro';
+const { lang } = Astro.props as { lang: Locale };
+const c = homeCopy[lang].manifesto;
+---
+<section class="section surface-paper" id="manifiesto" aria-labelledby="mani-title">
+  <span class="mani-ring" aria-hidden="true"></span><span class="mani-circle" aria-hidden="true"></span>
+  <div class="wrap mani">
+    <div class="copy"><Heading n="03" eyebrow={c.eyebrow} a={c.h2a} b={c.h2b} id="mani-title" />
+      <p class="lead" style="margin-top:2rem">{c.body}</p></div>
+    <div></div>
+    <p class="meta-side" aria-hidden="true">{c.meta.map((m) => <span>{m}</span>)}</p>
+  </div>
+</section>

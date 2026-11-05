@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../home/SiteHeader.astro';
+import Contact from '../home/Contact.astro';
+import type { Locale } from '../../i18n/index';
+import { crumbHome } from '../../i18n/pages';
+import type { Crumb } from './PageHero.astro';
+interface Props { lang: Locale; title: string; description: string; crumbs: Crumb[]; schema?: Record<string, unknown>[]; faq?: { q: string; a: string }[]; ogImage?: string }
+const { lang, title, description, crumbs, schema = [], faq, ogImage } = Astro.props;
+const site = 'https://oscardev.co';
+const all = [{ href: lang === 'es' ? '/' : '/en/', label: crumbHome[lang] }, ...crumbs];
+const breadcrumb = {
+  '@type': 'BreadcrumbList',
+  itemListElement: all.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.label, item: new URL(c.href ?? Astro.url.pathname, site).href })),
+};
+---
+<BaseLayout lang={lang} title={title} description={description} schema={[breadcrumb, ...schema]} faq={faq} ogImage={ogImage}>
+  <SiteHeader lang={lang} solid />
+  <main id="contenido-principal" class="subpage">
+    <slot />
+    <Contact lang={lang} n="" />
+  </main>
+</BaseLayout>

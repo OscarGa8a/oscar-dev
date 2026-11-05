@@ -1,0 +1,34 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { Locale } from '../../i18n/index';
+import { contactPage } from '../../i18n/services';
+import { whatsappUrl, author } from '../../config/site';
+import Heading from '../home/Heading.astro';
+import PageHero from './PageHero.astro';
+import PageShell from './PageShell.astro';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = contactPage[lang];
+const site = 'https://oscardev.co';
+const schema = [{ '@type': 'ContactPage', name: t.title, url: new URL(Astro.url.pathname, site).href, about: { '@id': `${site}/#service` } }];
+---
+<PageShell lang={lang} title={t.title} description={t.description} crumbs={[{ label: t.eyebrow }]} schema={schema}>
+  <PageHero lang={lang} eyebrow={t.eyebrow} h1a={t.h1a} h1b={t.h1b} lead={t.lead} crumbs={[{ href: lang === 'es' ? '/' : '/en/', label: lang === 'es' ? 'Inicio' : 'Home' }, { label: t.eyebrow }]} location="contact_page_hero" />
+  <section class="section surface-paper" aria-labelledby="ch-title">
+    <div class="wrap">
+      <Heading n="01" eyebrow={t.channelsH.eyebrow} a={t.channelsH.a} b={t.channelsH.b} id="ch-title" />
+      <ul class="why channels" role="list">
+        <li><h3><Icon name="ph:whatsapp-logo" aria-hidden="true" /> {t.channels.whatsapp}</h3><p><a href={whatsappUrl(lang)} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click" data-event-location="contact_page">{author.phoneDisplay}</a></p></li>
+        <li><h3><Icon name="ph:envelope-simple" aria-hidden="true" /> {t.channels.email}</h3><p><a href="mailto:hola@oscardev.co" data-event="email_click" data-event-location="contact_page">hola@oscardev.co</a></p></li>
+        <li><h3><Icon name="ph:clock" aria-hidden="true" /> {t.channels.hours}</h3><p>{t.hours}</p></li>
+        <li><h3><Icon name="ph:map-pin" aria-hidden="true" /> {t.channels.place}</h3><p>{t.place}</p></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section surface-ivory" aria-labelledby="steps-title">
+    <div class="wrap">
+      <Heading n="02" eyebrow={t.stepsH.eyebrow} a={t.stepsH.a} b={t.stepsH.b} id="steps-title" />
+      <ol class="why" role="list">{t.steps.map((w) => <li><h3>{w.t}</h3><p>{w.d}</p></li>)}</ol>
+    </div>
+  </section>
+</PageShell>

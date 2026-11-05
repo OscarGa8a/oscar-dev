@@ -1,0 +1,25 @@
+---
+import { Icon } from 'astro-icon/components';
+import { whatsappUrl } from '../../config/site';
+import type { Locale } from '../../i18n/index';
+export interface Crumb { href?: string; label: string }
+interface Props { lang: Locale; eyebrow: string; h1a: string; h1b: string; lead: string; crumbs: Crumb[]; cta?: boolean; location?: string }
+const { lang, eyebrow, h1a, h1b, lead, crumbs, cta = true, location = 'page_hero' } = Astro.props;
+---
+<section class="page-hero surface-ivory" aria-labelledby="page-title">
+  <div class="wrap">
+    <nav class="crumbs" aria-label={lang === 'es' ? 'Ruta de navegación' : 'Breadcrumb'}>
+      <ol>{crumbs.map((c, i) => <li>{c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}{i < crumbs.length - 1 && <Icon name="ph:caret-right" aria-hidden="true" />}</li>)}</ol>
+    </nav>
+    <p class="eyebrow"><span>{eyebrow}</span></p>
+    <h1 id="page-title" class="page-h1">{h1a} <span class="accent">{h1b}</span></h1>
+    <p class="lead">{lead}</p>
+    <slot />
+    {cta && (
+      <div class="ctas">
+        <a class="btn btn-ink" href={whatsappUrl(lang)} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click" data-event-location={location}><Icon name="ph:whatsapp-logo" aria-hidden="true" />{lang === 'es' ? 'Agenda tu diagnóstico gratis' : 'Book a free 30-min call'}</a>
+        <a class="btn btn-line" href="mailto:hola@oscardev.co" data-event="email_click" data-event-location={location}><Icon name="ph:envelope-simple" aria-hidden="true" />hola@oscardev.co</a>
+      </div>
+    )}
+  </div>
+</section>

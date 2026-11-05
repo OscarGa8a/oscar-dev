@@ -7,6 +7,7 @@ import { routePairs } from './src/config/routes.ts';
 
 const SITE = 'https://oscardev.co';
 // hreflang alternates per URL pair (ES and EN slugs differ, so the built-in i18n option can't pair them).
+/** @param {string} url */
 const pairFor = (url) => {
   const path = new URL(url).pathname;
   return routePairs.find((r) => r.es === path || r.en === path);

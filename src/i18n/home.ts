@@ -5,7 +5,7 @@ const es = {
   nav: {
     projects: 'Proyectos', services: 'Servicios', pricing: 'Precios', about: 'Sobre mí', contact: 'Contacto',
     cta: 'Cuéntame tu proyecto', menu: 'Menú', open: 'Abrir menú', close: 'Cerrar menú',
-    home: 'Oscar Dev — inicio', primary: 'Navegación principal',
+    home: 'OscarDev — inicio', primary: 'Navegación principal',
   },
   hero: {
     eyebrow: 'Desarrollo web · Aplicaciones · Soluciones digitales',
@@ -69,9 +69,10 @@ const es = {
   about: {
     eyebrow: 'Sobre mí',
     h2a: 'Hola, soy', h2b: 'Oscar García.',
-    lead: 'Desarrollador web y creador de soluciones digitales desde 2019.',
+    lead: 'Desarrollador web y creador de soluciones digitales desde 2020.',
     p1: 'He trabajado en proyectos de comercio electrónico, turismo, deportes y otros sectores, combinando diseño y desarrollo para construir experiencias útiles.',
     p2: 'Me interesa entender cómo funciona cada negocio, qué necesita mejorar y cómo la tecnología puede ayudar sin complicar las cosas.',
+    career: 'Frontend & Mobile en Grupo Tecnológico CATO (2020-2025)',
     meta: 'Villavicencio, Colombia · Desarrollo independiente',
     cta: 'Conoce mis proyectos',
   },
@@ -108,7 +109,7 @@ const en: HomeCopy = {
   nav: {
     projects: 'Projects', services: 'Services', pricing: 'Pricing', about: 'About', contact: 'Contact',
     cta: 'Tell me about your project', menu: 'Menu', open: 'Open menu', close: 'Close menu',
-    home: 'Oscar Dev — home', primary: 'Main navigation',
+    home: 'OscarDev — home', primary: 'Main navigation',
   },
   hero: {
     eyebrow: 'Web development · Apps · Digital solutions',
@@ -172,9 +173,10 @@ const en: HomeCopy = {
   about: {
     eyebrow: 'About me',
     h2a: 'Hi, I’m', h2b: 'Oscar García.',
-    lead: 'Web developer and digital solutions builder since 2019.',
+    lead: 'Web developer and digital solutions builder since 2020.',
     p1: 'I have worked on e-commerce, tourism, sports and other projects, combining design and development to build useful experiences.',
     p2: 'I care about understanding how each business works, what it needs to improve and how technology can help without making things complicated.',
+    career: 'Frontend & Mobile at Grupo Tecnológico CATO (2020-2025)',
     meta: 'Villavicencio, Colombia · Independent development',
     cta: 'See my projects',
   },

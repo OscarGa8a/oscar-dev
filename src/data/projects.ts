@@ -1,7 +1,6 @@
 import type { ImageMetadata } from 'astro';
 import type { Locale } from '../i18n/index';
 import conectaplay from '../assets/projects/conectaplay.png';
-import fueradelmolde from '../assets/projects/fueradelmolde.png';
 import upsteppers from '../assets/projects/upsteppers.png';
 import lalocura from '../assets/projects/lalocura.png';
 import optica from '../assets/projects/optica-alemania.jpg';
@@ -134,18 +133,6 @@ export const projects: PortfolioProject[] = [
     hasCase: true, externalUrl: 'https://lalocurabar.com.co/', published: true, displayOrder: 6,
   },
   {
-    slug: 'fuera-del-molde', title: 'Fuera del Molde', kind: 'client',
-    type: { es: 'Tienda online', en: 'Online store' }, sector: { es: 'Productos personalizados', en: 'Custom products' },
-    city: { es: 'Colombia', en: 'Colombia' },
-    description: {
-      es: 'Tienda de productos personalizables con catálogo claro y flujo de compra pensado para móvil.',
-      en: 'Store for customizable products with a clear catalog and a mobile-first purchase flow.',
-    },
-    cover: fueradelmolde,
-    coverAlt: { es: 'Página de inicio de la tienda Fuera del Molde con prendas personalizadas', en: 'Fuera del Molde store homepage showing custom apparel' },
-    externalUrl: 'https://fueradelmolde.com/', published: true, displayOrder: 7,
-  },
-  {
     slug: 'riplai', title: 'Riplai', kind: 'own-product',
     type: { es: 'SaaS · Beta', en: 'SaaS · Beta' }, sector: { es: 'Atención por WhatsApp', en: 'WhatsApp support' },
     city: { es: 'Colombia', en: 'Colombia' },
@@ -176,7 +163,7 @@ export const concepts: Concept[] = [
   concept('academia-belleza-lady', 'Academia Lady', A, 'Bucaramanga', { es: 'Academia de belleza: cursos y matrícula.', en: 'Beauty academy: courses and enrollment.' }, cLady),
   concept('glamping', 'Los Ángeles Glamping', T, 'Villavicencio', { es: 'Glamping: experiencia y reservas.', en: 'Glamping: experience and bookings.' }, cGlamping),
   concept('laventanilla', 'La Ventanilla', T, 'Oaxaca, MX', { es: 'Ecoturismo comunitario: recorridos y reservas.', en: 'Community ecotourism: tours and bookings.' }, cLaventanilla),
-  concept('lume', 'Corte & Brasa', T, '', { es: 'Restaurante: carta y reserva de mesa.', en: 'Restaurant: menu and table booking.' }, cLume),
+  concept('lume', 'Corte & Brasa', T, 'Bogotá', { es: 'Restaurante: carta y reserva de mesa.', en: 'Restaurant: menu and table booking.' }, cLume),
 ];
 export const conceptUrl = (c: Concept) => `https://${c.slug}.oscardev.co/`;
 

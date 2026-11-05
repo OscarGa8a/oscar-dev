@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon/components';
 import type { Locale } from '../../i18n/index';
 import { homeCopy, homeBase } from '../../i18n/home';
 import Heading from './Heading.astro';
-import { whatsappUrl, contact } from '../../config/site';
+import { whatsappUrl, contact, author } from '../../config/site';
 const { lang, n: num = '09' } = Astro.props as { lang: Locale; n?: string };
 const c = homeCopy[lang].contact;
 const f = homeCopy[lang].footer;
@@ -13,6 +13,7 @@ const year = new Date().getFullYear();
 const socials = [
   { href: contact.instagram, label: 'Instagram', icon: 'ph:instagram-logo' },
   { href: contact.tiktok, label: 'TikTok', icon: 'ph:tiktok-logo' },
+  { href: contact.facebook, label: 'Facebook', icon: 'ph:facebook-logo' },
   { href: contact.linkedin, label: 'LinkedIn', icon: 'ph:linkedin-logo' },
   { href: contact.github, label: 'GitHub', icon: 'ph:github-logo' },
   { href: whatsappUrl(lang), label: 'WhatsApp', icon: 'ph:whatsapp-logo', event: 'whatsapp_click' },
@@ -34,21 +35,23 @@ const socials = [
 <footer class="footer v2">
   <div class="wrap">
     <div class="top">
-      <div class="brand"><a href={base} aria-label={n.home}><img src="/logo-oscar-dev.webp" alt="Oscar Dev" width="600" height="108" loading="lazy" /></a><p>{f.tagline}</p></div>
+      <div class="brand"><a href={base} aria-label={n.home}><img src="/logo-oscar-dev.webp" alt="OscarDev" width="600" height="108" loading="lazy" /></a><p>{f.tagline}</p></div>
       <nav aria-label="Footer"><ul>
         <li><a href={base}>{f.home}</a></li>
         <li><a href={lang === 'es' ? '/proyectos/' : '/en/projects/'}>{n.projects}</a></li>
-        <li><a href={`${base}#servicios`}>{n.services}</a></li>
+        <li><a href={lang === 'es' ? '/servicios/' : '/en/services/'}>{n.services}</a></li>
         <li><a href={lang === 'es' ? '/precios/' : '/en/pricing/'}>{n.pricing}</a></li>
         <li><a href={lang === 'es' ? '/diseno-web-villavicencio/' : '/en/web-design-villavicencio/'}>{f.local}</a></li>
         <li><a href={lang === 'es' ? '/paginas-web-negocios-latinos-usa/' : '/en/hispanic-business-websites/'}>{f.usa}</a></li>
         <li><a href={`${base}#preguntas`}>{f.faq}</a></li>
+        <li><a href={lang === 'es' ? '/contacto/' : '/en/contact/'}>{n.contact}</a></li>
         <li><a href="mailto:hola@oscardev.co" data-event="email_click" data-event-location="footer">hola@oscardev.co</a></li>
       </ul></nav>
       <ul class="socials" aria-label={f.social}>
         {socials.map((s) => <li><a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} data-event={s.event ?? 'social_click'} data-event-location="footer"><Icon name={s.icon} aria-hidden="true" /></a></li>)}
       </ul>
     </div>
-    <div class="bottom"><span>© {year} Oscar Dev. {f.rights}</span><span>{f.made}</span></div>
+    <p class="nap"><a href={whatsappUrl(lang)} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click" data-event-location="footer_nap">WhatsApp {author.phoneDisplay}</a> · <span>{author.hours[lang]}</span> · <span>{author.city}</span></p>
+    <div class="bottom"><span>© {year} OscarDev. {f.rights}</span><span>{f.made}</span></div>
   </div>
 </footer>

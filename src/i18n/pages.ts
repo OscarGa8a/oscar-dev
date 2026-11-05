@@ -6,7 +6,7 @@ export const crumbHome: Record<Locale, string> = { es: 'Inicio', en: 'Home' };
 
 export const projectsPage = {
   es: {
-    title: 'Proyectos y casos de estudio | Oscar Dev',
+    title: 'Proyectos y casos de estudio | OscarDev',
     description: 'Webs, tiendas y plataformas reales en Colombia y EE. UU.: contexto, reto, solución y resultado de cada proyecto.',
     eyebrow: 'Portafolio', h1a: 'Proyectos reales,', h1b: 'decisiones explicadas',
     lead: 'Clientes reales en Colombia y EE. UU., productos propios y conceptos de diseño. Cada uno marcado por lo que es.',
@@ -15,7 +15,7 @@ export const projectsPage = {
     concepts: { eyebrow: 'Conceptos', h2a: 'Conceptos', h2b: 'de diseño', lead: 'Proyectos de diseño no comisionados para mostrar cómo resolvería la web de distintos rubros. No son los sitios oficiales de ningún negocio.', label: 'Concepto', note: 'Proyecto de diseño no comisionado', shows: 'Qué muestra', visit: 'Ver concepto' },
   },
   en: {
-    title: 'Projects & Case Studies | Oscar Dev',
+    title: 'Projects & Case Studies | OscarDev',
     description: 'Real websites, stores and platforms in Colombia and the US: context, challenge, solution and result for each project.',
     eyebrow: 'Portfolio', h1a: 'Real projects,', h1b: 'decisions explained',
     lead: 'Real clients in Colombia and the US, our own products and design concepts. Each one labeled for what it is.',
@@ -27,7 +27,7 @@ export const projectsPage = {
 
 export const pricingPage = {
   es: {
-    title: 'Precios de páginas web en Colombia | Oscar Dev',
+    title: 'Precios de páginas web en Colombia | OscarDev',
     description: 'Landing page desde COP 600.000 (o USD 200). Webs, tiendas, apps y reservas: cotización según alcance, sin costos ocultos.',
     eyebrow: 'Precios', h1a: 'Precios claros,', h1b: 'alcance claro',
     lead: 'Una landing page profesional desde COP 600.000 si ya tienes dominio y hosting (o desde USD 200 para clientes en EE. UU.). Para webs, tiendas, apps y plataformas, te doy una cotización cerrada según lo que tu negocio realmente necesita.',
@@ -41,6 +41,7 @@ export const pricingPage = {
       { name: 'App móvil', price: 'Cotización según alcance', ideal: 'Productos que necesitan app en iOS y Android', time: '6–12 semanas' },
     ],
     timeNote: 'Los plazos dependen de que el contenido (textos, fotos, logo) esté listo.',
+    pay: { eyebrow: 'Forma de pago', h: 'Pagas cuando ves tu web terminada', body: 'No te pido anticipo: pagas al entregarte el trabajo terminado. En algunos proyectos podemos dividir el pago en dos partes: una al entregar y otra a 1 o 2 meses. Lo acordamos por escrito antes de empezar.' },
     incH: 'Qué incluye la landing',
     includes: ['Diseño a medida, adaptado a celular', 'Botón de WhatsApp y/o formulario de contacto', 'SEO técnico básico: títulos, descripción y velocidad', 'Publicación en tu dominio y hosting', 'El código y el sitio quedan a tu nombre'],
     excH: 'No incluido (lo pagas directo a tu proveedor)',
@@ -50,13 +51,14 @@ export const pricingPage = {
       { q: '¿Por qué la landing es «desde»?', a: 'El precio base cubre una landing estándar. Secciones extra, textos desde cero o integraciones especiales suben el valor; siempre lo verás por escrito antes de empezar.' },
       { q: '¿Qué pasa si no tengo dominio ni hosting?', a: 'El precio desde COP 600.000 asume que ya los tienes. Si no, te oriento para comprarlos a tu nombre y lo incluimos en la cotización.' },
       { q: '¿Por qué no publicas precio de tiendas, apps o plataformas?', a: 'Porque dependen del catálogo, los pagos, los usuarios y los procesos. Prefiero darte un precio cerrado tras el diagnóstico que una cifra que luego cambie.' },
+      { q: '¿Cuándo pago?', a: 'Cuando ves tu web terminada. En algunos proyectos se puede dividir en dos pagos: uno al entregar y otro a 1 o 2 meses.' },
       { q: '¿El sitio queda a mi nombre?', a: 'Sí. Código, dominio y accesos son tuyos.' },
       { q: '¿Trabajas con negocios fuera de Villavicencio?', a: 'Sí: toda Colombia y negocios latinos en EE. UU., en español o inglés, de forma remota.' },
     ],
     cta: { q: '¿No sabes qué necesitas?', body: 'Cuéntame tu negocio en 30 minutos y te digo si te sirve una landing, una web, una tienda o una plataforma, trabajemos o no. También puedes escribirme a hola@oscardev.co.' },
   },
   en: {
-    title: 'Website Pricing | Oscar Dev',
+    title: 'Website Pricing | OscarDev',
     description: 'Landing pages from USD 200. Websites, stores, apps and booking systems quoted by scope. Clear proposals, no hidden fees.',
     eyebrow: 'Pricing', h1a: 'Clear pricing,', h1b: 'clear scope',
     lead: 'Professional landing pages from USD 200. Websites, online stores, apps and booking platforms are quoted by scope, with a fixed written proposal before we start.',
@@ -70,6 +72,7 @@ export const pricingPage = {
       { name: 'Mobile app', price: 'Quoted by scope', ideal: 'Products that need an iOS and Android app', time: '6–12 weeks' },
     ],
     timeNote: 'Timelines depend on your content (copy, photos, logo) being ready.',
+    pay: { eyebrow: 'Payment', h: 'You pay when you see your finished website', body: 'No upfront deposit: you pay when the finished work is delivered. On some projects we can split the payment in two: one part on delivery and the rest 1 or 2 months later. We agree on it in writing before we start.' },
     incH: 'What the landing page includes',
     includes: ['Custom, mobile-first design', 'WhatsApp button and/or contact form', 'Basic technical SEO: titles, description and speed', 'Launch on your domain and hosting', 'You own the code and the site'],
     excH: 'Not included (paid directly to your provider)',
@@ -77,6 +80,7 @@ export const pricingPage = {
     faqH: { eyebrow: 'FAQ', a: 'Pricing', b: 'questions' },
     faq: [
       { q: 'Why “from”?', a: 'The base price covers a standard landing page. Extra sections, copywriting from scratch or special integrations change the price, and you always see it in writing before we start.' },
+      { q: 'When do I pay?', a: 'When you see your finished website. On some projects the payment can be split in two: one part on delivery and the other 1 or 2 months later.' },
       { q: 'Do I own the site?', a: 'Yes. The code, the domain and every login are yours.' },
       { q: 'Do you speak Spanish?', a: 'Yes, natively. I work in English or Spanish, whichever is easier for you and your customers.' },
       { q: 'Why don’t you list prices for stores, apps or platforms?', a: 'Because they depend on your catalog, payments, users and processes. I’d rather give you a fixed price after a short call than a number that changes later.' },
@@ -89,7 +93,7 @@ export const pricingPage = {
 export const localPages = {
   villavicencio: {
     es: {
-      title: 'Diseño de páginas web en Villavicencio | Oscar Dev',
+      title: 'Diseño de páginas web en Villavicencio | OscarDev',
       description: 'Desarrollador web en Villavicencio (Meta): webs, tiendas y reservas. Casos locales: Upsteppers, La Locura Bar y Óptica Alemania. Diagnóstico gratis.',
       eyebrow: 'Villavicencio, Meta', h1a: 'Diseño de páginas web', h1b: 'en Villavicencio',
       lead: 'Soy Oscar García, desarrollador web en Villavicencio. Hago webs, tiendas online y sistemas de reservas para negocios del Meta y de toda Colombia, con atención directa y en persona cuando hace falta.',
@@ -108,7 +112,7 @@ export const localPages = {
       pricingLink: 'Ver precios',
     },
     en: {
-      title: 'Web Design in Villavicencio, Colombia | Oscar Dev',
+      title: 'Web Design in Villavicencio, Colombia | OscarDev',
       description: 'Web developer in Villavicencio (Meta, Colombia): websites, online stores and booking systems. Local cases: Upsteppers, La Locura Bar and Óptica Alemania',
       eyebrow: 'Villavicencio, Colombia', h1a: 'Web design', h1b: 'in Villavicencio',
       lead: 'I’m Oscar García, a web developer based in Villavicencio. I build websites, online stores and booking systems for businesses in Meta and across Colombia.',

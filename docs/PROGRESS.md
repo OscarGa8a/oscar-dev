@@ -65,6 +65,48 @@ Rama: `feat/home-v2`. No se hace merge a main ni se despliega a producción desd
 - Abogados: dominio correcto abogadosbucaramanga.com (abogadoslobo.com es el sitio viejo del cliente).
 
 ### Dudas abiertas
-- Rol del hermano en ConectaPlay.
-- Condiciones de pago y rondas de revisión de landing.
-- Detalles de Fuera del Molde y La Locura.
+
+
+
+
+> Dudas de Fase 2 resueltas en Fase 3: rol del hermano en ConectaPlay, condiciones de pago, La Locura y Fuera del Molde.
+
+## Fase 3: auditoría de Marketing (rama feat/home-v2)
+
+### Hecho
+- Schema ProfessionalService:
+  - horario lunes a sábado 8:00–18:00 y `telephone` +57 318 020 9851;
+  - areaServed: Villavicencio, Colombia y EE. UU.;
+  - `founder` y `knowsLanguage` en lugar de `provider` e `inLanguage`.
+- sameAs y footer con Instagram, TikTok, Facebook, LinkedIn y GitHub.
+- Footer con NAP: WhatsApp, horario y ciudad.
+- Marca unificada como «OscarDev».
+- hreflang `es` en lugar de `es-CO`, también en el sitemap.
+- Concepto lume con ciudad (Bogotá).
+- Nuevas páginas con SEO por página, en el sitemap con hreflang:
+  - /servicios/ y 6 páginas de servicio, en ES y EN (/en/services/…);
+  - /contacto/ y /en/contact/.
+- Header, footer y servicios de la home enlazan a las nuevas páginas.
+- «Desde 2020 / más de 5 años», también en llms.txt y llms-full.txt.
+- llms.txt y llms-full.txt reescritos: NAP, servicios, casos (URL del caso → sitio del cliente), productos propios y conceptos.
+- ConectaPlay: Oscar es el desarrollador e hizo toda la programación; su hermano es socio e inversionista y pagó las herramientas de IA.
+- Fuera del Molde eliminado por completo: datos, imagen, borrador del caso, sitemap y llms. En Sobre mí solo aparece «Frontend & Mobile en Grupo Tecnológico CATO (2020-2025)», en ES y EN.
+- La Locura Bar: caso ampliado con lo visible en lalocurabar.com.co:
+  - horario y planes;
+  - carta con precios y calculadora de cuenta;
+  - reservas por WhatsApp;
+  - versión en inglés.
+  No incluye métricas.
+- /precios: bloque «Pagas cuando ves tu web terminada» (pago al entregar; en algunos proyectos, en dos partes a 1–2 meses). Se añadió a la FAQ en ES y EN. No se indican rondas de revisión.
+- Lighthouse (móvil y escritorio) en servicios, contacto y sus versiones EN: 100/100/100/100.
+
+### Decisiones
+- 6 servicios según plan-v2.
+- La página de contacto no tiene formulario porque no hay backend y no promete tiempo de respuesta.
+- H1 de la home: la auditoría no propone otro; ya coincide con plan-v2.
+
+### Dudas abiertas
+- Formulario de contacto y backend.
+- Tiempo de respuesta (SLA) a publicar.
+- Perfil de Google Business para sameAs.
+- Foto real de Oscar.

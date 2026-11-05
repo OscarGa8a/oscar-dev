@@ -3,7 +3,9 @@ import { Icon } from 'astro-icon/components';
 import type { Locale } from '../../i18n/index';
 import { homeCopy } from '../../i18n/home';
 import Heading from './Heading.astro';
-import { whatsappUrl } from '../../config/site';
+import { services, serviceUrl } from '../../i18n/services';
+const map: Record<string, string> = { 'sitios-web': 'pymes', 'tiendas-online': 'tiendas', aplicaciones: 'apps', plataformas: 'software' };
+const hrefFor = (id: string) => serviceUrl(services.find((s) => s.key === map[id])!, lang);
 const { lang } = Astro.props as { lang: Locale };
 const c = homeCopy[lang].services;
 ---
@@ -16,12 +18,12 @@ const c = homeCopy[lang].services;
     <ol class="svc-list">
       {c.items.map((s, i) => (
         <li class="svc-row" id={`servicio-${s.id}`}>
-          <a href={whatsappUrl(lang)} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click" data-event-location={`services_${s.id}`}>
+          <a href={hrefFor(s.id)} data-event="service_click" data-event-location={`services_${s.id}`}>
             <span class="num" aria-hidden="true">0{i + 1}</span>
             <h3>{s.title}</h3>
             <p>{s.desc}</p>
             <span class="round" aria-hidden="true"><Icon name="ph:arrow-up-right" /></span>
-            <span class="sr-only">— {c.linkLabel} {s.title.toLowerCase()} (WhatsApp)</span>
+            
           </a>
         </li>
       ))}

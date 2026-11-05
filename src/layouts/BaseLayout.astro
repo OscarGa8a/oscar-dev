@@ -23,8 +23,8 @@ const {
   lang,
   noindex = false,
   title = lang === 'es'
-    ? 'Desarrollo web en Villavicencio y Colombia | Oscar Dev'
-    : 'Web Developer for Small Businesses | Oscar Dev',
+    ? 'Desarrollo web en Villavicencio y Colombia | OscarDev'
+    : 'Web Developer for Small Businesses | OscarDev',
   description = lang === 'es'
     ? 'Páginas web, tiendas online y sistemas de reservas a medida para pymes en Villavicencio, Colombia y negocios latinos en EE. UU.'
     : 'Websites, online stores and booking systems for small businesses in the US and Colombia. Bilingual. Landing pages from USD 200.',
@@ -39,8 +39,8 @@ const esHref = pair ? new URL(pair.es, siteUrl).href : undefined;
 const enHref = pair ? new URL(pair.en, siteUrl).href : undefined;
 const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/en/';
 const ogAlt = lang === 'es'
-  ? 'Oscar Dev — soluciones digitales para negocios reales'
-  : 'Oscar Dev — digital solutions for real businesses';
+  ? 'OscarDev — soluciones digitales para negocios reales'
+  : 'OscarDev — digital solutions for real businesses';
 
 const services = lang === 'es'
   ? ['Sitios web profesionales', 'Tiendas online', 'Aplicaciones web y móviles', 'Plataformas a medida']
@@ -90,9 +90,15 @@ const jsonLd = {
       url: siteUrl,
       image: ogImage,
       description,
-      provider: { '@id': `${siteUrl}/#person` },
-      inLanguage: [lang, lang === 'es' ? 'en' : 'es'],
-      areaServed: ['CO', 'US'],
+      founder: { '@id': `${siteUrl}/#person` },
+      knowsLanguage: ['es', 'en'],
+      telephone: author.phone,
+      areaServed: [
+        { '@type': 'City', name: 'Villavicencio' },
+        { '@type': 'Country', name: 'Colombia' },
+        { '@type': 'Country', name: 'United States' },
+      ],
+      sameAs: [contact.linkedin, contact.github, contact.instagram, contact.tiktok, contact.facebook],
       priceRange: '$$',
       currenciesAccepted: 'COP, USD',
       paymentAccepted: 'Transferencia bancaria, Nequi, Daviplata, Bre-B, Wire transfer',
@@ -101,8 +107,8 @@ const jsonLd = {
       openingHoursSpecification: [
         {
           '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-          opens: '09:00',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+          opens: '08:00',
           closes: '18:00',
         },
       ],
@@ -173,7 +179,7 @@ const jsonLd = {
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogAlt} />
     {pair && !noindex && <>
-      <link rel="alternate" hreflang="es-CO" href={esHref} />
+      <link rel="alternate" hreflang="es" href={esHref} />
       <link rel="alternate" hreflang="en" href={enHref} />
       <link rel="alternate" hreflang="x-default" href={esHref} />
     </>}

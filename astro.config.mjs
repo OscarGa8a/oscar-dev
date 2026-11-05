@@ -28,7 +28,7 @@ export default defineConfig({
         const pair = pairFor(item.url);
         if (pair) {
           item.links = [
-            { lang: 'es-CO', url: SITE + pair.es },
+            { lang: 'es', url: SITE + pair.es },
             { lang: 'en', url: SITE + pair.en },
             { lang: 'x-default', url: SITE + pair.es },
           ];

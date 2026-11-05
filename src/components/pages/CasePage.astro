@@ -20,7 +20,7 @@ const facts: [string, string][] = [
 const more = publishedProjects.filter((x) => x.slug !== slug && x.hasCase).slice(0, 3);
 const schema = [{
   '@type': 'CreativeWork', '@id': new URL(Astro.url.pathname, site).href + '#case',
-  name: p.title, headline: `${c.h1a} ${c.h1b}`, description: c.description, inLanguage: lang === 'es' ? 'es-CO' : 'en',
+  name: p.title, headline: `${c.h1a} ${c.h1b}`, description: c.description, inLanguage: lang === 'es' ? 'es' : 'en',
   url: new URL(Astro.url.pathname, site).href, creator: { '@id': `${site}/#person` }, ...(p.externalUrl ? { about: { '@type': 'WebSite', name: p.title, url: p.externalUrl } } : {}),
 }];
 ---

@@ -1,0 +1,41 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { Locale } from '../../i18n/index';
+import { services, servicesIndex, serviceUrl } from '../../i18n/services';
+import PageHero from './PageHero.astro';
+import PageShell from './PageShell.astro';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = servicesIndex[lang];
+const site = 'https://oscardev.co';
+const schema = [{
+  '@type': 'ItemList', name: t.title, url: new URL(Astro.url.pathname, site).href,
+  itemListElement: services.map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: s[lang].eyebrow, url: site + serviceUrl(s, lang) })),
+}];
+const pricingHref = lang === 'es' ? '/precios/' : '/en/pricing/';
+---
+<PageShell lang={lang} title={t.title} description={t.description} crumbs={[{ label: t.eyebrow }]} schema={schema}>
+  <PageHero lang={lang} eyebrow={t.eyebrow} h1a={t.h1a} h1b={t.h1b} lead={t.lead} crumbs={[{ href: lang === 'es' ? '/' : '/en/', label: lang === 'es' ? 'Inicio' : 'Home' }, { label: t.eyebrow }]} location="services_hero" />
+  <section class="section surface-paper" aria-label={t.eyebrow}>
+    <div class="wrap">
+      <ol class="svc-list">
+        {services.map((s, i) => (
+          <li class="svc-row">
+            <a href={serviceUrl(s, lang)}>
+              <span class="num" aria-hidden="true">0{i + 1}</span>
+              <h2 class="h3">{s[lang].eyebrow}</h2>
+              <p>{s[lang].card}</p>
+              <span class="round" aria-hidden="true"><Icon name="ph:arrow-right" /></span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+  <section class="section surface-dark" aria-label={t.pricingLink}>
+    <div class="wrap price-band">
+      <p>{t.price}</p>
+      <a class="btn btn-orange" href={pricingHref}>{t.pricingLink}<Icon name="ph:arrow-right" aria-hidden="true" /></a>
+    </div>
+  </section>
+</PageShell>

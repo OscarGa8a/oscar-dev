@@ -10,10 +10,10 @@ const c = homeCopy[lang].nav;
 const base = homeBase(lang);
 const links = [
   { href: lang === 'es' ? '/proyectos/' : '/en/projects/', label: c.projects },
-  { href: `${base}#servicios`, label: c.services },
+  { href: lang === 'es' ? '/servicios/' : '/en/services/', label: c.services },
   { href: lang === 'es' ? '/precios/' : '/en/pricing/', label: c.pricing },
   { href: `${base}#sobre-mi`, label: c.about },
-  { href: '#contacto', label: c.contact },
+  { href: lang === 'es' ? '/contacto/' : '/en/contact/', label: c.contact },
 ];
 const pair = alternatesFor(Astro.url.pathname);
 const other = lang === 'es'

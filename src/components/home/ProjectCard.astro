@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import type { Locale } from '../../i18n/index';
+import { type PortfolioProject, projectHref, isExternal, kindLabel } from '../../data/projects';
+interface Props { p: PortfolioProject; lang: Locale; location: string; sizes?: string; headingLevel?: 'h2' | 'h3' }
+const { p, lang, location, sizes = '(min-width:1024px) 28vw, (min-width:640px) 46vw, 86vw', headingLevel = 'h3' } = Astro.props;
+const ext = isExternal(p);
+const H = headingLevel;
+---
+<a class="card" href={projectHref(p, lang)} {...(ext ? { target: '_blank', rel: 'noopener noreferrer' } : {})} data-event="project_link_click" data-event-location={location}>
+  <div class="img"><Image src={p.cover} alt={p.coverAlt[lang]} widths={[480, 720, 960]} sizes={sizes} loading="lazy" /></div>
+  <div class="body">
+    <span class="type">{p.type[lang]}</span>
+    <H>{p.title}</H>
+    <span class="round"><Icon name={ext ? 'ph:arrow-up-right' : 'ph:arrow-right'} aria-hidden="true" /></span>
+    <p>{p.description[lang]}</p>
+    <span class="kind">{kindLabel[p.kind][lang]} · {p.sector[lang]}</span>
+  </div>
+</a>

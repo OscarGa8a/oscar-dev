@@ -7,7 +7,7 @@ export function whatsappUrl(_lang?: 'es' | 'en', _context = 'portfolio') {
 }
 
 export const contact = {
-  email: 'mailto:oscar.garcia.development@gmail.com',
+  email: 'mailto:hola@oscardev.co',
   linkedin: 'https://www.linkedin.com/in/oscar-garcia-dev/',
   github: 'https://github.com/OscarGa8a',
   instagram: 'https://www.instagram.com/oscargarcia.dev/',
@@ -19,7 +19,7 @@ export const author = {
   name: 'Oscar García',
   brand: 'Oscar Dev',
   jobTitle: { es: 'Desarrollador de soluciones digitales', en: 'Digital Solutions Developer' },
-  email: 'oscar.garcia.development@gmail.com',
+  email: 'hola@oscardev.co',
   phone: '+573180209851',
   countryCode: 'CO',
   experienceSince: '2019',

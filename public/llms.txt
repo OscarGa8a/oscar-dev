@@ -23,7 +23,7 @@
 - [Instagram](https://www.instagram.com/oscargarcia.dev/): Contenido audiovisual sobre desarrollo y proyectos.
 - [TikTok](https://www.tiktok.com/@oscargarcia.dev): Divulgación tecnológica y buenas prácticas de ingeniería.
 - [Facebook](https://www.facebook.com/oscardev.co): Página oficial de Oscar Dev.
-- [Correo Electrónico](mailto:oscar.garcia.development@gmail.com): Contacto vía email corporativo.
+- [Correo Electrónico](mailto:hola@oscardev.co): Contacto vía email corporativo.
 
 ## Documentación y Enlaces Opcionales
 

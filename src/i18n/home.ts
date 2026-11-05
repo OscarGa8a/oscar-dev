@@ -3,17 +3,18 @@ import type { Locale } from './index';
 /** Home V2 copy (docs/page_blueprint.md). Serif-italic accent = the `accent` part of each heading. */
 const es = {
   nav: {
-    projects: 'Proyectos', services: 'Servicios', about: 'Sobre mí', contact: 'Contacto',
+    projects: 'Proyectos', services: 'Servicios', pricing: 'Precios', about: 'Sobre mí', contact: 'Contacto',
     cta: 'Cuéntame tu proyecto', menu: 'Menú', open: 'Abrir menú', close: 'Cerrar menú',
     home: 'Oscar Dev — inicio', primary: 'Navegación principal',
   },
   hero: {
     eyebrow: 'Desarrollo web · Aplicaciones · Soluciones digitales',
-    h1a: 'Ideas que', h1b: 'funcionan.',
-    desc: 'Webs y plataformas a medida para pymes en Villavicencio, Colombia y negocios latinos en EE. UU.',
+    h1a: 'Webs y plataformas a medida para negocios que', h1b: 'quieren crecer',
+    tagline: 'Ideas que funcionan.',
+    desc: 'Para pymes en Villavicencio, toda Colombia y negocios latinos en EE. UU.',
     cta: 'Cuéntame tu proyecto', secondary: 'Ver proyectos', scroll: 'Scroll para explorar',
     strip: 'Proyectos destacados', all: 'Todos los proyectos', allShort: 'Ver todos',
-    portraitPending: 'Retrato de Oscar — foto real pendiente',
+    portraitPending: 'Oscar García, desarrollador web',
   },
   projects: {
     eyebrow: 'Proyectos destacados',
@@ -95,7 +96,7 @@ const es = {
     cta: 'Cuéntame tu proyecto', email: 'Enviar un correo',
   },
   footer: {
-    tagline: 'Soluciones digitales', home: 'Inicio', faq: 'Preguntas frecuentes',
+    tagline: 'Soluciones digitales', home: 'Inicio', faq: 'Preguntas frecuentes', local: 'Diseño web en Villavicencio', usa: 'Negocios latinos en EE. UU.',
     made: 'Desarrollado con pasión desde Colombia', rights: 'Todos los derechos reservados.',
     social: 'Redes sociales',
   },
@@ -105,17 +106,18 @@ type HomeCopy = typeof es;
 
 const en: HomeCopy = {
   nav: {
-    projects: 'Projects', services: 'Services', about: 'About', contact: 'Contact',
+    projects: 'Projects', services: 'Services', pricing: 'Pricing', about: 'About', contact: 'Contact',
     cta: 'Tell me about your project', menu: 'Menu', open: 'Open menu', close: 'Close menu',
     home: 'Oscar Dev — home', primary: 'Main navigation',
   },
   hero: {
     eyebrow: 'Web development · Apps · Digital solutions',
-    h1a: 'Ideas that', h1b: 'work.',
-    desc: 'Custom websites and platforms for small businesses in the US and Colombia. Bilingual, English and Spanish.',
+    h1a: 'Custom websites and platforms for', h1b: 'growing businesses',
+    tagline: 'Ideas that work.',
+    desc: 'For small businesses in the US and Colombia. Bilingual, English and Spanish.',
     cta: 'Tell me about your project', secondary: 'See projects', scroll: 'Scroll to explore',
     strip: 'Featured projects', all: 'All projects', allShort: 'See all',
-    portraitPending: 'Portrait of Oscar — real photo pending',
+    portraitPending: 'Oscar García, web developer',
   },
   projects: {
     eyebrow: 'Featured projects',
@@ -197,7 +199,7 @@ const en: HomeCopy = {
     cta: 'Tell me about your project', email: 'Send an email',
   },
   footer: {
-    tagline: 'Digital solutions', home: 'Home', faq: 'FAQ',
+    tagline: 'Digital solutions', home: 'Home', faq: 'FAQ', local: 'Web design in Villavicencio', usa: 'Hispanic businesses in the US',
     made: 'Built with passion in Colombia', rights: 'All rights reserved.',
     social: 'Social media',
   },

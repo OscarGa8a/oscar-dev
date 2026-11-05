@@ -1,15 +1,23 @@
 ---
+import interTightWoff2 from '@fontsource-variable/inter-tight/files/inter-tight-latin-wght-normal.woff2?url';
+import serifItalicWoff2 from '@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2?url';
 import '../styles/global.css';
 import RevealObserver from '../components/RevealObserver.astro';
 import Analytics from '../components/Analytics.astro';
 import { siteUrl, author, contact } from '../config/site';
 import { homeCopy } from '../i18n/home';
+import { alternatesFor } from '../config/routes';
 
 interface Props {
   lang: 'es' | 'en';
   title?: string;
   description?: string;
   noindex?: boolean;
+  /** Extra JSON-LD nodes (BreadcrumbList, CreativeWork, OfferCatalog…) appended to the @graph. */
+  schema?: Record<string, unknown>[];
+  /** FAQ for FAQPage schema. Defaults to the home FAQ on the home page only. */
+  faq?: { q: string; a: string }[];
+  ogImage?: string;
 }
 const {
   lang,
@@ -25,9 +33,11 @@ const {
 // Absolute URLs (canonical, OG) derived from the single siteUrl source.
 const gtmId = import.meta.env.PUBLIC_GTM_ID || 'GTM-5L5Z4KV6';
 const canonical = new URL(Astro.url.pathname, siteUrl).href;
-const ogImage = new URL('/og-image.png', siteUrl).href;
-const esHref = new URL('/', siteUrl).href;
-const enHref = new URL('/en/', siteUrl).href;
+const ogImage = new URL(Astro.props.ogImage ?? '/og-image.png', siteUrl).href;
+const pair = alternatesFor(Astro.url.pathname);
+const esHref = pair ? new URL(pair.es, siteUrl).href : undefined;
+const enHref = pair ? new URL(pair.en, siteUrl).href : undefined;
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/en/';
 const ogAlt = lang === 'es'
   ? 'Oscar Dev — soluciones digitales para negocios reales'
   : 'Oscar Dev — digital solutions for real businesses';
@@ -36,7 +46,7 @@ const services = lang === 'es'
   ? ['Sitios web profesionales', 'Tiendas online', 'Aplicaciones web y móviles', 'Plataformas a medida']
   : ['Professional websites', 'Online stores', 'Web and mobile apps', 'Custom platforms'];
 
-const faqs = homeCopy[lang].faq.items.map((f) => ({ q: f.q, a: f.a }));
+const faqs = Astro.props.faq ?? (isHome ? homeCopy[lang].faq.items.map((f) => ({ q: f.q, a: f.a })) : []);
 
 // Structured data: Entity graph + FAQPage for traditional and AI search (Google AI Overviews, Perplexity, ChatGPT).
 const jsonLd = {
@@ -85,7 +95,9 @@ const jsonLd = {
       areaServed: ['CO', 'US'],
       priceRange: '$$',
       currenciesAccepted: 'COP, USD',
-      paymentAccepted: 'Transferencia bancaria, Pasarela de pago, Stripe, Wire transfer',
+      paymentAccepted: 'Transferencia bancaria, Nequi, Daviplata, Bre-B, Wire transfer',
+      address: { '@type': 'PostalAddress', addressLocality: 'Villavicencio', addressRegion: 'Meta', addressCountry: 'CO' },
+      email: author.email,
       openingHoursSpecification: [
         {
           '@type': 'OpeningHoursSpecification',
@@ -107,7 +119,8 @@ const jsonLd = {
       url: siteUrl,
       inLanguage: ['es', 'en'],
     },
-    {
+    ...(Astro.props.schema ?? []),
+    ...(faqs.length === 0 ? [] : [{
       '@type': 'FAQPage',
       '@id': `${canonical}#faq`,
       mainEntity: faqs.map((faq) => ({
@@ -118,7 +131,7 @@ const jsonLd = {
           text: faq.a,
         },
       })),
-    },
+    }]),
   ],
 };
 ---
@@ -140,6 +153,8 @@ const jsonLd = {
     <link rel="manifest" href="/site.webmanifest" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="preload" href={interTightWoff2} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={serifItalicWoff2} as="font" type="font/woff2" crossorigin />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -157,9 +172,11 @@ const jsonLd = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogAlt} />
-    <link rel="alternate" hreflang="es" href={esHref} />
-    <link rel="alternate" hreflang="en" href={enHref} />
-    <link rel="alternate" hreflang="x-default" href={esHref} />
+    {pair && !noindex && <>
+      <link rel="alternate" hreflang="es-CO" href={esHref} />
+      <link rel="alternate" hreflang="en" href={enHref} />
+      <link rel="alternate" hreflang="x-default" href={esHref} />
+    </>}
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
     {gtmId && (
       <!-- Google Tag Manager (High-Performance Deferred Loading) -->

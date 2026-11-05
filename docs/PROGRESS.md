@@ -43,3 +43,28 @@ Rama: `feat/home-v2`. No se hace merge a main ni se despliega a producción desd
 - ¿Se puede publicar Statum u Óptica Alemania (demo)? ¿Hay evidencia?
 - ¿Pley o ConectaPlay? Hoy está ConectaPlay como producto propio.
 - ¿Deseas páginas de caso por proyecto?
+
+## Fase 2 (2026-11-04)
+
+### Hecho
+- H1 nuevo «Webs y plataformas a medida para negocios que quieren crecer» + tagline «Ideas que funcionan.» (ES/EN).
+- Componente `Portrait` (placeholder elegante; pasar `src` para foto real).
+- Páginas: /proyectos/ (Clientes / Productos propios / Conceptos), casos /proyectos/[slug]/ (ES/EN), /precios/, /diseno-web-villavicencio/, /paginas-web-negocios-latinos-usa/ y equivalentes EN.
+- Duarte's publicado como cliente web (marketing/contenido con aliado), sin precio.
+- Email hola@oscardev.co; sitemap con hreflang es-CO/en/x-default; schema por página (CreativeWork, OfferCatalog, Service, BreadcrumbList, FAQPage).
+- Eliminados componentes V1 y src/i18n/es.ts, en.ts.
+- Preload de fuentes woff2 (CLS móvil en casos 0.23 → 0).
+- Lighthouse móvil: home 100/100/100/100, caso Óptica 96/100/100/100, caso Duarte's 97/100/100/100; resto 100s.
+
+### Pendiente
+- Foto real de Oscar (Portrait `src`).
+- Merge a main / producción (lo decide Oscar).
+
+### Decisiones
+- Sin métricas ni testimonios inventados; conceptos con badge «Concepto» y rel=nofollow.
+- Abogados: dominio correcto abogadosbucaramanga.com (abogadoslobo.com es el sitio viejo del cliente).
+
+### Dudas abiertas
+- Rol del hermano en ConectaPlay.
+- Condiciones de pago y rondas de revisión de landing.
+- Detalles de Fuera del Molde y La Locura.

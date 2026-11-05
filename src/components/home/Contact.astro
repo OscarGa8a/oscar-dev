@@ -4,7 +4,7 @@ import type { Locale } from '../../i18n/index';
 import { homeCopy, homeBase } from '../../i18n/home';
 import Heading from './Heading.astro';
 import { whatsappUrl, contact } from '../../config/site';
-const { lang } = Astro.props as { lang: Locale };
+const { lang, n: num = '09' } = Astro.props as { lang: Locale; n?: string };
 const c = homeCopy[lang].contact;
 const f = homeCopy[lang].footer;
 const n = homeCopy[lang].nav;
@@ -22,7 +22,7 @@ const socials = [
   <span class="contact-ring" aria-hidden="true"></span><span class="contact-art" aria-hidden="true"></span>
   <div class="wrap contact">
     <div>
-      <Heading n="09" eyebrow={c.eyebrow} a={c.h2a} b={c.h2b} id="contact-title" />
+      <Heading n={num} eyebrow={c.eyebrow} a={c.h2a} b={c.h2b} id="contact-title" />
       <p class="lead" style="margin-top:1.75rem">{c.body}</p>
       <div class="ctas">
         <a class="btn btn-ink" href={whatsappUrl(lang)} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click" data-event-location="final_cta"><Icon name="ph:whatsapp-logo" aria-hidden="true" />{c.cta}</a>
@@ -36,12 +36,14 @@ const socials = [
     <div class="top">
       <div class="brand"><a href={base} aria-label={n.home}><img src="/logo-oscar-dev.webp" alt="Oscar Dev" width="600" height="108" loading="lazy" /></a><p>{f.tagline}</p></div>
       <nav aria-label="Footer"><ul>
-        <li><a href={`${base}#inicio`}>{f.home}</a></li>
-        <li><a href={`${base}#proyectos`}>{n.projects}</a></li>
+        <li><a href={base}>{f.home}</a></li>
+        <li><a href={lang === 'es' ? '/proyectos/' : '/en/projects/'}>{n.projects}</a></li>
         <li><a href={`${base}#servicios`}>{n.services}</a></li>
-        <li><a href={`${base}#sobre-mi`}>{n.about}</a></li>
+        <li><a href={lang === 'es' ? '/precios/' : '/en/pricing/'}>{n.pricing}</a></li>
+        <li><a href={lang === 'es' ? '/diseno-web-villavicencio/' : '/en/web-design-villavicencio/'}>{f.local}</a></li>
+        <li><a href={lang === 'es' ? '/paginas-web-negocios-latinos-usa/' : '/en/hispanic-business-websites/'}>{f.usa}</a></li>
         <li><a href={`${base}#preguntas`}>{f.faq}</a></li>
-        <li><a href={`${base}#contacto`}>{n.contact}</a></li>
+        <li><a href="mailto:hola@oscardev.co" data-event="email_click" data-event-location="footer">hola@oscardev.co</a></li>
       </ul></nav>
       <ul class="socials" aria-label={f.social}>
         {socials.map((s) => <li><a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} data-event={s.event ?? 'social_click'} data-event-location="footer"><Icon name={s.icon} aria-hidden="true" /></a></li>)}

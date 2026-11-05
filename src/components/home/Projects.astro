@@ -1,9 +1,9 @@
 ---
-import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 import type { Locale } from '../../i18n/index';
 import { homeCopy } from '../../i18n/home';
-import { publishedProjects, projectHref, kindLabel } from '../../data/projects';
+import { publishedProjects, projectsIndexUrl } from '../../data/projects';
+import ProjectCard from './ProjectCard.astro';
 import Heading from './Heading.astro';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
@@ -24,16 +24,7 @@ const c = homeCopy[lang].projects;
     <ul class="track" id="proj-track" tabindex="0">
       {publishedProjects.map((p) => (
         <li>
-          <a class="card" href={projectHref(p)} target="_blank" rel="noopener noreferrer" data-event="project_link_click" data-event-location="projects_carousel">
-            <div class="img"><Image src={p.cover!} alt={p.coverAlt![lang]} widths={[480, 720, 960]} sizes="(min-width:1024px) 28vw, (min-width:640px) 46vw, 86vw" loading="lazy" /></div>
-            <div class="body">
-              <span class="type">{p.type[lang]}</span>
-              <h3>{p.title}</h3>
-              <span class="round"><Icon name="ph:arrow-up-right" aria-hidden="true" /></span>
-              <p>{p.description[lang]}</p>
-              <span class="kind">{kindLabel[p.kind][lang]} · {p.sector[lang]}</span>
-            </div>
-          </a>
+          <ProjectCard p={p} lang={lang} location="projects_carousel" />
         </li>
       ))}
     </ul>
@@ -41,6 +32,7 @@ const c = homeCopy[lang].projects;
   <div class="wrap proj-foot">
     <div class="progress" role="presentation"><i id="proj-progress"></i></div>
     <span class="swipe" aria-hidden="true">{c.swipe}</span>
+    <a class="text-link proj-all" href={projectsIndexUrl(lang)}>{c.all}<Icon name="ph:arrow-right" aria-hidden="true" /></a>
   </div>
 </section>
 <script>

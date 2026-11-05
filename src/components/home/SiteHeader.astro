@@ -3,17 +3,22 @@ import { Icon } from 'astro-icon/components';
 import type { Locale } from '../../i18n/index';
 import { homeCopy, homeBase } from '../../i18n/home';
 import { whatsappUrl } from '../../config/site';
+import { alternatesFor } from '../../config/routes';
 interface Props { lang: Locale; solid?: boolean }
 const { lang, solid = false } = Astro.props;
 const c = homeCopy[lang].nav;
 const base = homeBase(lang);
 const links = [
-  { href: `${base}#proyectos`, label: c.projects },
+  { href: lang === 'es' ? '/proyectos/' : '/en/projects/', label: c.projects },
   { href: `${base}#servicios`, label: c.services },
+  { href: lang === 'es' ? '/precios/' : '/en/pricing/', label: c.pricing },
   { href: `${base}#sobre-mi`, label: c.about },
-  { href: `${base}#contacto`, label: c.contact },
+  { href: '#contacto', label: c.contact },
 ];
-const other = lang === 'es' ? { href: '/en/', label: 'EN', aria: 'EN — English version', hl: 'en' } : { href: '/', label: 'ES', aria: 'ES — Versión en español', hl: 'es' };
+const pair = alternatesFor(Astro.url.pathname);
+const other = lang === 'es'
+  ? { href: pair?.en ?? '/en/', label: 'EN', aria: 'EN — English version', hl: 'en' }
+  : { href: pair?.es ?? '/', label: 'ES', aria: 'ES — Versión en español', hl: 'es' };
 ---
 <header class:list={['site-header', { 'is-solid': solid }]} id="site-header" data-solid={solid ? 'always' : undefined}>
   <div class="wrap bar">

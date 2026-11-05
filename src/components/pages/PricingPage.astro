@@ -1,0 +1,61 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { Locale } from '../../i18n/index';
+import { pricingPage } from '../../i18n/pages';
+import { whatsappUrl } from '../../config/site';
+import Heading from '../home/Heading.astro';
+import PageHero from './PageHero.astro';
+import PageShell from './PageShell.astro';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = pricingPage[lang];
+const site = 'https://oscardev.co';
+const schema = [{
+  '@type': 'OfferCatalog', name: t.title, url: new URL(Astro.url.pathname, site).href,
+  itemListElement: [
+    { '@type': 'Offer', name: 'Landing page', seller: { '@id': `${site}/#service` }, priceSpecification: { '@type': 'PriceSpecification', minPrice: 600000, priceCurrency: 'COP' }, description: lang === 'es' ? 'Con dominio y hosting del cliente' : 'With the client’s own domain and hosting' },
+    { '@type': 'Offer', name: 'Landing page', seller: { '@id': `${site}/#service` }, priceSpecification: { '@type': 'PriceSpecification', minPrice: 200, priceCurrency: 'USD' } },
+  ],
+}];
+---
+<PageShell lang={lang} title={t.title} description={t.description} crumbs={[{ label: t.eyebrow }]} schema={schema} faq={[...t.faq]}>
+  <PageHero lang={lang} eyebrow={t.eyebrow} h1a={t.h1a} h1b={t.h1b} lead={t.lead} crumbs={[{ href: lang === 'es' ? '/' : '/en/', label: lang === 'es' ? 'Inicio' : 'Home' }, { label: t.eyebrow }]} location="pricing_hero" />
+  <section class="section surface-paper" aria-labelledby="plans-title">
+    <div class="wrap">
+      <Heading n="01" eyebrow={t.plansH.eyebrow} a={t.plansH.a} b={t.plansH.b} id="plans-title" />
+      <ul class="plans" role="list">
+        {t.plans.map((p) => (
+          <li class:list={['plan', { featured: 'featured' in p && p.featured }]}>
+            <h3>{p.name}</h3>
+            <p class="price">{p.price}</p>
+            {'priceNote' in p && <p class="price-note">{p.priceNote}</p>}
+            <dl><div><dt>{t.cols.ideal}</dt><dd>{p.ideal}</dd></div><div><dt>{t.cols.time}</dt><dd>{p.time}</dd></div></dl>
+          </li>
+        ))}
+      </ul>
+      <p class="fine">{t.timeNote}</p>
+    </div>
+  </section>
+  <section class="section surface-ivory" aria-labelledby="inc-title">
+    <div class="wrap inc-grid">
+      <div>
+        <h2 class="h3" id="inc-title">{t.incH}</h2>
+        <ul class="ticks">{t.includes.map((s) => <li><Icon name="ph:check-circle" aria-hidden="true" />{s}</li>)}</ul>
+      </div>
+      <div>
+        <h2 class="h3">{t.excH}</h2>
+        <ul class="ticks muted">{t.excludes.map((s) => <li><Icon name="ph:minus-circle" aria-hidden="true" />{s}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+  <section class="section surface-paper" aria-labelledby="pfaq-title">
+    <div class="wrap">
+      <Heading n="02" eyebrow={t.faqH.eyebrow} a={t.faqH.a} b={t.faqH.b} id="pfaq-title" />
+      <div class="qa">{t.faq.map((f) => <details><summary>{f.q}<Icon name="ph:plus" aria-hidden="true" /></summary><p>{f.a}</p></details>)}</div>
+      <div class="case-cta">
+        <p><strong>{t.cta.q}</strong> {t.cta.body}</p>
+        <a class="btn btn-ink" href={whatsappUrl(lang)} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click" data-event-location="pricing_cta"><Icon name="ph:whatsapp-logo" aria-hidden="true" />{lang === 'es' ? 'Agendar diagnóstico gratis' : 'Book a free call'}</a>
+      </div>
+    </div>
+  </section>
+</PageShell>

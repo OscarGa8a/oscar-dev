@@ -1,0 +1,166 @@
+import type { Locale } from './index';
+
+/** Copy for the Phase-2 subpages. Source: /workspace/oscardev/plan-v2.md §1–2, §5–7 and portafolio.md. No invented metrics or testimonials. */
+
+export const crumbHome: Record<Locale, string> = { es: 'Inicio', en: 'Home' };
+
+export const projectsPage = {
+  es: {
+    title: 'Proyectos y casos de estudio | Oscar Dev',
+    description: 'Webs, tiendas y plataformas reales en Colombia y EE. UU.: contexto, reto, solución y resultado de cada proyecto.',
+    eyebrow: 'Portafolio', h1a: 'Proyectos reales,', h1b: 'decisiones explicadas',
+    lead: 'Clientes reales en Colombia y EE. UU., productos propios y conceptos de diseño. Cada uno marcado por lo que es.',
+    clients: { eyebrow: 'Clientes', h2a: 'Webs para', h2b: 'negocios reales', lead: 'Sitios en producción para clientes. Abre el caso para ver contexto, reto y solución.' },
+    own: { eyebrow: 'Productos propios', h2a: 'Lo que construyo', h2b: 'y opero', lead: 'Productos de OscarDev: los diseño, los programo y los mantengo en operación.' },
+    concepts: { eyebrow: 'Conceptos', h2a: 'Conceptos', h2b: 'de diseño', lead: 'Proyectos de diseño no comisionados para mostrar cómo resolvería la web de distintos rubros. No son los sitios oficiales de ningún negocio.', label: 'Concepto', note: 'Proyecto de diseño no comisionado', shows: 'Qué muestra', visit: 'Ver concepto' },
+  },
+  en: {
+    title: 'Projects & Case Studies | Oscar Dev',
+    description: 'Real websites, stores and platforms in Colombia and the US: context, challenge, solution and result for each project.',
+    eyebrow: 'Portfolio', h1a: 'Real projects,', h1b: 'decisions explained',
+    lead: 'Real clients in Colombia and the US, our own products and design concepts. Each one labeled for what it is.',
+    clients: { eyebrow: 'Clients', h2a: 'Websites for', h2b: 'real businesses', lead: 'Live sites built for clients. Open each case for the context, challenge and solution.' },
+    own: { eyebrow: 'Own products', h2a: 'What I build', h2b: 'and run', lead: 'OscarDev products: designed, coded and operated in-house.' },
+    concepts: { eyebrow: 'Concepts', h2a: 'Design', h2b: 'concepts', lead: 'Uncommissioned design projects that show how I would approach websites for different industries. They are not the official site of any business.', label: 'Concept', note: 'Uncommissioned design project', shows: 'What it shows', visit: 'View concept' },
+  },
+} as const;
+
+export const pricingPage = {
+  es: {
+    title: 'Precios de páginas web en Colombia | Oscar Dev',
+    description: 'Landing page desde COP 600.000 (o USD 200). Webs, tiendas, apps y reservas: cotización según alcance, sin costos ocultos.',
+    eyebrow: 'Precios', h1a: 'Precios claros,', h1b: 'alcance claro',
+    lead: 'Una landing page profesional desde COP 600.000 si ya tienes dominio y hosting (o desde USD 200 para clientes en EE. UU.). Para webs, tiendas, apps y plataformas, te doy una cotización cerrada según lo que tu negocio realmente necesita.',
+    plansH: { eyebrow: 'Planes', a: 'Qué cuesta', b: 'cada cosa' },
+    cols: { service: 'Servicio', price: 'Precio', ideal: 'Ideal para', time: 'Entrega típica' },
+    plans: [
+      { name: 'Landing page', price: 'Desde COP 600.000', priceNote: 'con tu dominio y hosting · desde USD 200', ideal: 'Un servicio, una campaña o un negocio que empieza', time: '2–4 semanas', featured: true },
+      { name: 'Sitio web para pyme', price: 'Cotización según alcance', ideal: 'Empresas con varios servicios que necesitan explicar su oferta', time: '2–4 semanas' },
+      { name: 'Tienda online', price: 'Cotización según alcance', ideal: 'Marcas con catálogo que quieren vender en línea o por WhatsApp', time: 'Según catálogo' },
+      { name: 'Sistema de reservas / plataforma a medida', price: 'Cotización según alcance', ideal: 'Negocios que gestionan reservas, pagos o usuarios a mano', time: '6–12 semanas' },
+      { name: 'App móvil', price: 'Cotización según alcance', ideal: 'Productos que necesitan app en iOS y Android', time: '6–12 semanas' },
+    ],
+    timeNote: 'Los plazos dependen de que el contenido (textos, fotos, logo) esté listo.',
+    incH: 'Qué incluye la landing',
+    includes: ['Diseño a medida, adaptado a celular', 'Botón de WhatsApp y/o formulario de contacto', 'SEO técnico básico: títulos, descripción y velocidad', 'Publicación en tu dominio y hosting', 'El código y el sitio quedan a tu nombre'],
+    excH: 'No incluido (lo pagas directo a tu proveedor)',
+    excludes: ['Dominio (renovación anual)', 'Hosting (mensual o anual, según el proveedor)', 'Comisiones de pasarela de pago por venta, si aplica'],
+    faqH: { eyebrow: 'Preguntas', a: 'Preguntas', b: 'sobre precios' },
+    faq: [
+      { q: '¿Por qué la landing es «desde»?', a: 'El precio base cubre una landing estándar. Secciones extra, textos desde cero o integraciones especiales suben el valor; siempre lo verás por escrito antes de empezar.' },
+      { q: '¿Qué pasa si no tengo dominio ni hosting?', a: 'El precio desde COP 600.000 asume que ya los tienes. Si no, te oriento para comprarlos a tu nombre y lo incluimos en la cotización.' },
+      { q: '¿Por qué no publicas precio de tiendas, apps o plataformas?', a: 'Porque dependen del catálogo, los pagos, los usuarios y los procesos. Prefiero darte un precio cerrado tras el diagnóstico que una cifra que luego cambie.' },
+      { q: '¿El sitio queda a mi nombre?', a: 'Sí. Código, dominio y accesos son tuyos.' },
+      { q: '¿Trabajas con negocios fuera de Villavicencio?', a: 'Sí: toda Colombia y negocios latinos en EE. UU., en español o inglés, de forma remota.' },
+    ],
+    cta: { q: '¿No sabes qué necesitas?', body: 'Cuéntame tu negocio en 30 minutos y te digo si te sirve una landing, una web, una tienda o una plataforma, trabajemos o no. También puedes escribirme a hola@oscardev.co.' },
+  },
+  en: {
+    title: 'Website Pricing | Oscar Dev',
+    description: 'Landing pages from USD 200. Websites, stores, apps and booking systems quoted by scope. Clear proposals, no hidden fees.',
+    eyebrow: 'Pricing', h1a: 'Clear pricing,', h1b: 'clear scope',
+    lead: 'Professional landing pages from USD 200. Websites, online stores, apps and booking platforms are quoted by scope, with a fixed written proposal before we start.',
+    plansH: { eyebrow: 'Plans', a: 'What things', b: 'cost' },
+    cols: { service: 'Service', price: 'Price', ideal: 'Best for', time: 'Typical delivery' },
+    plans: [
+      { name: 'Landing page', price: 'From USD 200', priceNote: 'with your own domain and hosting', ideal: 'One service, one campaign or a new business', time: '2–4 weeks', featured: true },
+      { name: 'Business website', price: 'Quoted by scope', ideal: 'Companies with several services to explain', time: '2–4 weeks' },
+      { name: 'Online store', price: 'Quoted by scope', ideal: 'Brands with a catalog that want to sell online or via WhatsApp', time: 'Depends on catalog' },
+      { name: 'Booking system / custom platform', price: 'Quoted by scope', ideal: 'Businesses managing bookings, payments or users by hand', time: '6–12 weeks' },
+      { name: 'Mobile app', price: 'Quoted by scope', ideal: 'Products that need an iOS and Android app', time: '6–12 weeks' },
+    ],
+    timeNote: 'Timelines depend on your content (copy, photos, logo) being ready.',
+    incH: 'What the landing page includes',
+    includes: ['Custom, mobile-first design', 'WhatsApp button and/or contact form', 'Basic technical SEO: titles, description and speed', 'Launch on your domain and hosting', 'You own the code and the site'],
+    excH: 'Not included (paid directly to your provider)',
+    excludes: ['Domain (yearly renewal)', 'Hosting (monthly or yearly)', 'Payment processor fees, if any'],
+    faqH: { eyebrow: 'FAQ', a: 'Pricing', b: 'questions' },
+    faq: [
+      { q: 'Why “from”?', a: 'The base price covers a standard landing page. Extra sections, copywriting from scratch or special integrations change the price, and you always see it in writing before we start.' },
+      { q: 'Do I own the site?', a: 'Yes. The code, the domain and every login are yours.' },
+      { q: 'Do you speak Spanish?', a: 'Yes, natively. I work in English or Spanish, whichever is easier for you and your customers.' },
+      { q: 'Why don’t you list prices for stores, apps or platforms?', a: 'Because they depend on your catalog, payments, users and processes. I’d rather give you a fixed price after a short call than a number that changes later.' },
+    ],
+    cta: { q: 'Not sure what you need?', body: 'Tell me about your business in 30 minutes and I’ll tell you whether a landing page, a website, a store or a platform makes sense, whether we work together or not. Or email hola@oscardev.co.' },
+  },
+} as const;
+
+/** Local landing pages. `cases` are case slugs; `concepts` are concept slugs (always labeled). */
+export const localPages = {
+  villavicencio: {
+    es: {
+      title: 'Diseño de páginas web en Villavicencio | Oscar Dev',
+      description: 'Desarrollador web en Villavicencio (Meta): webs, tiendas y reservas. Casos locales: Upsteppers, La Locura Bar y Óptica Alemania. Diagnóstico gratis.',
+      eyebrow: 'Villavicencio, Meta', h1a: 'Diseño de páginas web', h1b: 'en Villavicencio',
+      lead: 'Soy Oscar García, desarrollador web en Villavicencio. Hago webs, tiendas online y sistemas de reservas para negocios del Meta y de toda Colombia, con atención directa y en persona cuando hace falta.',
+      whyH: { eyebrow: 'Por qué local', a: 'Alguien que conoce', b: 'cómo compra tu cliente' },
+      why: [
+        { t: 'WhatsApp primero', d: 'En Villavicencio casi todo se cierra por WhatsApp. Cada web lleva el mensaje prellenado según el servicio que le interesa al cliente.' },
+        { t: 'Rápida en el celular', d: 'Páginas que cargan rápido con datos móviles, porque ahí es donde te buscan.' },
+        { t: 'Aparecer en Google', d: 'Títulos, descripciones, dirección y mapa bien configurados para búsquedas locales.' },
+        { t: 'Trato directo', d: 'Hablas conmigo, no con un intermediario. Nos podemos ver en Villavicencio.' },
+      ],
+      casesH: { eyebrow: 'Casos locales', a: 'Negocios de Villavicencio', b: 'que ya están en línea' },
+      cases: ['upsteppers', 'la-locura-bar', 'optica-alemania'],
+      conceptsH: { eyebrow: 'Conceptos', a: 'Ideas para', b: 'rubros locales', note: 'Conceptos de diseño no comisionados: no son los sitios oficiales de estos negocios.' },
+      concepts: ['romvet', 'glamping', 'academia-diyer'],
+      pricing: 'Landing page desde COP 600.000 si ya tienes dominio y hosting. Webs, tiendas y plataformas, con cotización cerrada según alcance.',
+      pricingLink: 'Ver precios',
+    },
+    en: {
+      title: 'Web Design in Villavicencio, Colombia | Oscar Dev',
+      description: 'Web developer in Villavicencio (Meta, Colombia): websites, online stores and booking systems. Local cases: Upsteppers, La Locura Bar and Óptica Alemania',
+      eyebrow: 'Villavicencio, Colombia', h1a: 'Web design', h1b: 'in Villavicencio',
+      lead: 'I’m Oscar García, a web developer based in Villavicencio. I build websites, online stores and booking systems for businesses in Meta and across Colombia.',
+      whyH: { eyebrow: 'Why local', a: 'Someone who knows', b: 'how your customers buy' },
+      why: [
+        { t: 'WhatsApp first', d: 'In Villavicencio most sales close on WhatsApp. Every site sends a pre-filled message based on the service the customer wants.' },
+        { t: 'Fast on mobile', d: 'Pages that load fast on mobile data, because that is where people search for you.' },
+        { t: 'Found on Google', d: 'Titles, descriptions, address and map set up for local searches.' },
+        { t: 'Direct contact', d: 'You talk to me, not a middleman. We can meet in Villavicencio.' },
+      ],
+      casesH: { eyebrow: 'Local cases', a: 'Villavicencio businesses', b: 'already online' },
+      cases: ['upsteppers', 'la-locura-bar', 'optica-alemania'],
+      conceptsH: { eyebrow: 'Concepts', a: 'Ideas for', b: 'local industries', note: 'Uncommissioned design concepts: not the official sites of these businesses.' },
+      concepts: ['romvet', 'glamping', 'academia-diyer'],
+      pricing: 'Landing pages from COP 600,000 if you already have a domain and hosting. Websites, stores and platforms get a fixed quote by scope.',
+      pricingLink: 'See pricing',
+    },
+  },
+  usa: {
+    es: {
+      title: 'Páginas web para negocios latinos en EE. UU.',
+      description: 'Webs en español e inglés para negocios hispanos en EE. UU. Landing desde USD 200. Atención directa en español.',
+      eyebrow: 'Negocios latinos en EE. UU.', h1a: 'Páginas web para negocios latinos', h1b: 'en Estados Unidos',
+      lead: 'Webs bilingües, en español e inglés, para negocios hispanos en EE. UU. Hablas directo conmigo, en español, y tu web habla el idioma de todos tus clientes.',
+      whyH: { eyebrow: 'Por qué conmigo', a: 'Tu web, en los dos', b: 'idiomas de tus clientes' },
+      why: [
+        { t: 'Bilingüe de verdad', d: 'Textos en inglés y español pensados para cada público, no traducciones automáticas.' },
+        { t: 'Atención en español', d: 'Explicas tu negocio en tu idioma y sin tecnicismos.' },
+        { t: 'Hecha para reservar', d: 'Botones de llamada, WhatsApp o formulario de cotización, según cómo trabajas.' },
+        { t: 'Precio claro', d: 'Landing desde USD 200; lo demás con cotización cerrada por escrito.' },
+      ],
+      casesH: { eyebrow: 'Caso en EE. UU.', a: 'Un negocio latino', b: 'en California' },
+      cases: ['duartes-auto-detailing'],
+      pricing: 'Landing page desde USD 200 con tu dominio y hosting. Webs, tiendas y plataformas, con cotización cerrada según alcance.',
+      pricingLink: 'Ver precios',
+    },
+    en: {
+      title: 'Websites for Hispanic Businesses in the US',
+      description: 'Bilingual English/Spanish websites for Latino-owned businesses in the US. Direct communication in Spanish. From USD 200.',
+      eyebrow: 'Hispanic-owned businesses', h1a: 'Websites for', h1b: 'Hispanic-owned businesses',
+      lead: 'Bilingual English and Spanish websites for Latino-owned businesses in the US. Talk to me directly in Spanish or English, and reach every customer in their language.',
+      whyH: { eyebrow: 'Why me', a: 'Your website in both', b: 'of your customers’ languages' },
+      why: [
+        { t: 'Truly bilingual', d: 'English and Spanish copy written for each audience, not machine translation.' },
+        { t: 'Spanish-speaking developer', d: 'Explain your business in your language, without jargon.' },
+        { t: 'Built for bookings', d: 'Call, WhatsApp or quote-request buttons, depending on how you work.' },
+        { t: 'Clear pricing', d: 'Landing pages from USD 200; everything else with a fixed written quote.' },
+      ],
+      casesH: { eyebrow: 'US case', a: 'A Latino-owned business', b: 'in California' },
+      cases: ['duartes-auto-detailing'],
+      pricing: 'Landing pages from USD 200 with your own domain and hosting. Websites, stores and platforms get a fixed quote by scope.',
+      pricingLink: 'See pricing',
+    },
+  },
+} as const;

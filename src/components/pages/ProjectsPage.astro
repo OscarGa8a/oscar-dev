@@ -1,0 +1,52 @@
+---
+import type { Locale } from '../../i18n/index';
+import { projectsPage } from '../../i18n/pages';
+import { clientProjects, ownProducts, concepts, projectHref, conceptUrl } from '../../data/projects';
+import Heading from '../home/Heading.astro';
+import ProjectCard from '../home/ProjectCard.astro';
+import ConceptCard from './ConceptCard.astro';
+import PageHero from './PageHero.astro';
+import PageShell from './PageShell.astro';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = projectsPage[lang];
+const site = 'https://oscardev.co';
+const items = [...clientProjects, ...ownProducts];
+const schema = [{
+  '@type': 'CollectionPage', name: t.title, description: t.description, url: new URL(Astro.url.pathname, site).href,
+  mainEntity: { '@type': 'ItemList', itemListElement: [
+    ...items.map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: p.title, url: new URL(projectHref(p, lang), site).href })),
+    ...concepts.map((c, i) => ({ '@type': 'ListItem', position: items.length + i + 1, name: `${t.concepts.label}: ${c.title}`, url: conceptUrl(c) })),
+  ] },
+}];
+---
+<PageShell lang={lang} title={t.title} description={t.description} crumbs={[{ label: t.eyebrow }]} schema={schema}>
+  <PageHero lang={lang} eyebrow={t.eyebrow} h1a={t.h1a} h1b={t.h1b} lead={t.lead} crumbs={[{ href: lang === 'es' ? '/' : '/en/', label: lang === 'es' ? 'Inicio' : 'Home' }, { label: t.eyebrow }]} cta={false}>
+    <ul class="jump" role="list">
+      <li><a href="#clientes">{t.clients.eyebrow}</a></li>
+      <li><a href="#productos">{t.own.eyebrow}</a></li>
+      <li><a href="#conceptos">{t.concepts.eyebrow}</a></li>
+    </ul>
+  </PageHero>
+  <section class="section surface-paper" id="clientes" aria-labelledby="clients-title">
+    <div class="wrap">
+      <Heading n="01" eyebrow={t.clients.eyebrow} a={t.clients.h2a} b={t.clients.h2b} id="clients-title" />
+      <p class="lead">{t.clients.lead}</p>
+      <div class="grid-cards">{clientProjects.map((p) => <ProjectCard p={p} lang={lang} location="projects_clients" sizes="(min-width:1024px) 30vw, (min-width:640px) 46vw, 92vw" />)}</div>
+    </div>
+  </section>
+  <section class="section surface-ivory" id="productos" aria-labelledby="own-title">
+    <div class="wrap">
+      <Heading n="02" eyebrow={t.own.eyebrow} a={t.own.h2a} b={t.own.h2b} id="own-title" />
+      <p class="lead">{t.own.lead}</p>
+      <div class="grid-cards two">{ownProducts.map((p) => <ProjectCard p={p} lang={lang} location="projects_own" sizes="(min-width:640px) 46vw, 92vw" />)}</div>
+    </div>
+  </section>
+  <section class="section surface-paper" id="conceptos" aria-labelledby="concepts-title">
+    <div class="wrap">
+      <Heading n="03" eyebrow={t.concepts.eyebrow} a={t.concepts.h2a} b={t.concepts.h2b} id="concepts-title" />
+      <p class="lead">{t.concepts.lead}</p>
+      <div class="grid-cards four">{concepts.map((c) => <ConceptCard c={c} lang={lang} />)}</div>
+    </div>
+  </section>
+</PageShell>

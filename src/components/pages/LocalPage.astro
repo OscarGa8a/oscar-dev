@@ -1,0 +1,54 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { Locale } from '../../i18n/index';
+import { localPages } from '../../i18n/pages';
+import { getProject, concepts as allConcepts } from '../../data/projects';
+import Heading from '../home/Heading.astro';
+import ProjectCard from '../home/ProjectCard.astro';
+import ConceptCard from './ConceptCard.astro';
+import PageHero from './PageHero.astro';
+import PageShell from './PageShell.astro';
+interface Props { lang: Locale; page: keyof typeof localPages }
+const { lang, page } = Astro.props;
+const t = localPages[page][lang] as (typeof localPages)['villavicencio']['es'] | (typeof localPages)['usa']['es'];
+const projects = t.cases.map(getProject);
+const cs = 'concepts' in t ? allConcepts.filter((c) => (t.concepts as readonly string[]).includes(c.slug)) : [];
+const site = 'https://oscardev.co';
+const schema = [{
+  '@type': 'Service', name: `${t.h1a} ${t.h1b}`, description: t.description, url: new URL(Astro.url.pathname, site).href,
+  provider: { '@id': `${site}/#service` },
+  areaServed: page === 'villavicencio' ? { '@type': 'City', name: 'Villavicencio' } : { '@type': 'Country', name: 'United States' },
+  availableLanguage: page === 'usa' ? ['es', 'en'] : ['es'],
+}];
+const pricingHref = lang === 'es' ? '/precios/' : '/en/pricing/';
+---
+<PageShell lang={lang} title={t.title} description={t.description} crumbs={[{ label: t.eyebrow }]} schema={schema}>
+  <PageHero lang={lang} eyebrow={t.eyebrow} h1a={t.h1a} h1b={t.h1b} lead={t.lead} crumbs={[{ href: lang === 'es' ? '/' : '/en/', label: lang === 'es' ? 'Inicio' : 'Home' }, { label: t.eyebrow }]} location={`local_${page}_hero`} />
+  <section class="section surface-paper" aria-labelledby="why-title">
+    <div class="wrap">
+      <Heading n="01" eyebrow={t.whyH.eyebrow} a={t.whyH.a} b={t.whyH.b} id="why-title" />
+      <ul class="why" role="list">{t.why.map((w) => <li><h3>{w.t}</h3><p>{w.d}</p></li>)}</ul>
+    </div>
+  </section>
+  <section class="section surface-ivory" aria-labelledby="lcases-title">
+    <div class="wrap">
+      <Heading n="02" eyebrow={t.casesH.eyebrow} a={t.casesH.a} b={t.casesH.b} id="lcases-title" />
+      <div class:list={['grid-cards', { two: projects.length < 3 }]}>{projects.map((p) => <ProjectCard p={p} lang={lang} location={`local_${page}`} sizes="(min-width:1024px) 30vw, (min-width:640px) 46vw, 92vw" />)}</div>
+    </div>
+  </section>
+  {cs.length > 0 && 'conceptsH' in t && (
+    <section class="section surface-paper" aria-labelledby="lconcepts-title">
+      <div class="wrap">
+        <Heading n="03" eyebrow={t.conceptsH.eyebrow} a={t.conceptsH.a} b={t.conceptsH.b} id="lconcepts-title" />
+        <p class="lead">{t.conceptsH.note}</p>
+        <div class="grid-cards">{cs.map((c) => <ConceptCard c={c} lang={lang} />)}</div>
+      </div>
+    </section>
+  )}
+  <section class="section surface-dark" aria-label={t.pricingLink}>
+    <div class="wrap price-band">
+      <p>{t.pricing}</p>
+      <a class="btn btn-orange" href={pricingHref}>{t.pricingLink}<Icon name="ph:arrow-right" aria-hidden="true" /></a>
+    </div>
+  </section>
+</PageShell>

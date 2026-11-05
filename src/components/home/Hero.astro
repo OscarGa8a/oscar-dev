@@ -3,7 +3,8 @@ import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 import type { Locale } from '../../i18n/index';
 import { homeCopy } from '../../i18n/home';
-import { heroProjects, projectHref } from '../../data/projects';
+import { heroProjects, projectHref, projectsIndexUrl } from '../../data/projects';
+import Portrait from './Portrait.astro';
 import { whatsappUrl } from '../../config/site';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
@@ -15,6 +16,7 @@ const c = homeCopy[lang].hero;
     <div class="copy">
       <p class="eyebrow-h">{c.eyebrow}</p>
       <h1 id="hero-title"><span class="l1">{c.h1a}</span> <span class="l2">{c.h1b}</span></h1>
+      <p class="tagline">{c.tagline}</p>
       <p class="desc">{c.desc}</p>
       <div class="ctas">
         <a class="btn btn-ink" href={whatsappUrl(lang)} target="_blank" rel="noopener noreferrer" data-event="whatsapp_click" data-event-location="hero">{c.cta}<Icon name="ph:arrow-up-right" aria-hidden="true" /></a>
@@ -22,22 +24,22 @@ const c = homeCopy[lang].hero;
       </div>
       <a class="scroll-ind" href="#proyectos" aria-hidden="true" tabindex="-1"><span><span class="mouse"></span><span class="stem"></span></span><span style="max-width:6rem;line-height:1.7">{c.scroll}</span></a>
     </div>
-    <!-- TODO(asset): replace with Oscar's real portrait (see docs/PROGRESS.md) -->
-    <div class="portrait"><div class="ph" role="img" aria-label={c.portraitPending}><span>{c.portraitPending}</span></div></div>
+    <!-- Real photo: pass src={import('../../assets/oscar.jpg')} to <Portrait> (see docs/PROGRESS.md) -->
+    <Portrait lang={lang} alt={c.portraitPending} />
   </div>
   <span id="hero-sentinel" aria-hidden="true" style="position:absolute;bottom:0;height:1px;width:1px"></span>
   {heroProjects.length > 0 && (
     <div class="strip">
       <div class="wrap in">
-        <p class="label" style="margin:0"><span>{c.strip}</span><a href="#proyectos">{c.allShort}<Icon name="ph:arrow-right" aria-hidden="true" /></a></p>
+        <p class="label" style="margin:0"><span>{c.strip}</span><a href={projectsIndexUrl(lang)}>{c.allShort}<Icon name="ph:arrow-right" aria-hidden="true" /></a></p>
         {heroProjects.map((p) => (
-          <a class="item" href={projectHref(p)} target="_blank" rel="noopener noreferrer" data-event="project_link_click" data-event-location="hero_strip">
+          <a class="item" href={projectHref(p, lang)} data-event="project_link_click" data-event-location="hero_strip">
             <span class="thumb"><Image src={p.cover!} alt="" widths={[208, 320]} sizes="(min-width:1024px) 104px, 30vw" loading="lazy" /></span>
             <span class="txt"><span class="t" style="display:block">{p.title}</span><span class="s">{p.type[lang]}</span></span>
-            <Icon name="ph:arrow-up-right" class="go" aria-hidden="true" />
+            <Icon name="ph:arrow-right" class="go" aria-hidden="true" />
           </a>
         ))}
-        <a class="all" href="#proyectos"><span><strong style="font-weight:600">{c.all}</strong></span><span class="round"><Icon name="ph:arrow-right" aria-hidden="true" /></span></a>
+        <a class="all" href={projectsIndexUrl(lang)}><span><strong style="font-weight:600">{c.all}</strong></span><span class="round"><Icon name="ph:arrow-right" aria-hidden="true" /></span></a>
       </div>
     </div>
   )}

@@ -128,3 +128,22 @@ Rama: `feat/home-v2`. No se hace merge a main ni se despliega a producción desd
 ### Dudas abiertas
 - Foto real de Oscar.
 - Perfil de Google Business para sameAs.
+
+## Publicación en producción (2026-11-05)
+
+- Merge normal (`--no-ff`, sin force push ni PR) de `feat/home-v2` a `main`:
+  - `f65c8a2`: rediseño completo. Cloudflare Pages desplegó bien, pero el CI de GitHub (`astro check`) falló por un parámetro `url` sin tipo en `astro.config.mjs`.
+  - `35aec14` (rama): arreglo del CI con un tipo JSDoc (`/** @param {string} url */`).
+  - `39bf9aa`: segundo merge con el arreglo. Cloudflare Pages y el CI (`validate`) en verde.
+- Verificación en vivo en https://oscardev.co:
+  - Sin `x-robots-tag` y con meta robots `index, follow`. El noindex queda solo en la 404.
+  - 200 en `/`, `/en/`, `/servicios/`, `/proyectos/`, `/precios/` y `/contacto/`. Una ruta inexistente devuelve un 404 real.
+  - `sitemap-index.xml` (38 URLs), `llms.txt` y `llms-full.txt` responden bien.
+  - El H1 nuevo está en vivo en ES y EN, con todas las correcciones de la Fase 4: no aparece «torneos», hay pago sin anticipo solo en landings, plazos reales, la línea de CATO, ConectaPlay con el hermano como socio, los medios de pago y la respuesta el mismo día hábil.
+- Lighthouse de la Home en producción: 100/100/100/100 en móvil (LCP 0,9 s) y en escritorio (LCP 0,3 s), CLS 0.
+- Capturas de producción en `/workspace/home-v2-compare/prod/` (fuera del repo).
+
+### Pendiente
+- `www.oscardev.co` no existe (NXDOMAIN). Hay que decidir si se crea el registro con un redirect 301 a `https://oscardev.co`.
+- Falta la foto real de Oscar.
+- Falta el perfil de Google Business.
